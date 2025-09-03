@@ -1,0 +1,11 @@
+﻿이름,paper,download link,property,description,fyi
+HF_Lung_V1,https://pmc.ncbi.nlm.nih.gov/articles/PMC8248710/#sec023,https://gitlab.com/techsupportHF/HF_Lung_V1,lung sound,"총 9765개의 폐음 오디오 파일로 구성된다. 각 파일은 15초 길이의 짧은 호흡음 클립이며, 호기/흡기의 구간 및 삑삑거림, 천명음, 협착음 등 비정상 폐음 이벤트에 대한 레이블을 포함한다. ",
+KAUH,https://www.sciencedirect.com/science/article/pii/S2352340921001979,https://data.mendeley.com/datasets/jwyy9np4gv/3,lung sound,"2021년에 공개된 King Abdullah University Hospital (KAUH) 데이터셋으로, 요르단 KAUH에서 전자청진기로 수집된 새로운 폐음 데이터이다. 천식, 폐렴, 심부전, 기관지확장증/기관지염, COPD 등 다양한 호흡기 질환 환자 70명과 건강한 대조군 35명의 청진 음성으로 구성되어 있다. 총 308개의 폐음 녹음이 있으며 각 샘플은 5초 길이로, 최소 한 번의 호흡 주기를 담고 있다. 각 녹음은 “정상”, “천식” 등 환자 그룹에 대한 레이블이 붙어 있다. ",
+SPRSound,https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=9880516&tag=1,https://github.com/SJTU-YONGFU-RESEARCH-GRP/SPRSound?tab=readme-ov-file,lung sound,,
+Pulmonary (Lungs) Sound,https://link.springer.com/article/10.1007/s00521-021-06302-1#Sec2,https://data.mendeley.com/datasets/fr7zvy8j5s/1,lung sound,,
+Respiratory and heart rate monitoring dataset from aeration study (version 1.0.0),,https://physionet.org/content/respiratory-heartrate-dataset/1.0.0/,,,
+"ICBHI ",https://doi.org/10.1007/978-981-10-7419-6_6,https://bhichallenge.med.auth.gr/,lung sound,"2017년 국제 생의학 건강정보학 컨퍼런스(ICBHI)에서 공개된 호흡음 데이터셋으로, 126명의 환자로부터 채록된 920개의 호흡음 기록을 포함한다. 녹음 길이는 10~90초로 다양하며 4kHz, 10kHz, 44kHz 등 여러 샘플레이트로 수집되었다. 각 녹음에는 환자의 진단 정보(정상 또는 천식, COPD, 폐렴 등 7가지 호흡기 질환)와 각 호흡 주기에 대한 잡음 종류 레이블(wheeze/crackle 여부)이 달려 있다.",https://github.com/architgajpal/respiratory_disease_classification
+Time-MMD: Multi-Domain Multimodal Dataset for Time Series Analysis,https://arxiv.org/abs/2406.08627,https://github.com/AdityaLab/Time-MMD,,"시계열 분석에서 텍스트 데이터를 활용하는 접근법을 효과적으로 도입하기 위해, 9개 도메인에서 수치 데이터 + 텍스트 데이터를 포함한 Time-MMD 데이터셋 구축.
+
+MM-TSFlib는 Time-MMD 데이터셋을 활용하여 다중 모달 시계열 예측이 가능하도록 지원하는 라이브러리.",2024 published
+Towards Open Respiratory Acoustic Foundation Models: Pretraining and Benchmarking,https://arxiv.org/abs/2406.16148,https://github.com/evelyn0414/OPERA,"Foundation model, lung sound",호흡기 소리에 특화된 최초의 개방형(Open-source) 사전 학습 모델 및 벤치마킹 시스템(OPERA-Open Respiratory Acoustic) 제안,

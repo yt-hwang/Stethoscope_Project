@@ -1,0 +1,4 @@
+path,start_sec,end_sec,label
+data/example.wav,0.00,2.50,breathing
+data/example.wav,3.00,4.50,wheezing
+data/example.wav,5.00,6.00,noise
