@@ -1,0 +1,746 @@
+{
+  "patients": {
+    "WEBSS002_3": {
+      "patient_id": "WEBSS002_3",
+      "num_files": 3,
+      "files": [
+        {
+          "filename": "WEBSS-002 TP 2_60sec.wav",
+          "sample_rate": 4000,
+          "duration": 60.0,
+          "data_type": "int32",
+          "data_shape": [
+            240000
+          ],
+          "file_size_mb": 0.6866874694824219,
+          "data_range": [
+            "-832041472",
+            "630886400"
+          ]
+        },
+        {
+          "filename": "WEBSS-002 TP 3_60sec.wav",
+          "sample_rate": 4000,
+          "duration": 60.0,
+          "data_type": "int32",
+          "data_shape": [
+            240000
+          ],
+          "file_size_mb": 0.6866874694824219,
+          "data_range": [
+            "-1744264704",
+            "2147483392"
+          ]
+        },
+        {
+          "filename": "WEBSS-002 TP 4_60sec.wav",
+          "sample_rate": 4000,
+          "duration": 60.0,
+          "data_type": "int32",
+          "data_shape": [
+            240000
+          ],
+          "file_size_mb": 0.6866874694824219,
+          "data_range": [
+            "-2147483648",
+            "1816232704"
+          ]
+        }
+      ],
+      "sample_rates": "{4000}",
+      "durations": [
+        60.0,
+        60.0,
+        60.0
+      ],
+      "data_types": "{'int32'}"
+    },
+    "WEBSS003_6": {
+      "patient_id": "WEBSS003_6",
+      "num_files": 6,
+      "files": [
+        {
+          "filename": "WEBSS-003 TP1_60sec.wav",
+          "sample_rate": 4000,
+          "duration": 60.0,
+          "data_type": "int32",
+          "data_shape": [
+            240000
+          ],
+          "file_size_mb": 0.6866874694824219,
+          "data_range": [
+            "-1711980032",
+            "2147483392"
+          ]
+        },
+        {
+          "filename": "WEBSS-003 TP2_60sec.wav",
+          "sample_rate": 4000,
+          "duration": 60.0,
+          "data_type": "int32",
+          "data_shape": [
+            240000
+          ],
+          "file_size_mb": 0.6866874694824219,
+          "data_range": [
+            "-1210656000",
+            "1065602048"
+          ]
+        },
+        {
+          "filename": "WEBSS-003 TP3_60sec.wav",
+          "sample_rate": 4000,
+          "duration": 60.0,
+          "data_type": "int32",
+          "data_shape": [
+            240000
+          ],
+          "file_size_mb": 0.6866874694824219,
+          "data_range": [
+            "-2147483648",
+            "2147483392"
+          ]
+        },
+        {
+          "filename": "WEBSS-003 TP4_60sec.wav",
+          "sample_rate": 4000,
+          "duration": 60.0,
+          "data_type": "int32",
+          "data_shape": [
+            240000
+          ],
+          "file_size_mb": 0.6866874694824219,
+          "data_range": [
+            "-2147483648",
+            "2147483392"
+          ]
+        },
+        {
+          "filename": "WEBSS-003 TP6_60sec.wav",
+          "sample_rate": 4000,
+          "duration": 60.0,
+          "data_type": "int32",
+          "data_shape": [
+            240000
+          ],
+          "file_size_mb": 0.6866874694824219,
+          "data_range": [
+            "-1600518912",
+            "1610488320"
+          ]
+        },
+        {
+          "filename": "WEBSS-003 TP7_60sec.wav",
+          "sample_rate": 4000,
+          "duration": 60.0,
+          "data_type": "int32",
+          "data_shape": [
+            240000
+          ],
+          "file_size_mb": 0.6866874694824219,
+          "data_range": [
+            "-2147483648",
+            "515047936"
+          ]
+        }
+      ],
+      "sample_rates": "{4000}",
+      "durations": [
+        60.0,
+        60.0,
+        60.0,
+        60.0,
+        60.0,
+        60.0
+      ],
+      "data_types": "{'int32'}"
+    },
+    "WEBSS004_5": {
+      "patient_id": "WEBSS004_5",
+      "num_files": 5,
+      "files": [
+        {
+          "filename": "WEBSS-004 TP1_60sec.wav",
+          "sample_rate": 4000,
+          "duration": 60.0,
+          "data_type": "int32",
+          "data_shape": [
+            240000
+          ],
+          "file_size_mb": 0.6866874694824219,
+          "data_range": [
+            "-2147483648",
+            "2147483392"
+          ]
+        },
+        {
+          "filename": "WEBSS-004 TP2_60sec.wav",
+          "sample_rate": 4000,
+          "duration": 60.0,
+          "data_type": "int32",
+          "data_shape": [
+            240000
+          ],
+          "file_size_mb": 0.6866874694824219,
+          "data_range": [
+            "-1819791104",
+            "2147483392"
+          ]
+        },
+        {
+          "filename": "WEBSS-004 TP3_60sec.wav",
+          "sample_rate": 4000,
+          "duration": 60.0,
+          "data_type": "int32",
+          "data_shape": [
+            240000
+          ],
+          "file_size_mb": 0.6866874694824219,
+          "data_range": [
+            "-1664369664",
+            "2147483392"
+          ]
+        },
+        {
+          "filename": "WEBSS-004 TP4_60sec.wav",
+          "sample_rate": 4000,
+          "duration": 60.0,
+          "data_type": "int32",
+          "data_shape": [
+            240000
+          ],
+          "file_size_mb": 0.6866874694824219,
+          "data_range": [
+            "-2147483648",
+            "2147483392"
+          ]
+        },
+        {
+          "filename": "WEBSS-004 TP5_60sec.wav",
+          "sample_rate": 4000,
+          "duration": 60.0,
+          "data_type": "int32",
+          "data_shape": [
+            240000
+          ],
+          "file_size_mb": 0.6866874694824219,
+          "data_range": [
+            "-916349952",
+            "1492569088"
+          ]
+        }
+      ],
+      "sample_rates": "{4000}",
+      "durations": [
+        60.0,
+        60.0,
+        60.0,
+        60.0,
+        60.0
+      ],
+      "data_types": "{'int32'}"
+    },
+    "WEBSS005_6": {
+      "patient_id": "WEBSS005_6",
+      "num_files": 6,
+      "files": [
+        {
+          "filename": "WEBSS-005 TP1_60sec.wav",
+          "sample_rate": 4000,
+          "duration": 60.0,
+          "data_type": "int32",
+          "data_shape": [
+            240000
+          ],
+          "file_size_mb": 0.6866874694824219,
+          "data_range": [
+            "-1749065472",
+            "1450396160"
+          ]
+        },
+        {
+          "filename": "WEBSS-005 TP2_60sec.wav",
+          "sample_rate": 4000,
+          "duration": 60.0,
+          "data_type": "int32",
+          "data_shape": [
+            240000
+          ],
+          "file_size_mb": 0.6866874694824219,
+          "data_range": [
+            "-2147483648",
+            "1536212992"
+          ]
+        },
+        {
+          "filename": "WEBSS-005 TP3_60sec.wav",
+          "sample_rate": 4000,
+          "duration": 60.0,
+          "data_type": "int32",
+          "data_shape": [
+            240000
+          ],
+          "file_size_mb": 0.6866874694824219,
+          "data_range": [
+            "-2147483648",
+            "1486860800"
+          ]
+        },
+        {
+          "filename": "WEBSS-005 TP4_60sec.wav",
+          "sample_rate": 4000,
+          "duration": 60.0,
+          "data_type": "int32",
+          "data_shape": [
+            240000
+          ],
+          "file_size_mb": 0.6866874694824219,
+          "data_range": [
+            "-2147483648",
+            "1754297344"
+          ]
+        },
+        {
+          "filename": "WEBSS-005 TP5_60sec.wav",
+          "sample_rate": 4000,
+          "duration": 60.0,
+          "data_type": "int32",
+          "data_shape": [
+            240000
+          ],
+          "file_size_mb": 0.6866874694824219,
+          "data_range": [
+            "-2059194880",
+            "2147483392"
+          ]
+        },
+        {
+          "filename": "WEBSS-005 TP6_60sec.wav",
+          "sample_rate": 4000,
+          "duration": 60.0,
+          "data_type": "int32",
+          "data_shape": [
+            240000
+          ],
+          "file_size_mb": 0.6866874694824219,
+          "data_range": [
+            "-2147483648",
+            "1895933440"
+          ]
+        }
+      ],
+      "sample_rates": "{4000}",
+      "durations": [
+        60.0,
+        60.0,
+        60.0,
+        60.0,
+        60.0,
+        60.0
+      ],
+      "data_types": "{'int32'}"
+    },
+    "WEBSS006_12": {
+      "patient_id": "WEBSS006_12",
+      "num_files": 12,
+      "files": [
+        {
+          "filename": "WEBSS-006 TP10_60sec.wav",
+          "sample_rate": 4000,
+          "duration": 60.0,
+          "data_type": "int32",
+          "data_shape": [
+            240000
+          ],
+          "file_size_mb": 0.6866874694824219,
+          "data_range": [
+            "-2141112320",
+            "2147483392"
+          ]
+        },
+        {
+          "filename": "WEBSS-006 TP11_60sec.wav",
+          "sample_rate": 4000,
+          "duration": 60.0,
+          "data_type": "int32",
+          "data_shape": [
+            240000
+          ],
+          "file_size_mb": 0.6866874694824219,
+          "data_range": [
+            "-1097305600",
+            "1237473280"
+          ]
+        },
+        {
+          "filename": "WEBSS-006 TP12_60sec.wav",
+          "sample_rate": 4000,
+          "duration": 60.0,
+          "data_type": "int32",
+          "data_shape": [
+            240000
+          ],
+          "file_size_mb": 0.6866874694824219,
+          "data_range": [
+            "-2147483648",
+            "2147483392"
+          ]
+        },
+        {
+          "filename": "WEBSS-006 TP1_60sec.wav",
+          "sample_rate": 4000,
+          "duration": 60.0,
+          "data_type": "int32",
+          "data_shape": [
+            240000
+          ],
+          "file_size_mb": 0.6866874694824219,
+          "data_range": [
+            "-1558704128",
+            "1545707520"
+          ]
+        },
+        {
+          "filename": "WEBSS-006 TP2_60sec.wav",
+          "sample_rate": 4000,
+          "duration": 60.0,
+          "data_type": "int32",
+          "data_shape": [
+            240000
+          ],
+          "file_size_mb": 0.6866874694824219,
+          "data_range": [
+            "-2147483136",
+            "2134211072"
+          ]
+        },
+        {
+          "filename": "WEBSS-006 TP3_60sec.wav",
+          "sample_rate": 4000,
+          "duration": 60.0,
+          "data_type": "int32",
+          "data_shape": [
+            240000
+          ],
+          "file_size_mb": 0.6866874694824219,
+          "data_range": [
+            "-2147483648",
+            "2147483392"
+          ]
+        },
+        {
+          "filename": "WEBSS-006 TP4_60sec.wav",
+          "sample_rate": 4000,
+          "duration": 60.82475,
+          "data_type": "int32",
+          "data_shape": [
+            243299
+          ],
+          "file_size_mb": 0.6961269378662109,
+          "data_range": [
+            "-1860318208",
+            "2147483392"
+          ]
+        },
+        {
+          "filename": "WEBSS-006 TP5_60sec.wav",
+          "sample_rate": 4000,
+          "duration": 60.0,
+          "data_type": "int32",
+          "data_shape": [
+            240000
+          ],
+          "file_size_mb": 0.6866874694824219,
+          "data_range": [
+            "-2140810752",
+            "2147483392"
+          ]
+        },
+        {
+          "filename": "WEBSS-006 TP6_60sec.wav",
+          "sample_rate": 4000,
+          "duration": 60.0,
+          "data_type": "int32",
+          "data_shape": [
+            240000
+          ],
+          "file_size_mb": 0.6866874694824219,
+          "data_range": [
+            "-2147483648",
+            "2147483392"
+          ]
+        },
+        {
+          "filename": "WEBSS-006 TP7_60sec.wav",
+          "sample_rate": 4000,
+          "duration": 60.0,
+          "data_type": "int32",
+          "data_shape": [
+            240000
+          ],
+          "file_size_mb": 0.6866874694824219,
+          "data_range": [
+            "-2147483648",
+            "2147483392"
+          ]
+        },
+        {
+          "filename": "WEBSS-006 TP8_60sec.wav",
+          "sample_rate": 4000,
+          "duration": 60.0,
+          "data_type": "int32",
+          "data_shape": [
+            240000
+          ],
+          "file_size_mb": 0.6866874694824219,
+          "data_range": [
+            "-2147483136",
+            "2016263680"
+          ]
+        },
+        {
+          "filename": "WEBSS-006 TP9_60sec.wav",
+          "sample_rate": 4000,
+          "duration": 60.0,
+          "data_type": "int32",
+          "data_shape": [
+            240000
+          ],
+          "file_size_mb": 0.6866874694824219,
+          "data_range": [
+            "-2147483392",
+            "1760585728"
+          ]
+        }
+      ],
+      "sample_rates": "{4000}",
+      "durations": [
+        60.0,
+        60.0,
+        60.0,
+        60.0,
+        60.0,
+        60.0,
+        60.82475,
+        60.0,
+        60.0,
+        60.0,
+        60.0,
+        60.0
+      ],
+      "data_types": "{'int32'}"
+    },
+    "WEBSS007_7": {
+      "patient_id": "WEBSS007_7",
+      "num_files": 7,
+      "files": [
+        {
+          "filename": "WEBSS-007 TP1_60sec.wav",
+          "sample_rate": 4000,
+          "duration": 60.0,
+          "data_type": "int32",
+          "data_shape": [
+            240000
+          ],
+          "file_size_mb": 0.6866874694824219,
+          "data_range": [
+            "-2147482624",
+            "1838632960"
+          ]
+        },
+        {
+          "filename": "WEBSS-007 TP2_60sec.wav",
+          "sample_rate": 4000,
+          "duration": 60.0,
+          "data_type": "int32",
+          "data_shape": [
+            240000
+          ],
+          "file_size_mb": 0.6866874694824219,
+          "data_range": [
+            "-1092790272",
+            "1531547648"
+          ]
+        },
+        {
+          "filename": "WEBSS-007 TP3_60sec.wav",
+          "sample_rate": 4000,
+          "duration": 60.0,
+          "data_type": "int32",
+          "data_shape": [
+            240000
+          ],
+          "file_size_mb": 0.6866874694824219,
+          "data_range": [
+            "-1976381440",
+            "2147483392"
+          ]
+        },
+        {
+          "filename": "WEBSS-007 TP4_60sec.wav",
+          "sample_rate": 4000,
+          "duration": 60.0,
+          "data_type": "int32",
+          "data_shape": [
+            240000
+          ],
+          "file_size_mb": 0.6866874694824219,
+          "data_range": [
+            "-2147483648",
+            "2147483392"
+          ]
+        },
+        {
+          "filename": "WEBSS-007 TP5_60sec.wav",
+          "sample_rate": 4000,
+          "duration": 60.0,
+          "data_type": "int32",
+          "data_shape": [
+            240000
+          ],
+          "file_size_mb": 0.6866874694824219,
+          "data_range": [
+            "-1669998080",
+            "2049212928"
+          ]
+        },
+        {
+          "filename": "WEBSS-007 TP6_60sec.wav",
+          "sample_rate": 4000,
+          "duration": 60.0,
+          "data_type": "int32",
+          "data_shape": [
+            240000
+          ],
+          "file_size_mb": 0.6866874694824219,
+          "data_range": [
+            "-2147483648",
+            "2022635264"
+          ]
+        },
+        {
+          "filename": "WEBSS-007 TP7_60sec.wav",
+          "sample_rate": 4000,
+          "duration": 60.0,
+          "data_type": "int32",
+          "data_shape": [
+            240000
+          ],
+          "file_size_mb": 0.6866874694824219,
+          "data_range": [
+            "-407316736",
+            "432312576"
+          ]
+        }
+      ],
+      "sample_rates": "{4000}",
+      "durations": [
+        60.0,
+        60.0,
+        60.0,
+        60.0,
+        60.0,
+        60.0,
+        60.0
+      ],
+      "data_types": "{'int32'}"
+    }
+  },
+  "total_files": 39,
+  "sample_rates": [
+    4000
+  ],
+  "durations": [
+    60.0,
+    60.0,
+    60.0,
+    60.0,
+    60.0,
+    60.0,
+    60.0,
+    60.0,
+    60.0,
+    60.0,
+    60.0,
+    60.0,
+    60.0,
+    60.0,
+    60.0,
+    60.0,
+    60.0,
+    60.0,
+    60.0,
+    60.0,
+    60.0,
+    60.0,
+    60.0,
+    60.0,
+    60.0,
+    60.0,
+    60.82475,
+    60.0,
+    60.0,
+    60.0,
+    60.0,
+    60.0,
+    60.0,
+    60.0,
+    60.0,
+    60.0,
+    60.0,
+    60.0,
+    60.0
+  ],
+  "data_types": [
+    "int32"
+  ],
+  "file_sizes": [
+    0.6866874694824219,
+    0.6866874694824219,
+    0.6866874694824219,
+    0.6866874694824219,
+    0.6866874694824219,
+    0.6866874694824219,
+    0.6866874694824219,
+    0.6866874694824219,
+    0.6866874694824219,
+    0.6866874694824219,
+    0.6866874694824219,
+    0.6866874694824219,
+    0.6866874694824219,
+    0.6866874694824219,
+    0.6866874694824219,
+    0.6866874694824219,
+    0.6866874694824219,
+    0.6866874694824219,
+    0.6866874694824219,
+    0.6866874694824219,
+    0.6866874694824219,
+    0.6866874694824219,
+    0.6866874694824219,
+    0.6866874694824219,
+    0.6866874694824219,
+    0.6866874694824219,
+    0.6961269378662109,
+    0.6866874694824219,
+    0.6866874694824219,
+    0.6866874694824219,
+    0.6866874694824219,
+    0.6866874694824219,
+    0.6866874694824219,
+    0.6866874694824219,
+    0.6866874694824219,
+    0.6866874694824219,
+    0.6866874694824219,
+    0.6866874694824219,
+    0.6866874694824219
+  ],
+  "patient_distribution": {
+    "WEBSS002_3": 3,
+    "WEBSS003_6": 6,
+    "WEBSS004_5": 5,
+    "WEBSS005_6": 6,
+    "WEBSS006_12": 12,
+    "WEBSS007_7": 7
+  }
+}
