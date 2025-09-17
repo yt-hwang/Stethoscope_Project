@@ -23,9 +23,9 @@ __pycache__/
 # Jupyter Notebook checkpoints
 .ipynb_checkpoints
 
-# Large data files
-*.xlsx
-*.xls
+# Large data files (exclude specific large Excel files)
+# *.xlsx
+# *.xls
 
 # Temporary files
 *.tmp

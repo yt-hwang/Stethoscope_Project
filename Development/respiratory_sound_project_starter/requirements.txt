@@ -1,9 +1,0 @@
-numpy
-scipy
-librosa>=0.10.0
-soundfile
-torch
-torchaudio
-scikit-learn
-matplotlib
-tqdm
