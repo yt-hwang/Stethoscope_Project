@@ -1,0 +1,73 @@
+{
+  "kmeans_k3": {
+    "representation": "logmel_mean",
+    "algorithm": "kmeans",
+    "params": {
+      "n_clusters": 3
+    },
+    "valid_runs": 7,
+    "total_runs": 7,
+    "silhouette_mean": 0.3274539876201273,
+    "silhouette_std": 0.011819150874296554,
+    "calinski_harabasz_mean": 23.63457294431894,
+    "calinski_harabasz_std": 0.511762523991955,
+    "davies_bouldin_mean": 1.0382622563407742,
+    "davies_bouldin_std": 0.05858532595871415,
+    "stability": 0.9881808491257035,
+    "quality_score": 0.32358375953605495
+  },
+  "kmeans_k4": {
+    "representation": "logmel_mean",
+    "algorithm": "kmeans",
+    "params": {
+      "n_clusters": 4
+    },
+    "valid_runs": 7,
+    "total_runs": 7,
+    "silhouette_mean": 0.3271197108481639,
+    "silhouette_std": 0.011684155416723154,
+    "calinski_harabasz_mean": 24.61221638123677,
+    "calinski_harabasz_std": 0.3135192397899069,
+    "davies_bouldin_mean": 0.9613403841401275,
+    "davies_bouldin_std": 0.01338341591443254,
+    "stability": 0.9883158445832768,
+    "quality_score": 0.3232975933067404
+  },
+  "kmeans_k5": {
+    "representation": "logmel_mean",
+    "algorithm": "kmeans",
+    "params": {
+      "n_clusters": 5
+    },
+    "valid_runs": 7,
+    "total_runs": 7,
+    "silhouette_mean": 0.33349388447987893,
+    "silhouette_std": 0.0067610267923764586,
+    "calinski_harabasz_mean": 24.56018026453862,
+    "calinski_harabasz_std": 0.19009362563803514,
+    "davies_bouldin_mean": 0.9298073391678559,
+    "davies_bouldin_std": 0.03445309627166926,
+    "stability": 0.9932389732076236,
+    "quality_score": 0.33123912339181677
+  },
+  "hdbscan": {
+    "representation": "logmel_mean",
+    "algorithm": "hdbscan",
+    "params": {
+      "min_cluster_size": 3
+    },
+    "valid_runs": 0,
+    "total_runs": 7,
+    "silhouette_mean": NaN,
+    "silhouette_std": NaN,
+    "calinski_harabasz_mean": NaN,
+    "calinski_harabasz_std": NaN,
+    "davies_bouldin_mean": NaN,
+    "davies_bouldin_std": NaN,
+    "stability": 0.0,
+    "quality_score": 0.0,
+    "mean_clusters": 0,
+    "mean_noise_ratio": 1.0,
+    "reason": "No valid runs"
+  }
+}

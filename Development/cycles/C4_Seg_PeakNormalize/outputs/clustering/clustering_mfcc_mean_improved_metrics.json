@@ -1,0 +1,72 @@
+{
+  "kmeans_k3": {
+    "representation": "mfcc_mean",
+    "algorithm": "kmeans",
+    "params": {
+      "n_clusters": 3
+    },
+    "valid_runs": 7,
+    "total_runs": 7,
+    "silhouette_mean": 0.3821243965836523,
+    "silhouette_std": 0.0023400788130254445,
+    "calinski_harabasz_mean": 207.02264252843182,
+    "calinski_harabasz_std": 0.09971496442537434,
+    "davies_bouldin_mean": 1.0900221527127016,
+    "davies_bouldin_std": 0.021112699809756098,
+    "stability": 0.9976599211869746,
+    "quality_score": 0.3812301953792668
+  },
+  "kmeans_k4": {
+    "representation": "mfcc_mean",
+    "algorithm": "kmeans",
+    "params": {
+      "n_clusters": 4
+    },
+    "valid_runs": 7,
+    "total_runs": 7,
+    "silhouette_mean": 0.35344191525247065,
+    "silhouette_std": 0.00042955770347391644,
+    "calinski_harabasz_mean": 193.2029301161602,
+    "calinski_harabasz_std": 0.0031636071628997654,
+    "davies_bouldin_mean": 1.2028999985242004,
+    "davies_bouldin_std": 0.0006354894699461096,
+    "stability": 0.999570442296526,
+    "quality_score": 0.3532900915550434
+  },
+  "kmeans_k5": {
+    "representation": "mfcc_mean",
+    "algorithm": "kmeans",
+    "params": {
+      "n_clusters": 5
+    },
+    "valid_runs": 7,
+    "total_runs": 7,
+    "silhouette_mean": 0.33957054256401287,
+    "silhouette_std": 0.00036935593287590676,
+    "calinski_harabasz_mean": 174.88320493151042,
+    "calinski_harabasz_std": 0.04192115604361611,
+    "davies_bouldin_mean": 1.3345668663880093,
+    "davies_bouldin_std": 0.004214356788711607,
+    "stability": 0.9996306440671241,
+    "quality_score": 0.33944512016948697
+  },
+  "hdbscan": {
+    "representation": "mfcc_mean",
+    "algorithm": "hdbscan",
+    "params": {
+      "min_cluster_size": 3
+    },
+    "valid_runs": 6,
+    "total_runs": 7,
+    "silhouette_mean": 0.47206746688067885,
+    "silhouette_std": 0.04741245461378169,
+    "calinski_harabasz_mean": 173.45178405186005,
+    "calinski_harabasz_std": 31.494958763221355,
+    "davies_bouldin_mean": 0.7631199851249867,
+    "davies_bouldin_std": 0.05268924709749746,
+    "stability": 0.9525875453862183,
+    "quality_score": 0.4496855895325558,
+    "mean_clusters": 5.0,
+    "mean_noise_ratio": 0.346969696969697
+  }
+}

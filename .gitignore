@@ -1,0 +1,44 @@
+# Large audio files (over 50MB)
+*.wav
+Audio shared/Josh Stethoscope Data 2/Audio/20220114_172627 Audio Extracted.wav
+
+# Large binary files
+*.pth
+*.npz
+
+# System files
+.DS_Store
+*/.DS_Store
+**/.DS_Store
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+*.so
+.pytest_cache/
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints
+
+# Large data files
+*.xlsx
+*.xls
+
+# Temporary files
+*.tmp
+*.temp
+*~
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Large image files (optional - uncomment if needed)
+# *.png
+# *.jpg
+# *.jpeg

@@ -1,0 +1,5 @@
+Rank,Cycle,Representation,Algorithm,Quality_Score,Silhouette,CH,DB,Valid_Runs,Gini,Noise_Frac,Stability_ARI,Base,Penalty,Bonus
+1,C3,logmel_mean,hdbscan_{'min_cluster_size': 25},0.7423,0.659±0.000,503.9±0.0,0.506±0.000,7/7,0.105,0.555,1.000,0.719,0.077,0.100
+2,C3,mfcc_mean,kmeans_{'n_clusters': 3},0.6784,0.383±0.000,205.6±0.0,1.075±0.000,7/7,0.176,0.000,1.000,0.614,0.035,0.100
+3,C3,mfcc_mean,kmeans_{'n_clusters': 4},0.6536,0.359±0.007,190.2±0.1,1.146±0.033,7/7,0.247,0.000,0.993,0.604,0.050,0.099
+4,C3,mfcc_mean,kmeans_{'n_clusters': 5},0.6401,0.336±0.002,171.4±0.2,1.341±0.006,7/7,0.251,0.000,0.998,0.591,0.050,0.100

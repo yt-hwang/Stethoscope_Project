@@ -1,0 +1,75 @@
+{
+  "kmeans_k3": {
+    "representation": "logmel_mean",
+    "algorithm": "kmeans",
+    "params": {
+      "n_clusters": 3
+    },
+    "valid_runs": 0,
+    "total_runs": 7,
+    "silhouette_mean": NaN,
+    "silhouette_std": NaN,
+    "calinski_harabasz_mean": NaN,
+    "calinski_harabasz_std": NaN,
+    "davies_bouldin_mean": NaN,
+    "davies_bouldin_std": NaN,
+    "stability": 0.0,
+    "quality_score": 0.0,
+    "reason": "No valid runs"
+  },
+  "kmeans_k4": {
+    "representation": "logmel_mean",
+    "algorithm": "kmeans",
+    "params": {
+      "n_clusters": 4
+    },
+    "valid_runs": 0,
+    "total_runs": 7,
+    "silhouette_mean": NaN,
+    "silhouette_std": NaN,
+    "calinski_harabasz_mean": NaN,
+    "calinski_harabasz_std": NaN,
+    "davies_bouldin_mean": NaN,
+    "davies_bouldin_std": NaN,
+    "stability": 0.0,
+    "quality_score": 0.0,
+    "reason": "No valid runs"
+  },
+  "kmeans_k5": {
+    "representation": "logmel_mean",
+    "algorithm": "kmeans",
+    "params": {
+      "n_clusters": 5
+    },
+    "valid_runs": 0,
+    "total_runs": 7,
+    "silhouette_mean": NaN,
+    "silhouette_std": NaN,
+    "calinski_harabasz_mean": NaN,
+    "calinski_harabasz_std": NaN,
+    "davies_bouldin_mean": NaN,
+    "davies_bouldin_std": NaN,
+    "stability": 0.0,
+    "quality_score": 0.0,
+    "reason": "No valid runs"
+  },
+  "hdbscan": {
+    "representation": "logmel_mean",
+    "algorithm": "hdbscan",
+    "params": {
+      "min_cluster_size": 3
+    },
+    "valid_runs": 5,
+    "total_runs": 7,
+    "silhouette_mean": 0.39131363397417934,
+    "silhouette_std": 0.06373921401790966,
+    "calinski_harabasz_mean": 193.6090597058748,
+    "calinski_harabasz_std": 73.75690992348984,
+    "davies_bouldin_mean": 0.6835415259813217,
+    "davies_bouldin_std": 0.1688089092933737,
+    "stability": 0.9362607859820904,
+    "quality_score": 0.3663716105101732,
+    "mean_clusters": 4.0,
+    "mean_noise_ratio": 0.4315151515151515
+  }
+}

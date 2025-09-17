@@ -1,0 +1,74 @@
+{
+  "kmeans_k3": {
+    "representation": "logmel_mean",
+    "algorithm": "kmeans",
+    "params": {
+      "n_clusters": 3
+    },
+    "valid_runs": 7,
+    "total_runs": 7,
+    "silhouette_mean": 0.4621337802786129,
+    "silhouette_std": 5.551115123125783e-17,
+    "calinski_harabasz_mean": 259.7780771306341,
+    "calinski_harabasz_std": 0.0,
+    "davies_bouldin_mean": 0.7734400846534121,
+    "davies_bouldin_std": 0.0,
+    "stability": 1.0,
+    "quality_score": 0.4621337802786129
+  },
+  "kmeans_k4": {
+    "representation": "logmel_mean",
+    "algorithm": "kmeans",
+    "params": {
+      "n_clusters": 4
+    },
+    "valid_runs": 0,
+    "total_runs": 7,
+    "silhouette_mean": NaN,
+    "silhouette_std": NaN,
+    "calinski_harabasz_mean": NaN,
+    "calinski_harabasz_std": NaN,
+    "davies_bouldin_mean": NaN,
+    "davies_bouldin_std": NaN,
+    "stability": 0.0,
+    "quality_score": 0.0,
+    "reason": "No valid runs"
+  },
+  "kmeans_k5": {
+    "representation": "logmel_mean",
+    "algorithm": "kmeans",
+    "params": {
+      "n_clusters": 5
+    },
+    "valid_runs": 0,
+    "total_runs": 7,
+    "silhouette_mean": NaN,
+    "silhouette_std": NaN,
+    "calinski_harabasz_mean": NaN,
+    "calinski_harabasz_std": NaN,
+    "davies_bouldin_mean": NaN,
+    "davies_bouldin_std": NaN,
+    "stability": 0.0,
+    "quality_score": 0.0,
+    "reason": "No valid runs"
+  },
+  "hdbscan": {
+    "representation": "logmel_mean",
+    "algorithm": "hdbscan",
+    "params": {
+      "min_cluster_size": 3
+    },
+    "valid_runs": 3,
+    "total_runs": 7,
+    "silhouette_mean": 0.39097820848255943,
+    "silhouette_std": 0.07984831904676166,
+    "calinski_harabasz_mean": 194.85676806793762,
+    "calinski_harabasz_std": 27.44820125912129,
+    "davies_bouldin_mean": 0.9285318337117503,
+    "davies_bouldin_std": 0.0975024056351815,
+    "stability": 0.9201516809532383,
+    "quality_score": 0.35975925575131273,
+    "mean_clusters": 5.333333333333333,
+    "mean_noise_ratio": 0.3696969696969697
+  }
+}

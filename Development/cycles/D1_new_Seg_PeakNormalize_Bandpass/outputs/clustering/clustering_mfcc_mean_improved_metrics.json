@@ -1,0 +1,72 @@
+{
+  "kmeans_k3": {
+    "representation": "mfcc_mean",
+    "algorithm": "kmeans",
+    "params": {
+      "n_clusters": 3
+    },
+    "valid_runs": 7,
+    "total_runs": 7,
+    "silhouette_mean": 0.32979950631315996,
+    "silhouette_std": 0.0,
+    "calinski_harabasz_mean": 179.04727499956454,
+    "calinski_harabasz_std": 4.2969585707536134e-14,
+    "davies_bouldin_mean": 1.0796176574825014,
+    "davies_bouldin_std": 0.0,
+    "stability": 1.0,
+    "quality_score": 0.32979950631315996
+  },
+  "kmeans_k4": {
+    "representation": "mfcc_mean",
+    "algorithm": "kmeans",
+    "params": {
+      "n_clusters": 4
+    },
+    "valid_runs": 7,
+    "total_runs": 7,
+    "silhouette_mean": 0.3036972010070106,
+    "silhouette_std": 0.00018778643229540694,
+    "calinski_harabasz_mean": 158.72148352209032,
+    "calinski_harabasz_std": 0.015682722665936448,
+    "davies_bouldin_mean": 1.172243962150608,
+    "davies_bouldin_std": 0.00320418710724426,
+    "stability": 0.9998122135677046,
+    "quality_score": 0.3036401707931354
+  },
+  "kmeans_k5": {
+    "representation": "mfcc_mean",
+    "algorithm": "kmeans",
+    "params": {
+      "n_clusters": 5
+    },
+    "valid_runs": 7,
+    "total_runs": 7,
+    "silhouette_mean": 0.2882930945657578,
+    "silhouette_std": 0.001335701923376482,
+    "calinski_harabasz_mean": 154.959115015976,
+    "calinski_harabasz_std": 0.09935887991479721,
+    "davies_bouldin_mean": 1.151633850306372,
+    "davies_bouldin_std": 0.01405094948061042,
+    "stability": 0.9986642980766235,
+    "quality_score": 0.2879080209248501
+  },
+  "hdbscan": {
+    "representation": "mfcc_mean",
+    "algorithm": "hdbscan",
+    "params": {
+      "min_cluster_size": 3
+    },
+    "valid_runs": 6,
+    "total_runs": 7,
+    "silhouette_mean": 0.4007295592873541,
+    "silhouette_std": 0.03648022723117659,
+    "calinski_harabasz_mean": 119.75163949099739,
+    "calinski_harabasz_std": 30.287361131803,
+    "davies_bouldin_mean": 0.8294544072695094,
+    "davies_bouldin_std": 0.07419519768201671,
+    "stability": 0.9635197727688234,
+    "quality_score": 0.3861108539063022,
+    "mean_clusters": 4.833333333333333,
+    "mean_noise_ratio": 0.39646464646464646
+  }
+}

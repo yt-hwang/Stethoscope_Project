@@ -1,0 +1,45 @@
+{
+  "kmeans_k3": {
+    "Silhouette": 0.26376151629861627,
+    "Calinski-Harabasz": 16.91477877611116,
+    "Davies-Bouldin": 1.2425796934255553,
+    "n_clusters": 3,
+    "n_noise": 0,
+    "params": {
+      "n_clusters": 3,
+      "random_state": 42
+    }
+  },
+  "kmeans_k4": {
+    "Silhouette": 0.24733360438514332,
+    "Calinski-Harabasz": 14.80668522006654,
+    "Davies-Bouldin": 1.2022411567335856,
+    "n_clusters": 4,
+    "n_noise": 0,
+    "params": {
+      "n_clusters": 4,
+      "random_state": 42
+    }
+  },
+  "kmeans_k5": {
+    "Silhouette": 0.21140185812099452,
+    "Calinski-Harabasz": 13.92755496033561,
+    "Davies-Bouldin": 1.2064422252656912,
+    "n_clusters": 5,
+    "n_noise": 0,
+    "params": {
+      "n_clusters": 5,
+      "random_state": 42
+    }
+  },
+  "hdbscan": {
+    "Silhouette": -1.0,
+    "Calinski-Harabasz": 0.0,
+    "Davies-Bouldin": Infinity,
+    "n_clusters": 0,
+    "n_noise": 39,
+    "params": {
+      "min_cluster_size": 25
+    }
+  }
+}

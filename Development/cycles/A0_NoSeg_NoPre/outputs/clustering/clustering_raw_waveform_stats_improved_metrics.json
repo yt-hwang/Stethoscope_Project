@@ -1,0 +1,73 @@
+{
+  "kmeans_k3": {
+    "representation": "raw_waveform_stats",
+    "algorithm": "kmeans",
+    "params": {
+      "n_clusters": 3
+    },
+    "valid_runs": 7,
+    "total_runs": 7,
+    "silhouette_mean": 0.38208865036420697,
+    "silhouette_std": 0.10309638560588272,
+    "calinski_harabasz_mean": 23.352196824931266,
+    "calinski_harabasz_std": 0.15088951349171134,
+    "davies_bouldin_mean": 0.7191187302163025,
+    "davies_bouldin_std": 0.21053315789166005,
+    "stability": 0.8969036143941173,
+    "quality_score": 0.3426966915306274
+  },
+  "kmeans_k4": {
+    "representation": "raw_waveform_stats",
+    "algorithm": "kmeans",
+    "params": {
+      "n_clusters": 4
+    },
+    "valid_runs": 7,
+    "total_runs": 7,
+    "silhouette_mean": 0.27565918541963186,
+    "silhouette_std": 0.012249167918361822,
+    "calinski_harabasz_mean": 27.116258622778297,
+    "calinski_harabasz_std": 0.05841918499574999,
+    "davies_bouldin_mean": 0.7162453665476302,
+    "davies_bouldin_std": 0.015614116536214561,
+    "stability": 0.9877508320816382,
+    "quality_score": 0.27228258976918795
+  },
+  "kmeans_k5": {
+    "representation": "raw_waveform_stats",
+    "algorithm": "kmeans",
+    "params": {
+      "n_clusters": 5
+    },
+    "valid_runs": 7,
+    "total_runs": 7,
+    "silhouette_mean": 0.28650085698854516,
+    "silhouette_std": 0.026549730111766562,
+    "calinski_harabasz_mean": 28.65969222190716,
+    "calinski_harabasz_std": 0.37622169741844214,
+    "davies_bouldin_mean": 0.7420760066339006,
+    "davies_bouldin_std": 0.06437870495478391,
+    "stability": 0.9734502698882335,
+    "quality_score": 0.2788943365587095
+  },
+  "hdbscan": {
+    "representation": "raw_waveform_stats",
+    "algorithm": "hdbscan",
+    "params": {
+      "min_cluster_size": 3
+    },
+    "valid_runs": 0,
+    "total_runs": 7,
+    "silhouette_mean": NaN,
+    "silhouette_std": NaN,
+    "calinski_harabasz_mean": NaN,
+    "calinski_harabasz_std": NaN,
+    "davies_bouldin_mean": NaN,
+    "davies_bouldin_std": NaN,
+    "stability": 0.0,
+    "quality_score": 0.0,
+    "mean_clusters": 0,
+    "mean_noise_ratio": 1.0,
+    "reason": "No valid runs"
+  }
+}
