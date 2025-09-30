@@ -1,0 +1,37 @@
+CLUSTER MEMBERSHIP ANALYSIS - NoSeg_Bandpass
+k=3, Silhouette Score=0.249
+============================================================
+
+CLUSTER 0 (18 segments):
+------------------------------
+  KP012        :  2 segments ( 11.1%)
+  WEBSS-002    :  2 segments ( 11.1%)
+  WEBSS-003    :  2 segments ( 11.1%)
+  WEBSS-007    :  2 segments ( 11.1%)
+  H002         :  1 segments (  5.6%)
+  H004         :  1 segments (  5.6%)
+  KP001        :  1 segments (  5.6%)
+  KP002        :  1 segments (  5.6%)
+  KP003        :  1 segments (  5.6%)
+  KP004        :  1 segments (  5.6%)
+  KP008        :  1 segments (  5.6%)
+  KP009        :  1 segments (  5.6%)
+  WEBSS-005    :  1 segments (  5.6%)
+  WEBSS-006    :  1 segments (  5.6%)
+
+CLUSTER 1 (9 segments):
+------------------------------
+  H001         :  1 segments ( 11.1%)
+  KP003        :  1 segments ( 11.1%)
+  KP005        :  1 segments ( 11.1%)
+  KP006        :  1 segments ( 11.1%)
+  KP007        :  1 segments ( 11.1%)
+  KP011        :  1 segments ( 11.1%)
+  WEBSS-005    :  1 segments ( 11.1%)
+  WEBSS-006    :  1 segments ( 11.1%)
+  WEBSS-007    :  1 segments ( 11.1%)
+
+CLUSTER 2 (2 segments):
+------------------------------
+  H003         :  1 segments ( 50.0%)
+  KP010        :  1 segments ( 50.0%)

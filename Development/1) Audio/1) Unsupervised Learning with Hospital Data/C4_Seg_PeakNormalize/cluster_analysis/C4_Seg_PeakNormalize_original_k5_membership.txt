@@ -1,0 +1,59 @@
+CLUSTER MEMBERSHIP ANALYSIS - C4_Seg_PeakNormalize (Original Handcrafted Features)
+k=5, Silhouette Score=0.823
+================================================================================
+
+CLUSTER 0 (302 segments):
+------------------------------
+  WEBSS-007    : 33 segments ( 10.9%)
+  KP012        : 22 segments (  7.3%)
+  WEBSS-002    : 22 segments (  7.3%)
+  WEBSS-005    : 22 segments (  7.3%)
+  WEBSS-006    : 22 segments (  7.3%)
+  WEBSS-003    : 21 segments (  7.0%)
+  KP003        : 18 segments (  6.0%)
+  H001         : 11 segments (  3.6%)
+  H003         : 11 segments (  3.6%)
+  KP001        : 11 segments (  3.6%)
+  KP002        : 11 segments (  3.6%)
+  KP004        : 11 segments (  3.6%)
+  KP006        : 11 segments (  3.6%)
+  KP009        : 11 segments (  3.6%)
+  H002         : 10 segments (  3.3%)
+  KP005        : 10 segments (  3.3%)
+  H004         :  9 segments (  3.0%)
+  KP007        :  9 segments (  3.0%)
+  KP008        :  9 segments (  3.0%)
+  KP010        :  9 segments (  3.0%)
+  KP011        :  9 segments (  3.0%)
+
+CLUSTER 1 (1 segments):
+------------------------------
+  KP006        :  1 segments (100.0%)
+
+CLUSTER 2 (1 segments):
+------------------------------
+  KP008        :  1 segments (100.0%)
+
+CLUSTER 3 (18 segments):
+------------------------------
+  KP003        :  4 segments ( 22.2%)
+  KP005        :  2 segments ( 11.1%)
+  KP010        :  2 segments ( 11.1%)
+  KP011        :  2 segments ( 11.1%)
+  H002         :  1 segments (  5.6%)
+  H004         :  1 segments (  5.6%)
+  KP001        :  1 segments (  5.6%)
+  KP002        :  1 segments (  5.6%)
+  KP004        :  1 segments (  5.6%)
+  KP007        :  1 segments (  5.6%)
+  KP008        :  1 segments (  5.6%)
+  WEBSS-003    :  1 segments (  5.6%)
+
+CLUSTER 4 (8 segments):
+------------------------------
+  H004         :  2 segments ( 25.0%)
+  KP003        :  2 segments ( 25.0%)
+  H001         :  1 segments ( 12.5%)
+  H002         :  1 segments ( 12.5%)
+  H003         :  1 segments ( 12.5%)
+  KP007        :  1 segments ( 12.5%)

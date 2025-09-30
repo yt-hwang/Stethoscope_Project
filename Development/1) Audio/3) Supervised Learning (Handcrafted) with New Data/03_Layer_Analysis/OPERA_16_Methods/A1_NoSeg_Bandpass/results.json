@@ -1,0 +1,32 @@
+{
+  "method_code": "A1",
+  "method_name": "NoSeg_Bandpass",
+  "config": {
+    "segmentation": false,
+    "bandpass": true,
+    "name": "NoSeg_Bandpass"
+  },
+  "n_files": 29,
+  "n_segments": 29,
+  "feature_shape": [
+    29,
+    768
+  ],
+  "extraction_time": 9.403116941452026,
+  "clustering_results": {
+    "k3": {
+      "silhouette_score": 0.2492227786675827,
+      "n_clusters": 3
+    },
+    "k4": {
+      "silhouette_score": 0.23793534053224724,
+      "n_clusters": 4
+    },
+    "k5": {
+      "silhouette_score": 0.23214371132177586,
+      "n_clusters": 5
+    }
+  },
+  "best_silhouette": 0.2492227786675827,
+  "timestamp": "2025-09-20T10:42:41.215354"
+}

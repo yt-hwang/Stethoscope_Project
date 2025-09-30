@@ -1,0 +1,60 @@
+# Example Configuration for OPERA-CT Transfer Learning
+
+# Data configuration
+data:
+  dataset_name: "respiratory_test"
+  train_dir: "data/train"
+  val_dir: "data/val" 
+  test_dir: "data/test"
+  transfer_train_dir: "data/transfer/train"  # For cross-dataset transfer
+  transfer_test_dir: "data/transfer/test"
+
+# Preprocessing configuration
+preprocess:
+  method: "D0"  # Method: A0-A4 (individual NoSeg), B0-B2 (combo NoSeg), C0-C4 (individual Seg), D0-D2 (combo Seg)
+  
+  # Automatic method parsing (set by method above):
+  # A0: No preprocessing
+  # A1: Bandpass only
+  # A2: Spectral gating only  
+  # A3: High-pass only
+  # A4: Peak normalize only
+  # B0: Bandpass + Spectral gating
+  # B1: Peak normalize + Bandpass
+  # B2: Full pipeline (all methods)
+  # C0-C4: Same as A0-A4 but with segmentation
+  # D0: Seg + High-pass + Peak normalize
+  # D1: Seg + High-pass + Bandpass  
+  # D2: Seg + Full pipeline
+  
+  # Manual override (if method not specified):
+  segmentation: false     # Apply segmentation
+  segment_length: 10      # Segment length in seconds
+  peak_normalize: false   # Peak normalization
+  highpass: false         # High-pass filter (20 Hz)
+  bandpass: false         # Bandpass filter (100-2000 Hz)
+  spectral_gating: false  # Spectral gating (noise reduction)
+  full_pipeline: false    # All preprocessing steps
+
+# Feature extraction configuration
+features:
+  backend: "opera_ct"     # opera_ct | mel_fallback
+  layer: "last"           # Which layer to extract features from
+  pooling: "mean"         # mean | max | cls
+  segment_length: 10      # Segment length in seconds
+
+# Training configuration
+train:
+  head: "mlp"            # linear | mlp
+  lr: 0.001              # Learning rate
+  epochs: 50             # Maximum epochs
+  batch_size: 32         # Batch size
+  patience: 10           # Early stopping patience
+  
+# Transfer learning configuration
+transfer:
+  shots_per_class: [1, 5, 10, 50]  # Few-shot learning settings
+  
+# General configuration
+seed: 42
+device: "auto"  # auto | cuda | cpu

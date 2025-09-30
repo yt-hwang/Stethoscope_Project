@@ -1,0 +1,32 @@
+{
+  "method_code": "B2",
+  "method_name": "NoSeg_FullPipeline",
+  "config": {
+    "segmentation": false,
+    "full_pipeline": true,
+    "name": "NoSeg_FullPipeline"
+  },
+  "n_files": 29,
+  "n_segments": 29,
+  "feature_shape": [
+    29,
+    768
+  ],
+  "extraction_time": 9.197888851165771,
+  "clustering_results": {
+    "k3": {
+      "silhouette_score": 0.215757019001711,
+      "n_clusters": 3
+    },
+    "k4": {
+      "silhouette_score": 0.23060922099616024,
+      "n_clusters": 4
+    },
+    "k5": {
+      "silhouette_score": 0.16113373017388077,
+      "n_clusters": 5
+    }
+  },
+  "best_silhouette": 0.23060922099616024,
+  "timestamp": "2025-09-20T10:45:39.944605"
+}

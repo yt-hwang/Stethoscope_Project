@@ -1,0 +1,13 @@
+Time_Range,Center_Time,CORRECT_Ground_Truth,Model_Prediction,Match_Status,Visual_Check
+9.00-9.50s,9.25s,non-breathing,non-breathing,MATCH,RED under RED
+13.00-13.50s,13.25s,breathing,non-breathing,MISMATCH,RED under GREEN
+27.00-27.50s,27.25s,breathing,non-breathing,MISMATCH,RED under GREEN
+21.00-21.50s,21.25s,non-breathing,non-breathing,MATCH,RED under RED
+7.50-8.00s,7.75s,breathing,non-breathing,MISMATCH,RED under GREEN
+1.50-2.00s,1.75s,non-breathing,non-breathing,MATCH,RED under RED
+18.00-18.50s,18.25s,breathing,non-breathing,MISMATCH,RED under GREEN
+8.50-9.00s,8.75s,breathing,non-breathing,MISMATCH,RED under GREEN
+18.50-19.00s,18.75s,breathing,non-breathing,MISMATCH,RED under GREEN
+26.00-26.50s,26.25s,non-breathing,non-breathing,MATCH,RED under RED
+0.00-0.50s,0.25s,non-breathing,non-breathing,MATCH,RED under RED
+15.50-16.00s,15.75s,breathing,non-breathing,MISMATCH,RED under GREEN

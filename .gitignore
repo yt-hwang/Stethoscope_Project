@@ -5,6 +5,14 @@ Audio shared/Josh Stethoscope Data 2/Audio/20220114_172627 Audio Extracted.wav
 # Large binary files
 *.pth
 *.npz
+*.ckpt
+*.bin
+*.safetensors
+*.h5
+*.hdf5
+*.pkl
+*.pickle
+*.joblib
 
 # System files
 .DS_Store
@@ -42,3 +50,13 @@ __pycache__/
 # *.png
 # *.jpg
 # *.jpeg
+
+# OPERA submodule directories
+Development/3) Supervised Learning (Handcrafted) with New Data/01_Full_Frozen_Unsupervised/setup/OPERA
+Development/3) Supervised Learning (Handcrafted) with New Data/03_Layer_Analysis/setup/OPERA
+Development/4) Transfer Learning with OPERA-CT/01_Full_Frozen_Unsupervised/setup/OPERA
+Development/4) Transfer Learning with OPERA-CT/03_Layer_Analysis/setup/OPERA
+Development/1) Audio/3) Supervised Learning (Handcrafted) with New Data/01_Full_Frozen_Unsupervised/setup/OPERA
+Development/1) Audio/3) Supervised Learning (Handcrafted) with New Data/03_Layer_Analysis/setup/OPERA
+Development/1) Audio/4) Transfer Learning with OPERA-CT/01_Unsupervised_Learning/01_Baseline/setup/OPERA
+Development/1) Audio/4) Transfer Learning with OPERA-CT/01_Unsupervised_Learning/03_Layer_Analysis/setup/OPERA

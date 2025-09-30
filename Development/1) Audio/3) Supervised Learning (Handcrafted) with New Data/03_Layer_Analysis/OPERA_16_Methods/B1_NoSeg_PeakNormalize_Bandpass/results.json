@@ -1,0 +1,33 @@
+{
+  "method_code": "B1",
+  "method_name": "NoSeg_PeakNormalize_Bandpass",
+  "config": {
+    "segmentation": false,
+    "peak_normalize": true,
+    "bandpass": true,
+    "name": "NoSeg_PeakNormalize_Bandpass"
+  },
+  "n_files": 29,
+  "n_segments": 29,
+  "feature_shape": [
+    29,
+    768
+  ],
+  "extraction_time": 9.546653032302856,
+  "clustering_results": {
+    "k3": {
+      "silhouette_score": 0.24925298744807706,
+      "n_clusters": 3
+    },
+    "k4": {
+      "silhouette_score": 0.238081160685874,
+      "n_clusters": 4
+    },
+    "k5": {
+      "silhouette_score": 0.23228812086525294,
+      "n_clusters": 5
+    }
+  },
+  "best_silhouette": 0.24925298744807706,
+  "timestamp": "2025-09-20T10:45:12.157190"
+}

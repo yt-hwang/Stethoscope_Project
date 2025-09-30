@@ -1,0 +1,32 @@
+{
+  "method_code": "C3",
+  "method_name": "Seg_HighPass",
+  "config": {
+    "segmentation": true,
+    "highpass": true,
+    "name": "Seg_HighPass"
+  },
+  "n_files": 29,
+  "n_segments": 89,
+  "feature_shape": [
+    89,
+    768
+  ],
+  "extraction_time": 28.953584909439087,
+  "clustering_results": {
+    "k3": {
+      "silhouette_score": 0.14399531480387054,
+      "n_clusters": 3
+    },
+    "k4": {
+      "silhouette_score": 0.22128718728542618,
+      "n_clusters": 4
+    },
+    "k5": {
+      "silhouette_score": 0.17789139075755497,
+      "n_clusters": 5
+    }
+  },
+  "best_silhouette": 0.22128718728542618,
+  "timestamp": "2025-09-20T10:48:56.497173"
+}

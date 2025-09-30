@@ -1,0 +1,17 @@
+{
+  "segment_length": 1.0,
+  "total_segments": 360,
+  "training_segments": 288,
+  "test_segments": 72,
+  "feature_count": 47,
+  "ensemble_results": {
+    "Hard Voting": 0.6805555555555556,
+    "Soft Voting": 0.6527777777777778,
+    "RF Heavy": 0.6666666666666666,
+    "SVM Heavy": 0.625,
+    "LR Heavy": 0.6527777777777778,
+    "Best 2": 0.6388888888888888
+  },
+  "best_ensemble": "Hard Voting",
+  "best_accuracy": 0.6805555555555556
+}

@@ -1,0 +1,10 @@
+path,true_idx,true_label,pred_idx,pred_label
+/Users/yunhwang/Desktop/Stethoscope_Project/Development/2) Image/2D CNN/Abnormal_Breathing/A/Scalogram/Processed Data/Healthy/H001.png,2,Healthy,1,Crackle
+/Users/yunhwang/Desktop/Stethoscope_Project/Development/2) Image/2D CNN/Abnormal_Breathing/A/Scalogram/Processed Data/Bronchi/KP001_WWS.png,0,Bronchi,1,Crackle
+/Users/yunhwang/Desktop/Stethoscope_Project/Development/2) Image/2D CNN/Abnormal_Breathing/A/Scalogram/Processed Data/Bronchi/KP003_WWS_1.png,0,Bronchi,1,Crackle
+/Users/yunhwang/Desktop/Stethoscope_Project/Development/2) Image/2D CNN/Abnormal_Breathing/A/Scalogram/Processed Data/Unknown/KP003_WWS_2.png,4,Unknown,1,Crackle
+/Users/yunhwang/Desktop/Stethoscope_Project/Development/2) Image/2D CNN/Abnormal_Breathing/A/Scalogram/Processed Data/Crackle/KP007_WWS.png,1,Crackle,1,Crackle
+/Users/yunhwang/Desktop/Stethoscope_Project/Development/2) Image/2D CNN/Abnormal_Breathing/A/Scalogram/Processed Data/Rhonchi/KP008_WWS.png,3,Rhonchi,1,Crackle
+/Users/yunhwang/Desktop/Stethoscope_Project/Development/2) Image/2D CNN/Abnormal_Breathing/A/Scalogram/Processed Data/Unknown/KP012_WWS_1.png,4,Unknown,1,Crackle
+/Users/yunhwang/Desktop/Stethoscope_Project/Development/2) Image/2D CNN/Abnormal_Breathing/A/Scalogram/Processed Data/Unknown/KP012_WWS_2.png,4,Unknown,1,Crackle
+/Users/yunhwang/Desktop/Stethoscope_Project/Development/2) Image/2D CNN/Abnormal_Breathing/A/Scalogram/Processed Data/Wheezing/KP013_WWS.png,5,Wheezing,1,Crackle

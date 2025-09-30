@@ -1,0 +1,53 @@
+CLUSTER MEMBERSHIP ANALYSIS - A2_NoSeg_SpectralGating (Original Handcrafted Features)
+k=5, Silhouette Score=0.303
+================================================================================
+
+CLUSTER 0 (10 segments):
+------------------------------
+  WEBSS-007    :  2 segments ( 20.0%)
+  KP003        :  2 segments ( 20.0%)
+  KP001        :  1 segments ( 10.0%)
+  KP012        :  1 segments ( 10.0%)
+  WEBSS-002    :  1 segments ( 10.0%)
+  WEBSS-005    :  1 segments ( 10.0%)
+  WEBSS-006    :  1 segments ( 10.0%)
+  KP002        :  1 segments ( 10.0%)
+
+CLUSTER 1 (10 segments):
+------------------------------
+  H003         :  2 segments ( 20.0%)
+  KP002        :  1 segments ( 10.0%)
+  KP003        :  1 segments ( 10.0%)
+  KP004        :  1 segments ( 10.0%)
+  KP009        :  1 segments ( 10.0%)
+  KP010        :  1 segments ( 10.0%)
+  WEBSS-003    :  1 segments ( 10.0%)
+  H004         :  1 segments ( 10.0%)
+  KP005        :  1 segments ( 10.0%)
+
+CLUSTER 2 (10 segments):
+------------------------------
+  H001         :  1 segments ( 10.0%)
+  H004         :  1 segments ( 10.0%)
+  KP003        :  1 segments ( 10.0%)
+  KP005        :  1 segments ( 10.0%)
+  KP012        :  1 segments ( 10.0%)
+  WEBSS-002    :  1 segments ( 10.0%)
+  WEBSS-003    :  1 segments ( 10.0%)
+  WEBSS-005    :  1 segments ( 10.0%)
+  WEBSS-006    :  1 segments ( 10.0%)
+  KP004        :  1 segments ( 10.0%)
+
+CLUSTER 3 (1 segments):
+------------------------------
+  KP011        :  1 segments (100.0%)
+
+CLUSTER 4 (8 segments):
+------------------------------
+  H002         :  2 segments ( 25.0%)
+  KP006        :  1 segments ( 12.5%)
+  KP007        :  1 segments ( 12.5%)
+  KP008        :  1 segments ( 12.5%)
+  WEBSS-007    :  1 segments ( 12.5%)
+  H001         :  1 segments ( 12.5%)
+  KP001        :  1 segments ( 12.5%)

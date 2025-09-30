@@ -1,0 +1,47 @@
+CLUSTER MEMBERSHIP ANALYSIS - Seg_SpectralGating
+k=4, Silhouette Score=0.179
+============================================================
+
+CLUSTER 0 (23 segments):
+------------------------------
+  H001         :  3 segments ( 13.0%)
+  H003         :  3 segments ( 13.0%)
+  KP003        :  3 segments ( 13.0%)
+  KP010        :  3 segments ( 13.0%)
+  KP011        :  3 segments ( 13.0%)
+  WEBSS-006    :  3 segments ( 13.0%)
+  WEBSS-007    :  3 segments ( 13.0%)
+  KP006        :  1 segments (  4.3%)
+  WEBSS-005    :  1 segments (  4.3%)
+
+CLUSTER 1 (32 segments):
+------------------------------
+  WEBSS-007    :  6 segments ( 18.8%)
+  H002         :  3 segments (  9.4%)
+  KP001        :  3 segments (  9.4%)
+  KP002        :  3 segments (  9.4%)
+  KP003        :  3 segments (  9.4%)
+  KP005        :  3 segments (  9.4%)
+  KP009        :  3 segments (  9.4%)
+  WEBSS-002    :  3 segments (  9.4%)
+  KP007        :  2 segments (  6.2%)
+  WEBSS-005    :  2 segments (  6.2%)
+  KP004        :  1 segments (  3.1%)
+
+CLUSTER 2 (23 segments):
+------------------------------
+  H004         :  3 segments ( 13.0%)
+  KP008        :  3 segments ( 13.0%)
+  KP012        :  3 segments ( 13.0%)
+  WEBSS-002    :  3 segments ( 13.0%)
+  WEBSS-003    :  3 segments ( 13.0%)
+  WEBSS-005    :  3 segments ( 13.0%)
+  KP004        :  2 segments (  8.7%)
+  KP006        :  2 segments (  8.7%)
+  KP007        :  1 segments (  4.3%)
+
+CLUSTER 3 (9 segments):
+------------------------------
+  KP012        :  3 segments ( 33.3%)
+  WEBSS-003    :  3 segments ( 33.3%)
+  WEBSS-006    :  3 segments ( 33.3%)

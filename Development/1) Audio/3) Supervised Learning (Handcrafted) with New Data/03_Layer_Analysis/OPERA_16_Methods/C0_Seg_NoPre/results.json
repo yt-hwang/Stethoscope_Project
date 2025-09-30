@@ -1,0 +1,31 @@
+{
+  "method_code": "C0",
+  "method_name": "Seg_NoPre",
+  "config": {
+    "segmentation": true,
+    "name": "Seg_NoPre"
+  },
+  "n_files": 29,
+  "n_segments": 89,
+  "feature_shape": [
+    89,
+    768
+  ],
+  "extraction_time": 27.800243854522705,
+  "clustering_results": {
+    "k3": {
+      "silhouette_score": 0.25969178884305794,
+      "n_clusters": 3
+    },
+    "k4": {
+      "silhouette_score": 0.23531859399212252,
+      "n_clusters": 4
+    },
+    "k5": {
+      "silhouette_score": 0.19707923748021572,
+      "n_clusters": 5
+    }
+  },
+  "best_silhouette": 0.25969178884305794,
+  "timestamp": "2025-09-20T10:46:35.433100"
+}

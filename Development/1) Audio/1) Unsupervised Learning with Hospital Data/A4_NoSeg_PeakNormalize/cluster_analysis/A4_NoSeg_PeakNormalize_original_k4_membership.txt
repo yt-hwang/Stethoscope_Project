@@ -1,0 +1,49 @@
+CLUSTER MEMBERSHIP ANALYSIS - A4_NoSeg_PeakNormalize (Original Handcrafted Features)
+k=4, Silhouette Score=0.531
+================================================================================
+
+CLUSTER 0 (8 segments):
+------------------------------
+  KP010        :  1 segments ( 12.5%)
+  WEBSS-002    :  1 segments ( 12.5%)
+  WEBSS-005    :  1 segments ( 12.5%)
+  WEBSS-007    :  1 segments ( 12.5%)
+  H001         :  1 segments ( 12.5%)
+  H003         :  1 segments ( 12.5%)
+  H004         :  1 segments ( 12.5%)
+  KP001        :  1 segments ( 12.5%)
+
+CLUSTER 1 (4 segments):
+------------------------------
+  H004         :  1 segments ( 25.0%)
+  KP002        :  1 segments ( 25.0%)
+  KP003        :  1 segments ( 25.0%)
+  KP005        :  1 segments ( 25.0%)
+
+CLUSTER 2 (16 segments):
+------------------------------
+  KP012        :  2 segments ( 12.5%)
+  WEBSS-003    :  2 segments ( 12.5%)
+  WEBSS-006    :  2 segments ( 12.5%)
+  WEBSS-007    :  2 segments ( 12.5%)
+  KP003        :  2 segments ( 12.5%)
+  WEBSS-002    :  1 segments (  6.2%)
+  WEBSS-005    :  1 segments (  6.2%)
+  H002         :  1 segments (  6.2%)
+  KP002        :  1 segments (  6.2%)
+  KP004        :  1 segments (  6.2%)
+  KP005        :  1 segments (  6.2%)
+
+CLUSTER 3 (11 segments):
+------------------------------
+  H001         :  1 segments (  9.1%)
+  H002         :  1 segments (  9.1%)
+  H003         :  1 segments (  9.1%)
+  KP001        :  1 segments (  9.1%)
+  KP003        :  1 segments (  9.1%)
+  KP004        :  1 segments (  9.1%)
+  KP006        :  1 segments (  9.1%)
+  KP007        :  1 segments (  9.1%)
+  KP008        :  1 segments (  9.1%)
+  KP009        :  1 segments (  9.1%)
+  KP011        :  1 segments (  9.1%)

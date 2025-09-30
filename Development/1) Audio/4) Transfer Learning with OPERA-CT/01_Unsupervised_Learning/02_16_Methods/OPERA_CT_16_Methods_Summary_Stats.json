@@ -1,0 +1,10 @@
+{
+  "Total_Methods": 16,
+  "Baseline_Score": 0.19585993933254653,
+  "Best_Score": 0.2667006856261322,
+  "Improvement_Percent": 36.16908416034308,
+  "Best_Method": "D1",
+  "Best_Method_Name": "Seg_HighPass_Bandpass",
+  "Segmentation_Impact": NaN,
+  "Bandpass_Impact": 0.03532204016873969
+}

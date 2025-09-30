@@ -1,0 +1,32 @@
+{
+  "method_code": "C1",
+  "method_name": "Seg_Bandpass",
+  "config": {
+    "segmentation": true,
+    "bandpass": true,
+    "name": "Seg_Bandpass"
+  },
+  "n_files": 29,
+  "n_segments": 89,
+  "feature_shape": [
+    89,
+    768
+  ],
+  "extraction_time": 28.317023038864136,
+  "clustering_results": {
+    "k3": {
+      "silhouette_score": 0.25624493748995814,
+      "n_clusters": 3
+    },
+    "k4": {
+      "silhouette_score": 0.24373988239923103,
+      "n_clusters": 4
+    },
+    "k5": {
+      "silhouette_score": 0.2666031144158277,
+      "n_clusters": 5
+    }
+  },
+  "best_silhouette": 0.2666031144158277,
+  "timestamp": "2025-09-20T10:47:23.584806"
+}

@@ -1,0 +1,31 @@
+{
+  "method_code": "A0",
+  "method_name": "NoSeg_NoPre",
+  "config": {
+    "segmentation": false,
+    "name": "NoSeg_NoPre"
+  },
+  "n_files": 29,
+  "n_segments": 29,
+  "feature_shape": [
+    29,
+    768
+  ],
+  "extraction_time": 9.327003955841064,
+  "clustering_results": {
+    "k3": {
+      "silhouette_score": 0.18109192450623493,
+      "n_clusters": 3
+    },
+    "k4": {
+      "silhouette_score": 0.19585993933254653,
+      "n_clusters": 4
+    },
+    "k5": {
+      "silhouette_score": 0.15965241692790047,
+      "n_clusters": 5
+    }
+  },
+  "best_silhouette": 0.19585993933254653,
+  "timestamp": "2025-09-20T10:42:13.396232"
+}

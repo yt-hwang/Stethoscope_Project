@@ -1,0 +1,46 @@
+CLUSTER MEMBERSHIP ANALYSIS - C2_Seg_SpectralGating (Original Handcrafted Features)
+k=5, Silhouette Score=0.834
+================================================================================
+
+CLUSTER 0 (79 segments):
+------------------------------
+  WEBSS-007    :  9 segments ( 11.4%)
+  KP012        :  6 segments (  7.6%)
+  WEBSS-002    :  6 segments (  7.6%)
+  WEBSS-003    :  6 segments (  7.6%)
+  WEBSS-005    :  6 segments (  7.6%)
+  WEBSS-006    :  6 segments (  7.6%)
+  H001         :  3 segments (  3.8%)
+  H002         :  3 segments (  3.8%)
+  H003         :  3 segments (  3.8%)
+  H004         :  3 segments (  3.8%)
+  KP001        :  3 segments (  3.8%)
+  KP002        :  3 segments (  3.8%)
+  KP003        :  3 segments (  3.8%)
+  KP005        :  3 segments (  3.8%)
+  KP008        :  3 segments (  3.8%)
+  KP009        :  3 segments (  3.8%)
+  KP010        :  3 segments (  3.8%)
+  KP011        :  3 segments (  3.8%)
+  KP004        :  2 segments (  2.5%)
+  KP006        :  1 segments (  1.3%)
+  KP007        :  1 segments (  1.3%)
+
+CLUSTER 1 (1 segments):
+------------------------------
+  KP007        :  1 segments (100.0%)
+
+CLUSTER 2 (1 segments):
+------------------------------
+  KP006        :  1 segments (100.0%)
+
+CLUSTER 3 (5 segments):
+------------------------------
+  KP003        :  2 segments ( 40.0%)
+  KP004        :  1 segments ( 20.0%)
+  KP006        :  1 segments ( 20.0%)
+  KP007        :  1 segments ( 20.0%)
+
+CLUSTER 4 (1 segments):
+------------------------------
+  KP003        :  1 segments (100.0%)

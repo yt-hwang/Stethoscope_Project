@@ -1,0 +1,14 @@
+{
+  "segment_length": 0.5,
+  "total_segments": 720,
+  "training_segments": 576,
+  "test_segments": 144,
+  "feature_count": 47,
+  "individual_results": {
+    "Random Forest": 0.7638888888888888,
+    "SVM": 0.6666666666666666,
+    "Logistic Regression": 0.6736111111111112
+  },
+  "best_model": "Random Forest",
+  "best_accuracy": 0.7638888888888888
+}

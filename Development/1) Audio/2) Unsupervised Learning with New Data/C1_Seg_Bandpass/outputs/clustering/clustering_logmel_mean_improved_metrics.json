@@ -1,0 +1,44 @@
+{
+  "kmeans_k3": {
+    "algorithm": "kmeans",
+    "params": {
+      "n_clusters": 3
+    },
+    "silhouette_mean": 0.31804526947032435,
+    "silhouette_std": 0.0031727625264664494,
+    "calinski_harabasz_mean": 50.46729587248104,
+    "davies_bouldin_mean": 1.0717063396298994,
+    "stability": 0.9968272374735335,
+    "quality_score": 0.31703618735762895,
+    "valid_runs": 7,
+    "total_runs": 7
+  },
+  "kmeans_k4": {
+    "algorithm": "kmeans",
+    "params": {
+      "n_clusters": 4
+    },
+    "silhouette_mean": 0.3055211627562797,
+    "silhouette_std": 0.004761843878312467,
+    "calinski_harabasz_mean": 46.72641861080756,
+    "davies_bouldin_mean": 1.1113842484225165,
+    "stability": 0.9952381561216875,
+    "quality_score": 0.30406631867771383,
+    "valid_runs": 7,
+    "total_runs": 7
+  },
+  "kmeans_k5": {
+    "algorithm": "kmeans",
+    "params": {
+      "n_clusters": 5
+    },
+    "silhouette_mean": 0.261711829151782,
+    "silhouette_std": 0.0055768689805668565,
+    "calinski_harabasz_mean": 46.17105875868828,
+    "davies_bouldin_mean": 1.0781150501158459,
+    "stability": 0.9944231310194331,
+    "quality_score": 0.260252296569938,
+    "valid_runs": 7,
+    "total_runs": 7
+  }
+}

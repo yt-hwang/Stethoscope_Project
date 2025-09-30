@@ -1,0 +1,53 @@
+CLUSTER MEMBERSHIP ANALYSIS - Seg_HighPass_PeakNormalize
+k=3, Silhouette Score=0.144
+============================================================
+
+CLUSTER 0 (27 segments):
+------------------------------
+  WEBSS-003    :  5 segments ( 18.5%)
+  KP005        :  3 segments ( 11.1%)
+  KP012        :  3 segments ( 11.1%)
+  KP004        :  2 segments (  7.4%)
+  KP006        :  2 segments (  7.4%)
+  KP008        :  2 segments (  7.4%)
+  WEBSS-006    :  2 segments (  7.4%)
+  WEBSS-007    :  2 segments (  7.4%)
+  H004         :  1 segments (  3.7%)
+  KP001        :  1 segments (  3.7%)
+  KP007        :  1 segments (  3.7%)
+  KP009        :  1 segments (  3.7%)
+  WEBSS-002    :  1 segments (  3.7%)
+  WEBSS-005    :  1 segments (  3.7%)
+
+CLUSTER 1 (24 segments):
+------------------------------
+  H001         :  4 segments ( 16.7%)
+  H003         :  3 segments ( 12.5%)
+  KP003        :  3 segments ( 12.5%)
+  KP011        :  3 segments ( 12.5%)
+  WEBSS-007    :  3 segments ( 12.5%)
+  KP012        :  2 segments (  8.3%)
+  KP006        :  1 segments (  4.2%)
+  KP008        :  1 segments (  4.2%)
+  KP010        :  1 segments (  4.2%)
+  WEBSS-005    :  1 segments (  4.2%)
+  WEBSS-006    :  1 segments (  4.2%)
+  H002         :  1 segments (  4.2%)
+
+CLUSTER 2 (38 segments):
+------------------------------
+  WEBSS-002    :  5 segments ( 13.2%)
+  WEBSS-005    :  4 segments ( 10.5%)
+  WEBSS-007    :  4 segments ( 10.5%)
+  H002         :  3 segments (  7.9%)
+  KP002        :  3 segments (  7.9%)
+  KP003        :  3 segments (  7.9%)
+  WEBSS-006    :  3 segments (  7.9%)
+  H004         :  2 segments (  5.3%)
+  KP001        :  2 segments (  5.3%)
+  KP007        :  2 segments (  5.3%)
+  KP009        :  2 segments (  5.3%)
+  KP010        :  2 segments (  5.3%)
+  KP004        :  1 segments (  2.6%)
+  KP012        :  1 segments (  2.6%)
+  WEBSS-003    :  1 segments (  2.6%)

@@ -1,0 +1,13 @@
+{
+  "segment_length": 1.0,
+  "method_type": "Individual",
+  "best_method": "Logistic Regression",
+  "best_score": 0.7435897435897436,
+  "individual_scores": {
+    "Random Forest": 0.7051282051282052,
+    "SVM": 0.5897435897435898,
+    "Logistic Regression": 0.7435897435897436
+  },
+  "corrected_excel_parsing": true,
+  "timestamp": "2025-09-21T20:35:51.015449"
+}

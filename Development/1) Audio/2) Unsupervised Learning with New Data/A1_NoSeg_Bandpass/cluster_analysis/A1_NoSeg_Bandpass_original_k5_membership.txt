@@ -1,0 +1,43 @@
+CLUSTER MEMBERSHIP ANALYSIS - A1_NoSeg_Bandpass (Original Handcrafted Features)
+k=5, Silhouette Score=0.698
+================================================================================
+
+CLUSTER 0 (20 segments):
+------------------------------
+  WEBSS-007    :  3 segments ( 15.0%)
+  WEBSS-002    :  2 segments ( 10.0%)
+  WEBSS-006    :  2 segments ( 10.0%)
+  H001         :  1 segments (  5.0%)
+  H002         :  1 segments (  5.0%)
+  H003         :  1 segments (  5.0%)
+  H004         :  1 segments (  5.0%)
+  KP002        :  1 segments (  5.0%)
+  KP003        :  1 segments (  5.0%)
+  KP008        :  1 segments (  5.0%)
+  KP009        :  1 segments (  5.0%)
+  KP010        :  1 segments (  5.0%)
+  KP011        :  1 segments (  5.0%)
+  KP012        :  1 segments (  5.0%)
+  WEBSS-003    :  1 segments (  5.0%)
+  WEBSS-005    :  1 segments (  5.0%)
+
+CLUSTER 1 (1 segments):
+------------------------------
+  KP012        :  1 segments (100.0%)
+
+CLUSTER 2 (2 segments):
+------------------------------
+  KP005        :  1 segments ( 50.0%)
+  KP006        :  1 segments ( 50.0%)
+
+CLUSTER 3 (1 segments):
+------------------------------
+  KP007        :  1 segments (100.0%)
+
+CLUSTER 4 (5 segments):
+------------------------------
+  KP001        :  1 segments ( 20.0%)
+  KP003        :  1 segments ( 20.0%)
+  KP004        :  1 segments ( 20.0%)
+  WEBSS-003    :  1 segments ( 20.0%)
+  WEBSS-005    :  1 segments ( 20.0%)

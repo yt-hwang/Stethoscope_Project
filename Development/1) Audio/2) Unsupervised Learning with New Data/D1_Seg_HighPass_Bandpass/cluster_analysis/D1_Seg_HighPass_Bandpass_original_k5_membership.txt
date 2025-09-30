@@ -1,0 +1,43 @@
+CLUSTER MEMBERSHIP ANALYSIS - D1_Seg_HighPass_Bandpass (Original Handcrafted Features)
+k=5, Silhouette Score=0.876
+================================================================================
+
+CLUSTER 0 (1 segments):
+------------------------------
+  KP006        :  1 segments (100.0%)
+
+CLUSTER 1 (1 segments):
+------------------------------
+  KP012        :  1 segments (100.0%)
+
+CLUSTER 2 (83 segments):
+------------------------------
+  WEBSS-007    :  9 segments ( 10.8%)
+  KP003        :  6 segments (  7.2%)
+  WEBSS-002    :  6 segments (  7.2%)
+  WEBSS-003    :  6 segments (  7.2%)
+  WEBSS-005    :  6 segments (  7.2%)
+  WEBSS-006    :  6 segments (  7.2%)
+  KP012        :  5 segments (  6.0%)
+  H001         :  3 segments (  3.6%)
+  H002         :  3 segments (  3.6%)
+  H003         :  3 segments (  3.6%)
+  H004         :  3 segments (  3.6%)
+  KP001        :  3 segments (  3.6%)
+  KP002        :  3 segments (  3.6%)
+  KP004        :  3 segments (  3.6%)
+  KP008        :  3 segments (  3.6%)
+  KP009        :  3 segments (  3.6%)
+  KP010        :  3 segments (  3.6%)
+  KP011        :  3 segments (  3.6%)
+  KP005        :  2 segments (  2.4%)
+  KP006        :  2 segments (  2.4%)
+  KP007        :  2 segments (  2.4%)
+
+CLUSTER 3 (1 segments):
+------------------------------
+  KP007        :  1 segments (100.0%)
+
+CLUSTER 4 (1 segments):
+------------------------------
+  KP005        :  1 segments (100.0%)

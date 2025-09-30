@@ -1,0 +1,42 @@
+CLUSTER MEMBERSHIP ANALYSIS - B0_new_NoSeg_PeakNormalize_HighPass (Original Handcrafted Features)
+k=3, Silhouette Score=0.716
+================================================================================
+
+CLUSTER 0 (4 segments):
+------------------------------
+  KP005        :  1 segments ( 25.0%)
+  KP012        :  1 segments ( 25.0%)
+  WEBSS-005    :  1 segments ( 25.0%)
+  WEBSS-006    :  1 segments ( 25.0%)
+
+CLUSTER 1 (29 segments):
+------------------------------
+  KP003        :  3 segments ( 10.3%)
+  WEBSS-007    :  3 segments ( 10.3%)
+  H002         :  2 segments (  6.9%)
+  H003         :  2 segments (  6.9%)
+  H004         :  2 segments (  6.9%)
+  KP001        :  2 segments (  6.9%)
+  KP002        :  2 segments (  6.9%)
+  KP004        :  1 segments (  3.4%)
+  KP006        :  1 segments (  3.4%)
+  KP007        :  1 segments (  3.4%)
+  KP008        :  1 segments (  3.4%)
+  KP009        :  1 segments (  3.4%)
+  KP010        :  1 segments (  3.4%)
+  KP012        :  1 segments (  3.4%)
+  WEBSS-002    :  1 segments (  3.4%)
+  WEBSS-003    :  1 segments (  3.4%)
+  WEBSS-005    :  1 segments (  3.4%)
+  WEBSS-006    :  1 segments (  3.4%)
+  H001         :  1 segments (  3.4%)
+  KP005        :  1 segments (  3.4%)
+
+CLUSTER 2 (6 segments):
+------------------------------
+  H001         :  1 segments ( 16.7%)
+  KP003        :  1 segments ( 16.7%)
+  KP011        :  1 segments ( 16.7%)
+  WEBSS-002    :  1 segments ( 16.7%)
+  WEBSS-003    :  1 segments ( 16.7%)
+  KP004        :  1 segments ( 16.7%)

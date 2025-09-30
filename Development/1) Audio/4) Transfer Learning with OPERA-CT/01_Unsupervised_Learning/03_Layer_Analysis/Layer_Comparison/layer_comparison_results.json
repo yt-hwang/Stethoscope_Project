@@ -1,0 +1,61 @@
+{
+  "timestamp": "2025-09-20T10:11:59.300836",
+  "data_root": "/Users/yunhwang/Desktop/Stethoscope_Project/Audio shared/ML test sound list/RAW sound_ML test sound list",
+  "n_segments": 116,
+  "seg_sec": 7.5,
+  "layer_results": [
+    {
+      "layer_name": "final",
+      "feature_dim": 768,
+      "n_samples": 116,
+      "best_k": 10,
+      "best_silhouette": 0.26475064485395217,
+      "extraction_time": 37.931617975234985,
+      "timestamp": "2025-09-20T10:11:59.120821",
+      "umap_path": "Layer_3_Final/results/umap_final.png",
+      "all_k_results": [
+        {
+          "k": 2,
+          "silhouette": 0.21945121689014827
+        },
+        {
+          "k": 3,
+          "silhouette": 0.14837735676359037
+        },
+        {
+          "k": 4,
+          "silhouette": 0.1695128728426857
+        },
+        {
+          "k": 5,
+          "silhouette": 0.18205571431492296
+        },
+        {
+          "k": 6,
+          "silhouette": 0.216502910197619
+        },
+        {
+          "k": 7,
+          "silhouette": 0.22273415213487108
+        },
+        {
+          "k": 8,
+          "silhouette": 0.2343674619021553
+        },
+        {
+          "k": 9,
+          "silhouette": 0.24641945800530257
+        },
+        {
+          "k": 10,
+          "silhouette": 0.26475064485395217
+        }
+      ]
+    }
+  ],
+  "best_layer": "final",
+  "best_silhouette": 0.26475064485395217,
+  "performance_ranking": [
+    "final"
+  ]
+}

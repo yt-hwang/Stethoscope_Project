@@ -1,0 +1,7 @@
+Time_Range,Center_Time,CORRECT_Ground_Truth,Model_Prediction,Match_Status,Visual_Check
+0.00-1.00s,0.50s,breathing,breathing,MATCH,GREEN under GREEN
+18.00-19.00s,18.50s,breathing,breathing,MATCH,GREEN under GREEN
+22.00-23.00s,22.50s,non-breathing,non-breathing,MATCH,RED under RED
+28.00-29.00s,28.50s,non-breathing,non-breathing,MATCH,RED under RED
+12.00-13.00s,12.50s,breathing,breathing,MATCH,GREEN under GREEN
+25.00-26.00s,25.50s,non-breathing,breathing,MISMATCH,GREEN under RED

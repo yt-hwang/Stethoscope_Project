@@ -1,0 +1,32 @@
+{
+  "method_code": "A3",
+  "method_name": "NoSeg_HighPass",
+  "config": {
+    "segmentation": false,
+    "highpass": true,
+    "name": "NoSeg_HighPass"
+  },
+  "n_files": 29,
+  "n_segments": 29,
+  "feature_shape": [
+    29,
+    768
+  ],
+  "extraction_time": 9.064485788345337,
+  "clustering_results": {
+    "k3": {
+      "silhouette_score": 0.1811609410831732,
+      "n_clusters": 3
+    },
+    "k4": {
+      "silhouette_score": 0.19719034568083774,
+      "n_clusters": 4
+    },
+    "k5": {
+      "silhouette_score": 0.15904831241436848,
+      "n_clusters": 5
+    }
+  },
+  "best_silhouette": 0.19719034568083774,
+  "timestamp": "2025-09-20T10:43:34.428335"
+}

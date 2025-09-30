@@ -1,0 +1,32 @@
+{
+  "method_code": "D2",
+  "method_name": "Seg_FullPipeline",
+  "config": {
+    "segmentation": true,
+    "full_pipeline": true,
+    "name": "Seg_FullPipeline"
+  },
+  "n_files": 29,
+  "n_segments": 87,
+  "feature_shape": [
+    87,
+    768
+  ],
+  "extraction_time": 28.658584117889404,
+  "clustering_results": {
+    "k3": {
+      "silhouette_score": 0.21567693732493912,
+      "n_clusters": 3
+    },
+    "k4": {
+      "silhouette_score": 0.19911695312113956,
+      "n_clusters": 4
+    },
+    "k5": {
+      "silhouette_score": 0.18612254762102798,
+      "n_clusters": 5
+    }
+  },
+  "best_silhouette": 0.21567693732493912,
+  "timestamp": "2025-09-20T10:52:14.507549"
+}

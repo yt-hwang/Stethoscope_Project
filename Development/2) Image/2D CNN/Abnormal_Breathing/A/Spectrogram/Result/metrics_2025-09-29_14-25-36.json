@@ -1,0 +1,17 @@
+{
+  "classes": [
+    "Bronchi",
+    "Crackle",
+    "Healthy",
+    "Rhonchi",
+    "Unknown",
+    "Wheezing"
+  ],
+  "val_loss": 1.811949372291565,
+  "val_macro_f1": 0.05128205128205129,
+  "val_macro_ap": 0.3979166666666667,
+  "n_train": 32,
+  "n_val": 11,
+  "patient_split": true,
+  "stratified_by_label": true
+}

@@ -1,0 +1,12 @@
+=== FINAL TEST REPORT ===
+              precision    recall  f1-score   support
+
+NonBreathing       0.86      0.94      0.90       138
+   Breathing       0.91      0.79      0.84       103
+
+    accuracy                           0.88       241
+   macro avg       0.88      0.86      0.87       241
+weighted avg       0.88      0.88      0.87       241
+
+[[130   8]
+ [ 22  81]]

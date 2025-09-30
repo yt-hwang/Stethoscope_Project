@@ -1,0 +1,35 @@
+CLUSTER MEMBERSHIP ANALYSIS - C3_Seg_HighPass20 (Original Handcrafted Features)
+k=3, Silhouette Score=0.973
+================================================================================
+
+CLUSTER 0 (328 segments):
+------------------------------
+  WEBSS-007    : 33 segments ( 10.1%)
+  KP003        : 24 segments (  7.3%)
+  KP012        : 22 segments (  6.7%)
+  WEBSS-002    : 22 segments (  6.7%)
+  WEBSS-003    : 22 segments (  6.7%)
+  WEBSS-005    : 22 segments (  6.7%)
+  WEBSS-006    : 22 segments (  6.7%)
+  H001         : 12 segments (  3.7%)
+  H002         : 12 segments (  3.7%)
+  H003         : 12 segments (  3.7%)
+  H004         : 12 segments (  3.7%)
+  KP001        : 12 segments (  3.7%)
+  KP002        : 12 segments (  3.7%)
+  KP004        : 12 segments (  3.7%)
+  KP005        : 12 segments (  3.7%)
+  KP006        : 11 segments (  3.4%)
+  KP007        : 11 segments (  3.4%)
+  KP009        : 11 segments (  3.4%)
+  KP010        : 11 segments (  3.4%)
+  KP011        : 11 segments (  3.4%)
+  KP008        : 10 segments (  3.0%)
+
+CLUSTER 1 (1 segments):
+------------------------------
+  KP006        :  1 segments (100.0%)
+
+CLUSTER 2 (1 segments):
+------------------------------
+  KP008        :  1 segments (100.0%)

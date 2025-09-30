@@ -1,0 +1,8 @@
+              precision    recall  f1-score   support
+
+NonBreathing       0.90      0.83      0.86       138
+   Breathing       0.79      0.88      0.83       103
+
+    accuracy                           0.85       241
+   macro avg       0.85      0.85      0.85       241
+weighted avg       0.86      0.85      0.85       241

@@ -1,0 +1,43 @@
+CLUSTER MEMBERSHIP ANALYSIS - B2_NoSeg_FullPipeline (Original Handcrafted Features)
+k=5, Silhouette Score=0.786
+================================================================================
+
+CLUSTER 0 (1 segments):
+------------------------------
+  KP006        :  1 segments (100.0%)
+
+CLUSTER 1 (18 segments):
+------------------------------
+  WEBSS-007    :  3 segments ( 16.7%)
+  WEBSS-006    :  2 segments ( 11.1%)
+  H001         :  1 segments (  5.6%)
+  H002         :  1 segments (  5.6%)
+  H003         :  1 segments (  5.6%)
+  H004         :  1 segments (  5.6%)
+  KP002        :  1 segments (  5.6%)
+  KP003        :  1 segments (  5.6%)
+  KP008        :  1 segments (  5.6%)
+  KP009        :  1 segments (  5.6%)
+  KP010        :  1 segments (  5.6%)
+  KP011        :  1 segments (  5.6%)
+  KP012        :  1 segments (  5.6%)
+  WEBSS-002    :  1 segments (  5.6%)
+  WEBSS-003    :  1 segments (  5.6%)
+
+CLUSTER 2 (1 segments):
+------------------------------
+  KP012        :  1 segments (100.0%)
+
+CLUSTER 3 (2 segments):
+------------------------------
+  KP005        :  1 segments ( 50.0%)
+  KP007        :  1 segments ( 50.0%)
+
+CLUSTER 4 (7 segments):
+------------------------------
+  WEBSS-005    :  2 segments ( 28.6%)
+  KP001        :  1 segments ( 14.3%)
+  KP003        :  1 segments ( 14.3%)
+  KP004        :  1 segments ( 14.3%)
+  WEBSS-002    :  1 segments ( 14.3%)
+  WEBSS-003    :  1 segments ( 14.3%)

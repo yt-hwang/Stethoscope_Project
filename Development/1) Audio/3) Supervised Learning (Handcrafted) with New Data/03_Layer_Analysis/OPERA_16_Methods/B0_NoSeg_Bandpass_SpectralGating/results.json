@@ -1,0 +1,33 @@
+{
+  "method_code": "B0",
+  "method_name": "NoSeg_Bandpass_SpectralGating",
+  "config": {
+    "segmentation": false,
+    "bandpass": true,
+    "spectral_gating": true,
+    "name": "NoSeg_Bandpass_SpectralGating"
+  },
+  "n_files": 29,
+  "n_segments": 29,
+  "feature_shape": [
+    29,
+    768
+  ],
+  "extraction_time": 9.474192142486572,
+  "clustering_results": {
+    "k3": {
+      "silhouette_score": 0.21554470832288916,
+      "n_clusters": 3
+    },
+    "k4": {
+      "silhouette_score": 0.23051600091273905,
+      "n_clusters": 4
+    },
+    "k5": {
+      "silhouette_score": 0.22770951993938784,
+      "n_clusters": 5
+    }
+  },
+  "best_silhouette": 0.23051600091273905,
+  "timestamp": "2025-09-20T10:44:45.806934"
+}

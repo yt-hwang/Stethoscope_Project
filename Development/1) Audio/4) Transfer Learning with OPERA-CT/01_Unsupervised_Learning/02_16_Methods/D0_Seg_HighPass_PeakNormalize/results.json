@@ -1,0 +1,33 @@
+{
+  "method_code": "D0",
+  "method_name": "Seg_HighPass_PeakNormalize",
+  "config": {
+    "segmentation": true,
+    "highpass": true,
+    "peak_normalize": true,
+    "name": "Seg_HighPass_PeakNormalize"
+  },
+  "n_files": 29,
+  "n_segments": 89,
+  "feature_shape": [
+    89,
+    768
+  ],
+  "extraction_time": 29.545408010482788,
+  "clustering_results": {
+    "k3": {
+      "silhouette_score": 0.14398253946879574,
+      "n_clusters": 3
+    },
+    "k4": {
+      "silhouette_score": 0.2213102572932019,
+      "n_clusters": 4
+    },
+    "k5": {
+      "silhouette_score": 0.1776153394786324,
+      "n_clusters": 5
+    }
+  },
+  "best_silhouette": 0.2213102572932019,
+  "timestamp": "2025-09-20T10:50:46.215868"
+}

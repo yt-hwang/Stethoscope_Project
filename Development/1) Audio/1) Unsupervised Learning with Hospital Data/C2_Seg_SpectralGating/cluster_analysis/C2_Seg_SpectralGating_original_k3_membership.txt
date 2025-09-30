@@ -1,0 +1,56 @@
+CLUSTER MEMBERSHIP ANALYSIS - C2_Seg_SpectralGating (Original Handcrafted Features)
+k=3, Silhouette Score=0.676
+================================================================================
+
+CLUSTER 0 (163 segments):
+------------------------------
+  KP003        : 22 segments ( 13.5%)
+  H002         : 11 segments (  6.7%)
+  KP001        : 11 segments (  6.7%)
+  KP005        : 11 segments (  6.7%)
+  KP006        : 11 segments (  6.7%)
+  KP007        : 11 segments (  6.7%)
+  KP008        : 11 segments (  6.7%)
+  H001         : 10 segments (  6.1%)
+  H003         : 10 segments (  6.1%)
+  H004         : 10 segments (  6.1%)
+  KP002        : 10 segments (  6.1%)
+  KP004        : 10 segments (  6.1%)
+  KP009        :  8 segments (  4.9%)
+  WEBSS-005    :  5 segments (  3.1%)
+  WEBSS-003    :  3 segments (  1.8%)
+  WEBSS-006    :  3 segments (  1.8%)
+  KP011        :  2 segments (  1.2%)
+  WEBSS-007    :  2 segments (  1.2%)
+  KP010        :  1 segments (  0.6%)
+  KP012        :  1 segments (  0.6%)
+
+CLUSTER 1 (162 segments):
+------------------------------
+  WEBSS-007    : 31 segments ( 19.1%)
+  WEBSS-002    : 22 segments ( 13.6%)
+  KP012        : 21 segments ( 13.0%)
+  WEBSS-006    : 19 segments ( 11.7%)
+  WEBSS-003    : 18 segments ( 11.1%)
+  WEBSS-005    : 17 segments ( 10.5%)
+  KP010        : 10 segments (  6.2%)
+  KP011        :  9 segments (  5.6%)
+  KP009        :  3 segments (  1.9%)
+  H001         :  2 segments (  1.2%)
+  KP003        :  2 segments (  1.2%)
+  H002         :  1 segments (  0.6%)
+  H003         :  1 segments (  0.6%)
+  H004         :  1 segments (  0.6%)
+  KP001        :  1 segments (  0.6%)
+  KP002        :  1 segments (  0.6%)
+  KP004        :  1 segments (  0.6%)
+  KP005        :  1 segments (  0.6%)
+  KP006        :  1 segments (  0.6%)
+
+CLUSTER 2 (5 segments):
+------------------------------
+  H003         :  1 segments ( 20.0%)
+  H004         :  1 segments ( 20.0%)
+  KP002        :  1 segments ( 20.0%)
+  KP004        :  1 segments ( 20.0%)
+  WEBSS-003    :  1 segments ( 20.0%)

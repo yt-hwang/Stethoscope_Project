@@ -1,0 +1,32 @@
+{
+  "method_code": "C4",
+  "method_name": "Seg_PeakNormalize",
+  "config": {
+    "segmentation": true,
+    "peak_normalize": true,
+    "name": "Seg_PeakNormalize"
+  },
+  "n_files": 29,
+  "n_segments": 89,
+  "feature_shape": [
+    89,
+    768
+  ],
+  "extraction_time": 28.371669054031372,
+  "clustering_results": {
+    "k3": {
+      "silhouette_score": 0.26041708312982126,
+      "n_clusters": 3
+    },
+    "k4": {
+      "silhouette_score": 0.23630367522241733,
+      "n_clusters": 4
+    },
+    "k5": {
+      "silhouette_score": 0.250031318636404,
+      "n_clusters": 5
+    }
+  },
+  "best_silhouette": 0.26041708312982126,
+  "timestamp": "2025-09-20T10:49:38.507400"
+}

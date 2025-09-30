@@ -1,0 +1,64 @@
+CLUSTER MEMBERSHIP ANALYSIS - Seg_HighPass_PeakNormalize
+k=5, Silhouette Score=0.178
+============================================================
+
+CLUSTER 0 (31 segments):
+------------------------------
+  WEBSS-007    :  6 segments ( 19.4%)
+  H002         :  3 segments (  9.7%)
+  H004         :  3 segments (  9.7%)
+  KP002        :  3 segments (  9.7%)
+  KP003        :  3 segments (  9.7%)
+  KP001        :  2 segments (  6.5%)
+  KP005        :  2 segments (  6.5%)
+  KP007        :  2 segments (  6.5%)
+  WEBSS-002    :  2 segments (  6.5%)
+  KP004        :  1 segments (  3.2%)
+  KP006        :  1 segments (  3.2%)
+  KP009        :  1 segments (  3.2%)
+  WEBSS-003    :  1 segments (  3.2%)
+  WEBSS-005    :  1 segments (  3.2%)
+
+CLUSTER 1 (21 segments):
+------------------------------
+  WEBSS-003    :  4 segments ( 19.0%)
+  KP012        :  3 segments ( 14.3%)
+  KP004        :  2 segments (  9.5%)
+  KP008        :  2 segments (  9.5%)
+  WEBSS-005    :  2 segments (  9.5%)
+  WEBSS-006    :  2 segments (  9.5%)
+  KP001        :  1 segments (  4.8%)
+  KP005        :  1 segments (  4.8%)
+  KP006        :  1 segments (  4.8%)
+  KP007        :  1 segments (  4.8%)
+  KP009        :  1 segments (  4.8%)
+  WEBSS-002    :  1 segments (  4.8%)
+
+CLUSTER 2 (10 segments):
+------------------------------
+  H003         :  3 segments ( 30.0%)
+  KP010        :  3 segments ( 30.0%)
+  KP011        :  2 segments ( 20.0%)
+  KP009        :  1 segments ( 10.0%)
+  WEBSS-002    :  1 segments ( 10.0%)
+
+CLUSTER 3 (18 segments):
+------------------------------
+  H001         :  4 segments ( 22.2%)
+  KP003        :  3 segments ( 16.7%)
+  WEBSS-007    :  3 segments ( 16.7%)
+  KP012        :  2 segments ( 11.1%)
+  KP006        :  1 segments (  5.6%)
+  KP008        :  1 segments (  5.6%)
+  KP011        :  1 segments (  5.6%)
+  WEBSS-005    :  1 segments (  5.6%)
+  WEBSS-006    :  1 segments (  5.6%)
+  H002         :  1 segments (  5.6%)
+
+CLUSTER 4 (9 segments):
+------------------------------
+  WEBSS-006    :  3 segments ( 33.3%)
+  WEBSS-002    :  2 segments ( 22.2%)
+  WEBSS-005    :  2 segments ( 22.2%)
+  KP012        :  1 segments ( 11.1%)
+  WEBSS-003    :  1 segments ( 11.1%)

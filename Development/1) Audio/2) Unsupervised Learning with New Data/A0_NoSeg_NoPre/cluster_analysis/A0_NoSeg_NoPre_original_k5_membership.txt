@@ -1,0 +1,41 @@
+CLUSTER MEMBERSHIP ANALYSIS - A0_NoSeg_NoPre (Original Handcrafted Features)
+k=5, Silhouette Score=0.683
+================================================================================
+
+CLUSTER 0 (24 segments):
+------------------------------
+  WEBSS-007    :  3 segments ( 12.5%)
+  KP012        :  2 segments (  8.3%)
+  WEBSS-002    :  2 segments (  8.3%)
+  WEBSS-003    :  2 segments (  8.3%)
+  WEBSS-006    :  2 segments (  8.3%)
+  H001         :  1 segments (  4.2%)
+  H002         :  1 segments (  4.2%)
+  H003         :  1 segments (  4.2%)
+  H004         :  1 segments (  4.2%)
+  KP001        :  1 segments (  4.2%)
+  KP002        :  1 segments (  4.2%)
+  KP003        :  1 segments (  4.2%)
+  KP005        :  1 segments (  4.2%)
+  KP008        :  1 segments (  4.2%)
+  KP009        :  1 segments (  4.2%)
+  KP010        :  1 segments (  4.2%)
+  KP011        :  1 segments (  4.2%)
+  WEBSS-005    :  1 segments (  4.2%)
+
+CLUSTER 1 (1 segments):
+------------------------------
+  KP006        :  1 segments (100.0%)
+
+CLUSTER 2 (1 segments):
+------------------------------
+  KP007        :  1 segments (100.0%)
+
+CLUSTER 3 (1 segments):
+------------------------------
+  KP003        :  1 segments (100.0%)
+
+CLUSTER 4 (2 segments):
+------------------------------
+  KP004        :  1 segments ( 50.0%)
+  WEBSS-005    :  1 segments ( 50.0%)

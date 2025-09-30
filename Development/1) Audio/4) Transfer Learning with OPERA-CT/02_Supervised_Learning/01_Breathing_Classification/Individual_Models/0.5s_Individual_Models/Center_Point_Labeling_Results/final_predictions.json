@@ -1,0 +1,1276 @@
+{
+  "H002": [
+    {
+      "start_time": 19.5,
+      "end_time": 20.0,
+      "center_time": 19.75,
+      "prediction": 0,
+      "ground_truth": 0,
+      "condition": "Healthy"
+    },
+    {
+      "start_time": 16.5,
+      "end_time": 17.0,
+      "center_time": 16.75,
+      "prediction": 1,
+      "ground_truth": 0,
+      "condition": "Healthy"
+    },
+    {
+      "start_time": 27.0,
+      "end_time": 27.5,
+      "center_time": 27.25,
+      "prediction": 1,
+      "ground_truth": 0,
+      "condition": "Healthy"
+    },
+    {
+      "start_time": 7.5,
+      "end_time": 8.0,
+      "center_time": 7.75,
+      "prediction": 1,
+      "ground_truth": 1,
+      "condition": "Healthy"
+    },
+    {
+      "start_time": 12.0,
+      "end_time": 12.5,
+      "center_time": 12.25,
+      "prediction": 1,
+      "ground_truth": 1,
+      "condition": "Healthy"
+    },
+    {
+      "start_time": 8.5,
+      "end_time": 9.0,
+      "center_time": 8.75,
+      "prediction": 1,
+      "ground_truth": 0,
+      "condition": "Healthy"
+    },
+    {
+      "start_time": 28.0,
+      "end_time": 28.5,
+      "center_time": 28.25,
+      "prediction": 1,
+      "ground_truth": 1,
+      "condition": "Healthy"
+    },
+    {
+      "start_time": 11.5,
+      "end_time": 12.0,
+      "center_time": 11.75,
+      "prediction": 1,
+      "ground_truth": 1,
+      "condition": "Healthy"
+    },
+    {
+      "start_time": 3.0,
+      "end_time": 3.5,
+      "center_time": 3.25,
+      "prediction": 1,
+      "ground_truth": 1,
+      "condition": "Healthy"
+    },
+    {
+      "start_time": 17.5,
+      "end_time": 18.0,
+      "center_time": 17.75,
+      "prediction": 1,
+      "ground_truth": 0,
+      "condition": "Healthy"
+    },
+    {
+      "start_time": 27.5,
+      "end_time": 28.0,
+      "center_time": 27.75,
+      "prediction": 1,
+      "ground_truth": 0,
+      "condition": "Healthy"
+    },
+    {
+      "start_time": 20.0,
+      "end_time": 20.5,
+      "center_time": 20.25,
+      "prediction": 0,
+      "ground_truth": 0,
+      "condition": "Healthy"
+    },
+    {
+      "start_time": 0.5,
+      "end_time": 1.0,
+      "center_time": 0.75,
+      "prediction": 0,
+      "ground_truth": 0,
+      "condition": "Healthy"
+    },
+    {
+      "start_time": 11.0,
+      "end_time": 11.5,
+      "center_time": 11.25,
+      "prediction": 0,
+      "ground_truth": 0,
+      "condition": "Healthy"
+    }
+  ],
+  "H004": [
+    {
+      "start_time": 17.0,
+      "end_time": 17.5,
+      "center_time": 17.25,
+      "prediction": 1,
+      "ground_truth": 0,
+      "condition": "Healthy"
+    },
+    {
+      "start_time": 13.0,
+      "end_time": 13.5,
+      "center_time": 13.25,
+      "prediction": 1,
+      "ground_truth": 0,
+      "condition": "Healthy"
+    },
+    {
+      "start_time": 29.0,
+      "end_time": 29.5,
+      "center_time": 29.25,
+      "prediction": 1,
+      "ground_truth": 1,
+      "condition": "Healthy"
+    },
+    {
+      "start_time": 21.0,
+      "end_time": 21.5,
+      "center_time": 21.25,
+      "prediction": 0,
+      "ground_truth": 0,
+      "condition": "Healthy"
+    },
+    {
+      "start_time": 11.5,
+      "end_time": 12.0,
+      "center_time": 11.75,
+      "prediction": 1,
+      "ground_truth": 1,
+      "condition": "Healthy"
+    },
+    {
+      "start_time": 9.0,
+      "end_time": 9.5,
+      "center_time": 9.25,
+      "prediction": 1,
+      "ground_truth": 1,
+      "condition": "Healthy"
+    },
+    {
+      "start_time": 27.5,
+      "end_time": 28.0,
+      "center_time": 27.75,
+      "prediction": 0,
+      "ground_truth": 0,
+      "condition": "Healthy"
+    },
+    {
+      "start_time": 23.0,
+      "end_time": 23.5,
+      "center_time": 23.25,
+      "prediction": 0,
+      "ground_truth": 1,
+      "condition": "Healthy"
+    },
+    {
+      "start_time": 28.5,
+      "end_time": 29.0,
+      "center_time": 28.75,
+      "prediction": 1,
+      "ground_truth": 1,
+      "condition": "Healthy"
+    },
+    {
+      "start_time": 1.5,
+      "end_time": 2.0,
+      "center_time": 1.75,
+      "prediction": 1,
+      "ground_truth": 1,
+      "condition": "Healthy"
+    },
+    {
+      "start_time": 12.5,
+      "end_time": 13.0,
+      "center_time": 12.75,
+      "prediction": 1,
+      "ground_truth": 1,
+      "condition": "Healthy"
+    },
+    {
+      "start_time": 4.0,
+      "end_time": 4.5,
+      "center_time": 4.25,
+      "prediction": 1,
+      "ground_truth": 0,
+      "condition": "Healthy"
+    },
+    {
+      "start_time": 27.0,
+      "end_time": 27.5,
+      "center_time": 27.25,
+      "prediction": 0,
+      "ground_truth": 0,
+      "condition": "Healthy"
+    },
+    {
+      "start_time": 22.0,
+      "end_time": 22.5,
+      "center_time": 22.25,
+      "prediction": 1,
+      "ground_truth": 1,
+      "condition": "Healthy"
+    }
+  ],
+  "KP011_WWS": [
+    {
+      "start_time": 19.0,
+      "end_time": 19.5,
+      "center_time": 19.25,
+      "prediction": 1,
+      "ground_truth": 1,
+      "condition": "Pathological"
+    },
+    {
+      "start_time": 1.0,
+      "end_time": 1.5,
+      "center_time": 1.25,
+      "prediction": 1,
+      "ground_truth": 1,
+      "condition": "Pathological"
+    },
+    {
+      "start_time": 1.5,
+      "end_time": 2.0,
+      "center_time": 1.75,
+      "prediction": 1,
+      "ground_truth": 1,
+      "condition": "Pathological"
+    },
+    {
+      "start_time": 23.0,
+      "end_time": 23.5,
+      "center_time": 23.25,
+      "prediction": 1,
+      "ground_truth": 1,
+      "condition": "Pathological"
+    },
+    {
+      "start_time": 8.5,
+      "end_time": 9.0,
+      "center_time": 8.75,
+      "prediction": 0,
+      "ground_truth": 0,
+      "condition": "Pathological"
+    },
+    {
+      "start_time": 20.0,
+      "end_time": 20.5,
+      "center_time": 20.25,
+      "prediction": 0,
+      "ground_truth": 1,
+      "condition": "Pathological"
+    },
+    {
+      "start_time": 5.5,
+      "end_time": 6.0,
+      "center_time": 5.75,
+      "prediction": 1,
+      "ground_truth": 1,
+      "condition": "Pathological"
+    },
+    {
+      "start_time": 14.5,
+      "end_time": 15.0,
+      "center_time": 14.75,
+      "prediction": 1,
+      "ground_truth": 1,
+      "condition": "Pathological"
+    },
+    {
+      "start_time": 9.5,
+      "end_time": 10.0,
+      "center_time": 9.75,
+      "prediction": 0,
+      "ground_truth": 0,
+      "condition": "Pathological"
+    },
+    {
+      "start_time": 21.0,
+      "end_time": 21.5,
+      "center_time": 21.25,
+      "prediction": 0,
+      "ground_truth": 0,
+      "condition": "Pathological"
+    },
+    {
+      "start_time": 25.5,
+      "end_time": 26.0,
+      "center_time": 25.75,
+      "prediction": 0,
+      "ground_truth": 0,
+      "condition": "Pathological"
+    },
+    {
+      "start_time": 11.5,
+      "end_time": 12.0,
+      "center_time": 11.75,
+      "prediction": 0,
+      "ground_truth": 1,
+      "condition": "Pathological"
+    },
+    {
+      "start_time": 22.5,
+      "end_time": 23.0,
+      "center_time": 22.75,
+      "prediction": 1,
+      "ground_truth": 1,
+      "condition": "Pathological"
+    },
+    {
+      "start_time": 10.0,
+      "end_time": 10.5,
+      "center_time": 10.25,
+      "prediction": 1,
+      "ground_truth": 1,
+      "condition": "Pathological"
+    },
+    {
+      "start_time": 27.5,
+      "end_time": 28.0,
+      "center_time": 27.75,
+      "prediction": 1,
+      "ground_truth": 0,
+      "condition": "Pathological"
+    },
+    {
+      "start_time": 12.5,
+      "end_time": 13.0,
+      "center_time": 12.75,
+      "prediction": 0,
+      "ground_truth": 0,
+      "condition": "Pathological"
+    },
+    {
+      "start_time": 24.5,
+      "end_time": 25.0,
+      "center_time": 24.75,
+      "prediction": 1,
+      "ground_truth": 1,
+      "condition": "Pathological"
+    },
+    {
+      "start_time": 9.0,
+      "end_time": 9.5,
+      "center_time": 9.25,
+      "prediction": 0,
+      "ground_truth": 0,
+      "condition": "Pathological"
+    },
+    {
+      "start_time": 11.0,
+      "end_time": 11.5,
+      "center_time": 11.25,
+      "prediction": 1,
+      "ground_truth": 1,
+      "condition": "Pathological"
+    },
+    {
+      "start_time": 12.0,
+      "end_time": 12.5,
+      "center_time": 12.25,
+      "prediction": 0,
+      "ground_truth": 0,
+      "condition": "Pathological"
+    }
+  ],
+  "KP004_WWS": [
+    {
+      "start_time": 26.0,
+      "end_time": 26.5,
+      "center_time": 26.25,
+      "prediction": 0,
+      "ground_truth": 0,
+      "condition": "Pathological"
+    },
+    {
+      "start_time": 9.5,
+      "end_time": 10.0,
+      "center_time": 9.75,
+      "prediction": 0,
+      "ground_truth": 0,
+      "condition": "Pathological"
+    },
+    {
+      "start_time": 22.5,
+      "end_time": 23.0,
+      "center_time": 22.75,
+      "prediction": 1,
+      "ground_truth": 0,
+      "condition": "Pathological"
+    },
+    {
+      "start_time": 13.5,
+      "end_time": 14.0,
+      "center_time": 13.75,
+      "prediction": 1,
+      "ground_truth": 1,
+      "condition": "Pathological"
+    },
+    {
+      "start_time": 0.0,
+      "end_time": 0.5,
+      "center_time": 0.25,
+      "prediction": 1,
+      "ground_truth": 1,
+      "condition": "Pathological"
+    },
+    {
+      "start_time": 27.0,
+      "end_time": 27.5,
+      "center_time": 27.25,
+      "prediction": 1,
+      "ground_truth": 1,
+      "condition": "Pathological"
+    },
+    {
+      "start_time": 20.5,
+      "end_time": 21.0,
+      "center_time": 20.75,
+      "prediction": 0,
+      "ground_truth": 0,
+      "condition": "Pathological"
+    },
+    {
+      "start_time": 3.5,
+      "end_time": 4.0,
+      "center_time": 3.75,
+      "prediction": 1,
+      "ground_truth": 1,
+      "condition": "Pathological"
+    },
+    {
+      "start_time": 13.0,
+      "end_time": 13.5,
+      "center_time": 13.25,
+      "prediction": 0,
+      "ground_truth": 1,
+      "condition": "Pathological"
+    },
+    {
+      "start_time": 10.0,
+      "end_time": 10.5,
+      "center_time": 10.25,
+      "prediction": 1,
+      "ground_truth": 1,
+      "condition": "Pathological"
+    },
+    {
+      "start_time": 27.5,
+      "end_time": 28.0,
+      "center_time": 27.75,
+      "prediction": 1,
+      "ground_truth": 1,
+      "condition": "Pathological"
+    },
+    {
+      "start_time": 15.0,
+      "end_time": 15.5,
+      "center_time": 15.25,
+      "prediction": 1,
+      "ground_truth": 1,
+      "condition": "Pathological"
+    }
+  ],
+  "KP005_WWS": [
+    {
+      "start_time": 1.5,
+      "end_time": 2.0,
+      "center_time": 1.75,
+      "prediction": 1,
+      "ground_truth": 1,
+      "condition": "Pathological"
+    },
+    {
+      "start_time": 15.0,
+      "end_time": 15.5,
+      "center_time": 15.25,
+      "prediction": 0,
+      "ground_truth": 0,
+      "condition": "Pathological"
+    },
+    {
+      "start_time": 7.5,
+      "end_time": 8.0,
+      "center_time": 7.75,
+      "prediction": 0,
+      "ground_truth": 0,
+      "condition": "Pathological"
+    },
+    {
+      "start_time": 5.0,
+      "end_time": 5.5,
+      "center_time": 5.25,
+      "prediction": 1,
+      "ground_truth": 1,
+      "condition": "Pathological"
+    },
+    {
+      "start_time": 4.5,
+      "end_time": 5.0,
+      "center_time": 4.75,
+      "prediction": 1,
+      "ground_truth": 1,
+      "condition": "Pathological"
+    },
+    {
+      "start_time": 8.5,
+      "end_time": 9.0,
+      "center_time": 8.75,
+      "prediction": 1,
+      "ground_truth": 1,
+      "condition": "Pathological"
+    },
+    {
+      "start_time": 18.0,
+      "end_time": 18.5,
+      "center_time": 18.25,
+      "prediction": 1,
+      "ground_truth": 1,
+      "condition": "Pathological"
+    },
+    {
+      "start_time": 1.0,
+      "end_time": 1.5,
+      "center_time": 1.25,
+      "prediction": 1,
+      "ground_truth": 1,
+      "condition": "Pathological"
+    },
+    {
+      "start_time": 6.5,
+      "end_time": 7.0,
+      "center_time": 6.75,
+      "prediction": 1,
+      "ground_truth": 1,
+      "condition": "Pathological"
+    },
+    {
+      "start_time": 10.5,
+      "end_time": 11.0,
+      "center_time": 10.75,
+      "prediction": 1,
+      "ground_truth": 1,
+      "condition": "Pathological"
+    },
+    {
+      "start_time": 3.5,
+      "end_time": 4.0,
+      "center_time": 3.75,
+      "prediction": 1,
+      "ground_truth": 0,
+      "condition": "Pathological"
+    },
+    {
+      "start_time": 23.5,
+      "end_time": 24.0,
+      "center_time": 23.75,
+      "prediction": 1,
+      "ground_truth": 1,
+      "condition": "Pathological"
+    },
+    {
+      "start_time": 2.5,
+      "end_time": 3.0,
+      "center_time": 2.75,
+      "prediction": 1,
+      "ground_truth": 1,
+      "condition": "Pathological"
+    },
+    {
+      "start_time": 21.5,
+      "end_time": 22.0,
+      "center_time": 21.75,
+      "prediction": 1,
+      "ground_truth": 1,
+      "condition": "Pathological"
+    },
+    {
+      "start_time": 26.0,
+      "end_time": 26.5,
+      "center_time": 26.25,
+      "prediction": 1,
+      "ground_truth": 1,
+      "condition": "Pathological"
+    },
+    {
+      "start_time": 22.0,
+      "end_time": 22.5,
+      "center_time": 22.25,
+      "prediction": 1,
+      "ground_truth": 1,
+      "condition": "Pathological"
+    },
+    {
+      "start_time": 11.5,
+      "end_time": 12.0,
+      "center_time": 11.75,
+      "prediction": 1,
+      "ground_truth": 0,
+      "condition": "Pathological"
+    }
+  ],
+  "KP002_WWS_2": [
+    {
+      "start_time": 2.5,
+      "end_time": 3.0,
+      "center_time": 2.75,
+      "prediction": 0,
+      "ground_truth": 1,
+      "condition": "Pathological"
+    },
+    {
+      "start_time": 15.5,
+      "end_time": 16.0,
+      "center_time": 15.75,
+      "prediction": 1,
+      "ground_truth": 0,
+      "condition": "Pathological"
+    },
+    {
+      "start_time": 13.0,
+      "end_time": 13.5,
+      "center_time": 13.25,
+      "prediction": 1,
+      "ground_truth": 1,
+      "condition": "Pathological"
+    },
+    {
+      "start_time": 16.0,
+      "end_time": 16.5,
+      "center_time": 16.25,
+      "prediction": 0,
+      "ground_truth": 1,
+      "condition": "Pathological"
+    },
+    {
+      "start_time": 21.0,
+      "end_time": 21.5,
+      "center_time": 21.25,
+      "prediction": 1,
+      "ground_truth": 1,
+      "condition": "Pathological"
+    },
+    {
+      "start_time": 11.0,
+      "end_time": 11.5,
+      "center_time": 11.25,
+      "prediction": 1,
+      "ground_truth": 1,
+      "condition": "Pathological"
+    },
+    {
+      "start_time": 4.5,
+      "end_time": 5.0,
+      "center_time": 4.75,
+      "prediction": 1,
+      "ground_truth": 1,
+      "condition": "Pathological"
+    },
+    {
+      "start_time": 19.0,
+      "end_time": 19.5,
+      "center_time": 19.25,
+      "prediction": 1,
+      "ground_truth": 1,
+      "condition": "Pathological"
+    },
+    {
+      "start_time": 8.5,
+      "end_time": 9.0,
+      "center_time": 8.75,
+      "prediction": 1,
+      "ground_truth": 1,
+      "condition": "Pathological"
+    },
+    {
+      "start_time": 13.5,
+      "end_time": 14.0,
+      "center_time": 13.75,
+      "prediction": 0,
+      "ground_truth": 1,
+      "condition": "Pathological"
+    }
+  ],
+  "H001": [
+    {
+      "start_time": 29.5,
+      "end_time": 30.0,
+      "center_time": 29.75,
+      "prediction": 0,
+      "ground_truth": 0,
+      "condition": "Healthy"
+    },
+    {
+      "start_time": 4.5,
+      "end_time": 5.0,
+      "center_time": 4.75,
+      "prediction": 0,
+      "ground_truth": 0,
+      "condition": "Healthy"
+    },
+    {
+      "start_time": 20.5,
+      "end_time": 21.0,
+      "center_time": 20.75,
+      "prediction": 1,
+      "ground_truth": 1,
+      "condition": "Healthy"
+    },
+    {
+      "start_time": 24.5,
+      "end_time": 25.0,
+      "center_time": 24.75,
+      "prediction": 0,
+      "ground_truth": 0,
+      "condition": "Healthy"
+    },
+    {
+      "start_time": 25.0,
+      "end_time": 25.5,
+      "center_time": 25.25,
+      "prediction": 0,
+      "ground_truth": 0,
+      "condition": "Healthy"
+    },
+    {
+      "start_time": 12.0,
+      "end_time": 12.5,
+      "center_time": 12.25,
+      "prediction": 1,
+      "ground_truth": 1,
+      "condition": "Healthy"
+    },
+    {
+      "start_time": 24.0,
+      "end_time": 24.5,
+      "center_time": 24.25,
+      "prediction": 1,
+      "ground_truth": 1,
+      "condition": "Healthy"
+    },
+    {
+      "start_time": 7.5,
+      "end_time": 8.0,
+      "center_time": 7.75,
+      "prediction": 0,
+      "ground_truth": 0,
+      "condition": "Healthy"
+    },
+    {
+      "start_time": 27.0,
+      "end_time": 27.5,
+      "center_time": 27.25,
+      "prediction": 1,
+      "ground_truth": 1,
+      "condition": "Healthy"
+    },
+    {
+      "start_time": 1.0,
+      "end_time": 1.5,
+      "center_time": 1.25,
+      "prediction": 0,
+      "ground_truth": 0,
+      "condition": "Healthy"
+    }
+  ],
+  "H003": [
+    {
+      "start_time": 9.0,
+      "end_time": 9.5,
+      "center_time": 9.25,
+      "prediction": 0,
+      "ground_truth": 0,
+      "condition": "Healthy"
+    },
+    {
+      "start_time": 13.0,
+      "end_time": 13.5,
+      "center_time": 13.25,
+      "prediction": 0,
+      "ground_truth": 1,
+      "condition": "Healthy"
+    },
+    {
+      "start_time": 27.0,
+      "end_time": 27.5,
+      "center_time": 27.25,
+      "prediction": 0,
+      "ground_truth": 1,
+      "condition": "Healthy"
+    },
+    {
+      "start_time": 21.0,
+      "end_time": 21.5,
+      "center_time": 21.25,
+      "prediction": 0,
+      "ground_truth": 0,
+      "condition": "Healthy"
+    },
+    {
+      "start_time": 7.5,
+      "end_time": 8.0,
+      "center_time": 7.75,
+      "prediction": 0,
+      "ground_truth": 1,
+      "condition": "Healthy"
+    },
+    {
+      "start_time": 1.5,
+      "end_time": 2.0,
+      "center_time": 1.75,
+      "prediction": 0,
+      "ground_truth": 0,
+      "condition": "Healthy"
+    },
+    {
+      "start_time": 18.0,
+      "end_time": 18.5,
+      "center_time": 18.25,
+      "prediction": 0,
+      "ground_truth": 1,
+      "condition": "Healthy"
+    },
+    {
+      "start_time": 8.5,
+      "end_time": 9.0,
+      "center_time": 8.75,
+      "prediction": 0,
+      "ground_truth": 1,
+      "condition": "Healthy"
+    },
+    {
+      "start_time": 18.5,
+      "end_time": 19.0,
+      "center_time": 18.75,
+      "prediction": 0,
+      "ground_truth": 1,
+      "condition": "Healthy"
+    },
+    {
+      "start_time": 26.0,
+      "end_time": 26.5,
+      "center_time": 26.25,
+      "prediction": 0,
+      "ground_truth": 0,
+      "condition": "Healthy"
+    },
+    {
+      "start_time": 0.0,
+      "end_time": 0.5,
+      "center_time": 0.25,
+      "prediction": 0,
+      "ground_truth": 0,
+      "condition": "Healthy"
+    },
+    {
+      "start_time": 15.5,
+      "end_time": 16.0,
+      "center_time": 15.75,
+      "prediction": 0,
+      "ground_truth": 1,
+      "condition": "Healthy"
+    }
+  ],
+  "KP003_WWS_1": [
+    {
+      "start_time": 15.5,
+      "end_time": 16.0,
+      "center_time": 15.75,
+      "prediction": 1,
+      "ground_truth": 1,
+      "condition": "Pathological"
+    },
+    {
+      "start_time": 13.0,
+      "end_time": 13.5,
+      "center_time": 13.25,
+      "prediction": 1,
+      "ground_truth": 0,
+      "condition": "Pathological"
+    },
+    {
+      "start_time": 22.5,
+      "end_time": 23.0,
+      "center_time": 22.75,
+      "prediction": 0,
+      "ground_truth": 0,
+      "condition": "Pathological"
+    },
+    {
+      "start_time": 16.5,
+      "end_time": 17.0,
+      "center_time": 16.75,
+      "prediction": 0,
+      "ground_truth": 1,
+      "condition": "Pathological"
+    },
+    {
+      "start_time": 17.0,
+      "end_time": 17.5,
+      "center_time": 17.25,
+      "prediction": 1,
+      "ground_truth": 1,
+      "condition": "Pathological"
+    },
+    {
+      "start_time": 19.5,
+      "end_time": 20.0,
+      "center_time": 19.75,
+      "prediction": 1,
+      "ground_truth": 0,
+      "condition": "Pathological"
+    },
+    {
+      "start_time": 20.5,
+      "end_time": 21.0,
+      "center_time": 20.75,
+      "prediction": 1,
+      "ground_truth": 0,
+      "condition": "Pathological"
+    },
+    {
+      "start_time": 18.0,
+      "end_time": 18.5,
+      "center_time": 18.25,
+      "prediction": 1,
+      "ground_truth": 1,
+      "condition": "Pathological"
+    },
+    {
+      "start_time": 10.0,
+      "end_time": 10.5,
+      "center_time": 10.25,
+      "prediction": 1,
+      "ground_truth": 1,
+      "condition": "Pathological"
+    },
+    {
+      "start_time": 0.0,
+      "end_time": 0.5,
+      "center_time": 0.25,
+      "prediction": 0,
+      "ground_truth": 0,
+      "condition": "Pathological"
+    },
+    {
+      "start_time": 29.0,
+      "end_time": 29.5,
+      "center_time": 29.25,
+      "prediction": 0,
+      "ground_truth": 0,
+      "condition": "Pathological"
+    },
+    {
+      "start_time": 5.0,
+      "end_time": 5.5,
+      "center_time": 5.25,
+      "prediction": 1,
+      "ground_truth": 0,
+      "condition": "Pathological"
+    },
+    {
+      "start_time": 12.5,
+      "end_time": 13.0,
+      "center_time": 12.75,
+      "prediction": 1,
+      "ground_truth": 0,
+      "condition": "Pathological"
+    },
+    {
+      "start_time": 20.0,
+      "end_time": 20.5,
+      "center_time": 20.25,
+      "prediction": 0,
+      "ground_truth": 0,
+      "condition": "Pathological"
+    }
+  ],
+  "KP001_WWS": [
+    {
+      "start_time": 16.5,
+      "end_time": 17.0,
+      "center_time": 16.75,
+      "prediction": 1,
+      "ground_truth": 0,
+      "condition": "Pathological"
+    },
+    {
+      "start_time": 2.0,
+      "end_time": 2.5,
+      "center_time": 2.25,
+      "prediction": 1,
+      "ground_truth": 1,
+      "condition": "Pathological"
+    },
+    {
+      "start_time": 3.0,
+      "end_time": 3.5,
+      "center_time": 3.25,
+      "prediction": 0,
+      "ground_truth": 0,
+      "condition": "Pathological"
+    },
+    {
+      "start_time": 23.5,
+      "end_time": 24.0,
+      "center_time": 23.75,
+      "prediction": 1,
+      "ground_truth": 0,
+      "condition": "Pathological"
+    },
+    {
+      "start_time": 24.0,
+      "end_time": 24.5,
+      "center_time": 24.25,
+      "prediction": 0,
+      "ground_truth": 0,
+      "condition": "Pathological"
+    },
+    {
+      "start_time": 10.0,
+      "end_time": 10.5,
+      "center_time": 10.25,
+      "prediction": 1,
+      "ground_truth": 1,
+      "condition": "Pathological"
+    },
+    {
+      "start_time": 16.0,
+      "end_time": 16.5,
+      "center_time": 16.25,
+      "prediction": 1,
+      "ground_truth": 1,
+      "condition": "Pathological"
+    },
+    {
+      "start_time": 22.0,
+      "end_time": 22.5,
+      "center_time": 22.25,
+      "prediction": 1,
+      "ground_truth": 1,
+      "condition": "Pathological"
+    }
+  ],
+  "KP007_WWS": [
+    {
+      "start_time": 1.5,
+      "end_time": 2.0,
+      "center_time": 1.75,
+      "prediction": 1,
+      "ground_truth": 1,
+      "condition": "Pathological"
+    },
+    {
+      "start_time": 26.5,
+      "end_time": 27.0,
+      "center_time": 26.75,
+      "prediction": 1,
+      "ground_truth": 1,
+      "condition": "Pathological"
+    },
+    {
+      "start_time": 19.5,
+      "end_time": 20.0,
+      "center_time": 19.75,
+      "prediction": 0,
+      "ground_truth": 0,
+      "condition": "Pathological"
+    },
+    {
+      "start_time": 15.5,
+      "end_time": 16.0,
+      "center_time": 15.75,
+      "prediction": 0,
+      "ground_truth": 0,
+      "condition": "Pathological"
+    },
+    {
+      "start_time": 5.5,
+      "end_time": 6.0,
+      "center_time": 5.75,
+      "prediction": 1,
+      "ground_truth": 0,
+      "condition": "Pathological"
+    },
+    {
+      "start_time": 10.5,
+      "end_time": 11.0,
+      "center_time": 10.75,
+      "prediction": 1,
+      "ground_truth": 1,
+      "condition": "Pathological"
+    },
+    {
+      "start_time": 5.0,
+      "end_time": 5.5,
+      "center_time": 5.25,
+      "prediction": 1,
+      "ground_truth": 1,
+      "condition": "Pathological"
+    }
+  ],
+  "KP008_WWS": [
+    {
+      "start_time": 25.0,
+      "end_time": 25.5,
+      "center_time": 25.25,
+      "prediction": 1,
+      "ground_truth": 1,
+      "condition": "Pathological"
+    },
+    {
+      "start_time": 26.0,
+      "end_time": 26.5,
+      "center_time": 26.25,
+      "prediction": 1,
+      "ground_truth": 1,
+      "condition": "Pathological"
+    },
+    {
+      "start_time": 27.0,
+      "end_time": 27.5,
+      "center_time": 27.25,
+      "prediction": 0,
+      "ground_truth": 0,
+      "condition": "Pathological"
+    },
+    {
+      "start_time": 16.0,
+      "end_time": 16.5,
+      "center_time": 16.25,
+      "prediction": 1,
+      "ground_truth": 1,
+      "condition": "Pathological"
+    },
+    {
+      "start_time": 16.5,
+      "end_time": 17.0,
+      "center_time": 16.75,
+      "prediction": 1,
+      "ground_truth": 1,
+      "condition": "Pathological"
+    },
+    {
+      "start_time": 29.0,
+      "end_time": 29.5,
+      "center_time": 29.25,
+      "prediction": 1,
+      "ground_truth": 0,
+      "condition": "Pathological"
+    },
+    {
+      "start_time": 2.0,
+      "end_time": 2.5,
+      "center_time": 2.25,
+      "prediction": 1,
+      "ground_truth": 1,
+      "condition": "Pathological"
+    }
+  ],
+  "KP010_WWS": [
+    {
+      "start_time": 24.0,
+      "end_time": 24.5,
+      "center_time": 24.25,
+      "prediction": 1,
+      "ground_truth": 1,
+      "condition": "Pathological"
+    },
+    {
+      "start_time": 10.0,
+      "end_time": 10.5,
+      "center_time": 10.25,
+      "prediction": 0,
+      "ground_truth": 0,
+      "condition": "Pathological"
+    },
+    {
+      "start_time": 16.0,
+      "end_time": 16.5,
+      "center_time": 16.25,
+      "prediction": 1,
+      "ground_truth": 1,
+      "condition": "Pathological"
+    },
+    {
+      "start_time": 23.0,
+      "end_time": 23.5,
+      "center_time": 23.25,
+      "prediction": 0,
+      "ground_truth": 0,
+      "condition": "Pathological"
+    },
+    {
+      "start_time": 0.5,
+      "end_time": 1.0,
+      "center_time": 0.75,
+      "prediction": 1,
+      "ground_truth": 1,
+      "condition": "Pathological"
+    },
+    {
+      "start_time": 19.5,
+      "end_time": 20.0,
+      "center_time": 19.75,
+      "prediction": 1,
+      "ground_truth": 0,
+      "condition": "Pathological"
+    },
+    {
+      "start_time": 11.5,
+      "end_time": 12.0,
+      "center_time": 11.75,
+      "prediction": 1,
+      "ground_truth": 0,
+      "condition": "Pathological"
+    },
+    {
+      "start_time": 9.5,
+      "end_time": 10.0,
+      "center_time": 9.75,
+      "prediction": 1,
+      "ground_truth": 1,
+      "condition": "Pathological"
+    },
+    {
+      "start_time": 3.5,
+      "end_time": 4.0,
+      "center_time": 3.75,
+      "prediction": 1,
+      "ground_truth": 1,
+      "condition": "Pathological"
+    },
+    {
+      "start_time": 2.0,
+      "end_time": 2.5,
+      "center_time": 2.25,
+      "prediction": 1,
+      "ground_truth": 1,
+      "condition": "Pathological"
+    },
+    {
+      "start_time": 28.0,
+      "end_time": 28.5,
+      "center_time": 28.25,
+      "prediction": 1,
+      "ground_truth": 0,
+      "condition": "Pathological"
+    }
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "classes": [
+    "Bronchi",
+    "Crackle",
+    "Healthy",
+    "Rhonchi",
+    "Unknown",
+    "Wheezing"
+  ],
+  "final_macro_f1": 0.03333333333333333,
+  "final_macro_ap": 0.33300264550264547,
+  "support_per_class": {
+    "Bronchi": 2,
+    "Crackle": 1,
+    "Healthy": 1,
+    "Rhonchi": 1,
+    "Unknown": 3,
+    "Wheezing": 1
+  },
+  "best_model_path": "/Users/yunhwang/Desktop/Stethoscope_Project/Development/2) Image/2D CNN/Abnormal_Breathing/A/Scalogram/Result/best_model_2025-09-29_09-13-49.pt",
+  "preds_csv": "/Users/yunhwang/Desktop/Stethoscope_Project/Development/2) Image/2D CNN/Abnormal_Breathing/A/Scalogram/Result/preds_2025-09-29_09-13-49.csv"
+}

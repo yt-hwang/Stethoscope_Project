@@ -1,0 +1,32 @@
+{
+  "method_code": "A2",
+  "method_name": "NoSeg_SpectralGating",
+  "config": {
+    "segmentation": false,
+    "spectral_gating": true,
+    "name": "NoSeg_SpectralGating"
+  },
+  "n_files": 29,
+  "n_segments": 29,
+  "feature_shape": [
+    29,
+    768
+  ],
+  "extraction_time": 9.24851393699646,
+  "clustering_results": {
+    "k3": {
+      "silhouette_score": 0.19721962508002622,
+      "n_clusters": 3
+    },
+    "k4": {
+      "silhouette_score": 0.17211483764985516,
+      "n_clusters": 4
+    },
+    "k5": {
+      "silhouette_score": 0.13466817682698987,
+      "n_clusters": 5
+    }
+  },
+  "best_silhouette": 0.19721962508002622,
+  "timestamp": "2025-09-20T10:43:09.316336"
+}

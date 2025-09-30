@@ -1,0 +1,33 @@
+{
+  "method_code": "D1",
+  "method_name": "Seg_HighPass_Bandpass",
+  "config": {
+    "segmentation": true,
+    "highpass": true,
+    "bandpass": true,
+    "name": "Seg_HighPass_Bandpass"
+  },
+  "n_files": 29,
+  "n_segments": 89,
+  "feature_shape": [
+    89,
+    768
+  ],
+  "extraction_time": 28.111711025238037,
+  "clustering_results": {
+    "k3": {
+      "silhouette_score": 0.25629939081040887,
+      "n_clusters": 3
+    },
+    "k4": {
+      "silhouette_score": 0.2438391628268201,
+      "n_clusters": 4
+    },
+    "k5": {
+      "silhouette_score": 0.2667006856261322,
+      "n_clusters": 5
+    }
+  },
+  "best_silhouette": 0.2667006856261322,
+  "timestamp": "2025-09-20T10:51:28.925403"
+}

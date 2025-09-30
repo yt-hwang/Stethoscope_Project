@@ -1,0 +1,76 @@
+CLUSTER MEMBERSHIP ANALYSIS - C0_Seg_NoPre (Original Handcrafted Features)
+k=4, Silhouette Score=0.551
+================================================================================
+
+CLUSTER 0 (132 segments):
+------------------------------
+  WEBSS-007    : 30 segments ( 22.7%)
+  KP012        : 19 segments ( 14.4%)
+  WEBSS-002    : 19 segments ( 14.4%)
+  WEBSS-003    : 14 segments ( 10.6%)
+  WEBSS-006    : 14 segments ( 10.6%)
+  KP010        : 10 segments (  7.6%)
+  KP011        :  8 segments (  6.1%)
+  WEBSS-005    :  5 segments (  3.8%)
+  KP009        :  2 segments (  1.5%)
+  KP003        :  2 segments (  1.5%)
+  H001         :  1 segments (  0.8%)
+  H002         :  1 segments (  0.8%)
+  H003         :  1 segments (  0.8%)
+  H004         :  1 segments (  0.8%)
+  KP001        :  1 segments (  0.8%)
+  KP002        :  1 segments (  0.8%)
+  KP004        :  1 segments (  0.8%)
+  KP005        :  1 segments (  0.8%)
+  KP006        :  1 segments (  0.8%)
+
+CLUSTER 1 (110 segments):
+------------------------------
+  KP003        : 20 segments ( 18.2%)
+  KP008        : 10 segments (  9.1%)
+  H002         :  9 segments (  8.2%)
+  H003         :  9 segments (  8.2%)
+  H001         :  8 segments (  7.3%)
+  H004         :  8 segments (  7.3%)
+  KP001        :  8 segments (  7.3%)
+  KP002        :  7 segments (  6.4%)
+  KP004        :  6 segments (  5.5%)
+  KP006        :  6 segments (  5.5%)
+  KP007        :  6 segments (  5.5%)
+  KP009        :  5 segments (  4.5%)
+  KP005        :  4 segments (  3.6%)
+  WEBSS-007    :  2 segments (  1.8%)
+  WEBSS-003    :  1 segments (  0.9%)
+  WEBSS-005    :  1 segments (  0.9%)
+
+CLUSTER 2 (39 segments):
+------------------------------
+  KP005        :  7 segments ( 17.9%)
+  KP004        :  5 segments ( 12.8%)
+  KP006        :  5 segments ( 12.8%)
+  KP002        :  4 segments ( 10.3%)
+  KP007        :  4 segments ( 10.3%)
+  H004         :  3 segments (  7.7%)
+  KP001        :  3 segments (  7.7%)
+  KP003        :  2 segments (  5.1%)
+  KP009        :  2 segments (  5.1%)
+  H003         :  1 segments (  2.6%)
+  KP008        :  1 segments (  2.6%)
+  WEBSS-003    :  1 segments (  2.6%)
+  WEBSS-005    :  1 segments (  2.6%)
+
+CLUSTER 3 (49 segments):
+------------------------------
+  WEBSS-005    : 15 segments ( 30.6%)
+  WEBSS-006    :  8 segments ( 16.3%)
+  WEBSS-003    :  6 segments ( 12.2%)
+  H001         :  3 segments (  6.1%)
+  KP011        :  3 segments (  6.1%)
+  KP012        :  3 segments (  6.1%)
+  WEBSS-002    :  3 segments (  6.1%)
+  H002         :  2 segments (  4.1%)
+  KP009        :  2 segments (  4.1%)
+  H003         :  1 segments (  2.0%)
+  KP007        :  1 segments (  2.0%)
+  KP010        :  1 segments (  2.0%)
+  WEBSS-007    :  1 segments (  2.0%)

@@ -1,0 +1,22 @@
+{
+  "segment_length": 1.0,
+  "method_type": "Ensemble",
+  "best_method": "Hard Voting",
+  "best_score": 0.7307692307692307,
+  "individual_scores": {
+    "Random Forest": 0.7051282051282052,
+    "SVM": 0.5897435897435898,
+    "Logistic Regression": 0.7435897435897436
+  },
+  "corrected_excel_parsing": true,
+  "timestamp": "2025-09-21T20:36:48.160826",
+  "ensemble_scores": {
+    "Hard Voting": 0.7307692307692307,
+    "Soft Voting": 0.6923076923076923,
+    "RF Heavy (3:1:1)": 0.7051282051282052,
+    "SVM Heavy (1:3:1)": 0.6410256410256411,
+    "LR Heavy (1:1:3)": 0.717948717948718,
+    "Best 2 Models": 0.717948717948718
+  },
+  "improvement": -0.012820512820512886
+}

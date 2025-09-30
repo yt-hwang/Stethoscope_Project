@@ -1,0 +1,20 @@
+{
+  "backbone": "efficientnet_b0",
+  "classes": [
+    "Crackle",
+    "Healthy",
+    "Wheezing"
+  ],
+  "n_params_total": 4011391,
+  "n_params_trainable": 2747423,
+  "val_loss": 0.987497866153717,
+  "val_macro_f1": 0.7777777777777777,
+  "val_macro_ap": 0.8333333333333334,
+  "n_train": 18,
+  "n_val": 5,
+  "patient_split": true,
+  "stratified_by_label": true,
+  "excluded_labels": [
+    "Unknown"
+  ]
+}
