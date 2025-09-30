@@ -1,0 +1,28 @@
+{
+  "backbone": "efficientnet_b0",
+  "classes": [
+    "Crackle",
+    "Wheezing"
+  ],
+  "n_params_total": 4010110,
+  "n_params_trainable": 1131954,
+  "val_loss": 0.7023463845252991,
+  "val_macro_f1": 0.3333333333333333,
+  "val_macro_ap": 0.6666666666666666,
+  "n_train": 15,
+  "n_val": 4,
+  "patient_split": true,
+  "stratified_by_label": true,
+  "excluded_labels": [
+    "Unknown"
+  ],
+  "imbalance_strategy": "loss",
+  "train_class_counts": {
+    "Crackle": 9,
+    "Wheezing": 6
+  },
+  "val_class_counts": {
+    "Crackle": 2,
+    "Wheezing": 2
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "backbone": "convnext_tiny",
+  "classes": [
+    "Crackle",
+    "Wheezing"
+  ],
+  "n_params_total": 27821666,
+  "n_params_trainable": 14292482,
+  "val_loss": 0.7782368063926697,
+  "val_macro_f1": 0.3333333333333333,
+  "val_macro_ap": 0.41666666666666663,
+  "n_train": 15,
+  "n_val": 4,
+  "patient_split": true,
+  "stratified_by_label": true,
+  "excluded_labels": [
+    "Unknown"
+  ],
+  "imbalance_strategy": "loss",
+  "train_class_counts": {
+    "Crackle": 9,
+    "Wheezing": 6
+  },
+  "val_class_counts": {
+    "Crackle": 2,
+    "Wheezing": 2
+  }
+}

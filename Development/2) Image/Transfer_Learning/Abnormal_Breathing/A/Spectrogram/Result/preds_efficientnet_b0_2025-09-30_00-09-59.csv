@@ -1,0 +1,6 @@
+path,y_true,true_label,y_pred,pred_label,top1_conf
+D:\Stethoscope_Project\Development\2) Image\Transfer_Learning\Abnormal_Breathing\A\Spectrogram\Processed Data\Crackle\KP019_WWS_1.png,0,Crackle,2,Rhonchi,27.649869918823242
+D:\Stethoscope_Project\Development\2) Image\Transfer_Learning\Abnormal_Breathing\A\Spectrogram\Processed Data\Crackle\KP019_WWS_2.png,0,Crackle,2,Rhonchi,28.145519256591797
+D:\Stethoscope_Project\Development\2) Image\Transfer_Learning\Abnormal_Breathing\A\Spectrogram\Processed Data\Healthy\H001.png,1,Healthy,2,Rhonchi,30.843994140625
+D:\Stethoscope_Project\Development\2) Image\Transfer_Learning\Abnormal_Breathing\A\Spectrogram\Processed Data\Rhonchi\KP010_WWS.png,2,Rhonchi,1,Healthy,25.994152069091797
+D:\Stethoscope_Project\Development\2) Image\Transfer_Learning\Abnormal_Breathing\A\Spectrogram\Processed Data\Wheezing\KP004_WWS.png,3,Wheezing,3,Wheezing,30.562639236450195

@@ -1,0 +1,34 @@
+{
+  "backbone": "efficientnet_b0",
+  "classes": [
+    "Crackle",
+    "Healthy",
+    "Rhonchi",
+    "Wheezing"
+  ],
+  "n_params_total": 4012672,
+  "n_params_trainable": 1134516,
+  "val_loss": 1.4672558307647705,
+  "val_macro_f1": 0.2,
+  "val_macro_ap": 0.393452380952381,
+  "n_train": 19,
+  "n_val": 8,
+  "patient_split": true,
+  "stratified_by_label": true,
+  "excluded_labels": [
+    "Unknown"
+  ],
+  "imbalance_strategy": "loss",
+  "train_class_counts": {
+    "Crackle": 7,
+    "Wheezing": 6,
+    "Healthy": 3,
+    "Rhonchi": 3
+  },
+  "val_class_counts": {
+    "Crackle": 4,
+    "Wheezing": 2,
+    "Healthy": 1,
+    "Rhonchi": 1
+  }
+}

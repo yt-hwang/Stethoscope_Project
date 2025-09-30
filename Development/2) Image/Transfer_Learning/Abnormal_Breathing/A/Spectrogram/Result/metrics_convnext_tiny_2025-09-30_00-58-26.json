@@ -1,0 +1,34 @@
+{
+  "backbone": "convnext_tiny",
+  "classes": [
+    "Crackle",
+    "Healthy",
+    "Rhonchi",
+    "Wheezing"
+  ],
+  "n_params_total": 27823204,
+  "n_params_trainable": 14294020,
+  "val_loss": 1.483864665031433,
+  "val_macro_f1": 0.2,
+  "val_macro_ap": 0.2976190476190476,
+  "n_train": 19,
+  "n_val": 8,
+  "patient_split": true,
+  "stratified_by_label": true,
+  "excluded_labels": [
+    "Unknown"
+  ],
+  "imbalance_strategy": "loss",
+  "train_class_counts": {
+    "Crackle": 7,
+    "Wheezing": 6,
+    "Healthy": 3,
+    "Rhonchi": 3
+  },
+  "val_class_counts": {
+    "Crackle": 4,
+    "Wheezing": 2,
+    "Healthy": 1,
+    "Rhonchi": 1
+  }
+}

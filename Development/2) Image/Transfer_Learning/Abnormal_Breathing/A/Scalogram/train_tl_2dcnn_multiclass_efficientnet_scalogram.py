@@ -7,7 +7,7 @@ from collections import Counter
 import argparse
 import numpy as np
 import pandas as pd
-from PIL import Image
+from PIL import Image, UnidentifiedImageError
 
 import torch
 import torch.nn as nn
@@ -15,7 +15,10 @@ import torch.nn.functional as F
 from torch.utils.data import Dataset, DataLoader, WeightedRandomSampler
 from torchvision import transforms, models
 
-from sklearn.metrics import classification_report, confusion_matrix, f1_score, average_precision_score, precision_recall_curve
+from sklearn.metrics import (
+    classification_report, confusion_matrix, f1_score,
+    average_precision_score, precision_recall_curve
+)
 from sklearn.model_selection import StratifiedGroupKFold
 
 import matplotlib
@@ -23,8 +26,14 @@ matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 
 # ---- Paths: choose spectrogram or scalogram ----
-IMG_ROOT = Path("/Users/yunhwang/Desktop/Stethoscope_Project/Development/2) Image/Transfer_Learning/Abnormal_Breathing/A/Scalogram/Processed Data")
-OUT_ROOT = Path("/Users/yunhwang/Desktop/Stethoscope_Project/Development/2) Image/Transfer_Learning/Abnormal_Breathing/A/Scalogram/Result")
+# Mac
+# IMG_ROOT = Path("/Users/yunhwang/Desktop/Stethoscope_Project/Development/2) Image/Transfer_Learning/Abnormal_Breathing/A/Scalogram/Processed Data")
+# OUT_ROOT = Path("/Users/yunhwang/Desktop/Stethoscope_Project/Development/2) Image/Transfer_Learning/Abnormal_Breathing/A/Scalogram/Result")
+
+# Windows
+IMG_ROOT = Path("D:\\Stethoscope_Project\\Development\\2) Image\\Transfer_Learning\\Abnormal_Breathing\\A\\Scalogram\\Processed Data")
+OUT_ROOT = Path("D:\\Stethoscope_Project\\Development\\2) Image\\Transfer_Learning\\Abnormal_Breathing\\A\\Scalogram\\Result")
+
 # (switch to scalogram by changing the two lines above)
 
 IMG_SIZE = 224
@@ -36,15 +45,14 @@ LR_HEAD = 1e-3
 LR_BACKBONE = 1e-4
 WEIGHT_DECAY = 1e-4
 LABEL_SMOOTHING = 0.05
-NUM_WORKERS = 0
-TEST_SIZE = 0.2
+NUM_WORKERS = 2
+TEST_SIZE = 0.15
 SPLIT_RETRIES = 200
-MIN_IMAGES_PER_CLASS = 3
-TRAIN_AUG_PROB = 0.5
+MIN_IMAGES_PER_CLASS = 5
 BACKBONE = "efficientnet_b0"  # or "convnext_tiny"
 
 IMG_EXTS = {".png", ".jpg", ".jpeg", ".bmp"}
-EXCLUDE_LABELS = {"Unknown"}  # <<< NEW: drop these labels entirely
+EXCLUDE_LABELS = {"Unknown"}  # drop these labels entirely
 
 def parse_args():
     ap = argparse.ArgumentParser()
@@ -63,6 +71,16 @@ def parse_args():
     ap.add_argument("--test_size", type=float, default=TEST_SIZE)
     ap.add_argument("--min_per_class", type=int, default=MIN_IMAGES_PER_CLASS)
     ap.add_argument("--split_retries", type=int, default=SPLIT_RETRIES)
+    ap.add_argument("--imbalance_strategy", type=str, default="loss",
+                    choices=["none", "sampler", "loss", "both"],
+                    help="불균형 처리 방식 선택: sampler | loss | both | none (기본: loss)")
+    ap.add_argument("--save_softmax", action="store_true",
+                help="예측 결과 CSV에 클래스별 softmax 확률(%)을 저장")
+    ap.add_argument("--topk", type=int, default=3,
+                help="Top-k 요약 저장 (기본 3)")
+    ap.add_argument("--print_examples", type=int, default=0,
+                help="에폭마다 소프트맥스 예시 n개를 콘솔에 출력(0이면 비활성)")
+
     return ap.parse_args()
 
 def set_seed(seed=42):
@@ -127,11 +145,12 @@ class ImgDataset(Dataset):
         self.df = df.reset_index(drop=True)
         self.classes = classes
         self.cls2idx = {c:i for i,c in enumerate(classes)}
+        # 의미 보존형 증강: 시간축(가로) 이동만 허용, 수직/회전/스케일 제거
         if train:
             self.tx = transforms.Compose([
                 transforms.Resize((img_size, img_size)),
                 transforms.RandomApply([transforms.ColorJitter(0.10,0.10,0.05,0.02)], p=0.5),
-                transforms.RandomApply([transforms.RandomAffine(degrees=5, translate=(0.02,0.02), scale=(0.98,1.02))], p=0.5),
+                transforms.RandomApply([transforms.RandomAffine(degrees=0, translate=(0.05,0.0))], p=0.5),
                 transforms.ToTensor(),
                 transforms.Normalize(mean=[0.485,0.456,0.406], std=[0.229,0.224,0.225]),
             ])
@@ -141,8 +160,21 @@ class ImgDataset(Dataset):
                 transforms.ToTensor(),
                 transforms.Normalize(mean=[0.485,0.456,0.406], std=[0.229,0.224,0.225]),
             ])
+
     def __len__(self): return len(self.df)
+
     def __getitem__(self, i):
+        # 간헐적 이미지 로드 실패 대비
+        for _ in range(3):
+            r = self.df.iloc[i]
+            try:
+                x = Image.open(r.path).convert("RGB")
+                x = self.tx(x)
+                y = self.cls2idx[r.label]
+                return x, y, r.path
+            except (FileNotFoundError, UnidentifiedImageError, OSError):
+                i = np.random.randint(0, len(self.df))
+        # 그래도 실패하면 마지막 시도에서 예외
         r = self.df.iloc[i]
         x = Image.open(r.path).convert("RGB")
         x = self.tx(x)
@@ -183,9 +215,20 @@ def eval_epoch(model, dl, device, label_smoothing=0.0):
     y = np.concatenate(ys); p = np.concatenate(ps)
     pred = p.argmax(1)
     macro_f1 = f1_score(y, pred, average="macro", zero_division=0)
-    try: ap = average_precision_score(y, p, average="macro")
-    except: ap = None
-    return total/n, macro_f1, ap, y, pred, p, paths
+
+    # 멀티클래스 macro-AP를 안정적으로: 원-핫으로 클래스별 AP 계산 후 평균
+    classes = p.shape[1]
+    y_onehot = np.zeros((len(y), classes), dtype=int)
+    for i,lab in enumerate(y): y_onehot[i, lab] = 1
+    aps = []
+    for c in range(classes):
+        try:
+            aps.append(average_precision_score(y_onehot[:,c], p[:,c]))
+        except Exception:
+            pass
+    macro_ap = float(np.mean(aps)) if len(aps) > 0 else None
+
+    return total/n, macro_f1, macro_ap, y, pred, p, paths
 
 def train_epoch(model, dl, device, criterion, optimizer, use_amp=False):
     model.train(True)
@@ -207,14 +250,26 @@ def train_epoch(model, dl, device, criterion, optimizer, use_amp=False):
     y = np.concatenate(ys); p = np.concatenate(ps)
     pred = p.argmax(1)
     macro_f1 = f1_score(y, pred, average="macro", zero_division=0)
-    try: ap = average_precision_score(y, p, average="macro")
-    except: ap = None
-    return total/n, macro_f1, ap
+
+    # macro-AP(학습 모니터링용)
+    classes = p.shape[1]
+    y_onehot = np.zeros((len(y), classes), dtype=int)
+    for i,lab in enumerate(y): y_onehot[i, lab] = 1
+    aps = []
+    for c in range(classes):
+        try:
+            aps.append(average_precision_score(y_onehot[:,c], p[:,c]))
+        except Exception:
+            pass
+    macro_ap = float(np.mean(aps)) if len(aps) > 0 else None
+
+    return total/n, macro_f1, macro_ap
 
 def plot_curves_and_cm(out_dir, classes, y_true, prob, y_pred, tag):
     out_dir.mkdir(parents=True, exist_ok=True)
     present = sorted(list(set(y_true.tolist())))
-    # PR curves
+
+    # PR curves (클래스별)
     y_onehot = np.zeros((len(y_true), len(classes)), dtype=np.int64)
     for i,lab in enumerate(y_true): y_onehot[i, lab] = 1
     plt.figure(figsize=(7,6))
@@ -225,6 +280,7 @@ def plot_curves_and_cm(out_dir, classes, y_true, prob, y_pred, tag):
     plt.xlabel("Recall"); plt.ylabel("Precision"); plt.title(f"PR Curves ({tag})"); plt.legend()
     plt.grid(True, alpha=0.3); plt.tight_layout()
     plt.savefig(out_dir / f"curves_{tag}.png", dpi=150); plt.close()
+
     # Confusion matrix
     cm = confusion_matrix(y_true, y_pred, labels=present)
     plt.figure(figsize=(6,5))
@@ -250,11 +306,11 @@ def main():
 
     df = list_images(IMG_ROOT)
 
-    # fix mislabels (harmless if already correct)
+    # (Optional) mislabel fix (무해)
     df.loc[df['path'].str.contains("KP002_WWS_1"), "label"] = "Crackle"
     df.loc[df['path'].str.contains("KP002_WWS_2"), "label"] = "Crackle"
 
-    # ===== NEW: drop excluded labels (e.g., Unknown) BEFORE stats/split =====
+    # 라벨 제외 (예: Unknown)
     if EXCLUDE_LABELS:
         before = len(df)
         df = df[~df['label'].isin(EXCLUDE_LABELS)].copy()
@@ -265,19 +321,19 @@ def main():
     print(f"n={len(df)} | classes={sorted(df['label'].unique().tolist())}")
     print(df['label'].value_counts())
 
-    # drop ultra-rare classes
+    # 희귀 라벨 제거 (클래스당 최소 이미지 수)
     cls_counts = df['label'].value_counts()
     rare = cls_counts[cls_counts < args.min_per_class].index.tolist()
     if len(rare) > 0:
         print(f"\n[Info] Dropping rare classes (count < {args.min_per_class}): {rare}")
         df = df[~df['label'].isin(rare)].copy()
 
-    # patient-based + stratified split (retry)
+    # 환자 기반 + 라벨 계층 분할 (재시도)
     tr_df, va_df = stratified_group_split(df, test_size=args.test_size,
                                           max_tries=args.split_retries,
                                           min_per_class=1, seed=42)
 
-    # ensure same class set in both
+    # train/val 모두에 존재하는 공통 클래스만 유지
     tr_classes = set(tr_df['label'].unique()); va_classes = set(va_df['label'].unique())
     common = sorted(list(tr_classes & va_classes))
     if len(common) < len(set(df['label'].unique())):
@@ -302,9 +358,16 @@ def main():
     ds_tr = ImgDataset(tr_df, classes, img_size=args.img_size, train=True)
     ds_va = ImgDataset(va_df, classes, img_size=args.img_size, train=False)
 
-    sampler = build_sampler(tr_df)
-    dl_tr = DataLoader(ds_tr, batch_size=args.bs, sampler=sampler,
-                       num_workers=NUM_WORKERS, pin_memory=(device=="cuda"))
+    # 불균형 처리 전략 선택
+    sampler = None
+    if args.imbalance_strategy in ["sampler", "both"]:
+        sampler = build_sampler(tr_df)
+        dl_tr = DataLoader(ds_tr, batch_size=args.bs, sampler=sampler,
+                           num_workers=NUM_WORKERS, pin_memory=(device=="cuda"))
+    else:
+        dl_tr = DataLoader(ds_tr, batch_size=args.bs, shuffle=True,
+                           num_workers=NUM_WORKERS, pin_memory=(device=="cuda"))
+
     dl_va = DataLoader(ds_va, batch_size=args.bs, shuffle=False,
                        num_workers=NUM_WORKERS, pin_memory=(device=="cuda"))
 
@@ -313,11 +376,16 @@ def main():
     trainable_params = sum(p.numel() for p in model.parameters() if p.requires_grad)
     print(f"\nBackbone: {args.backbone} | params: total={total_params:,} trainable(now)={trainable_params:,}")
 
-    # Linear probe
-    if args.backbone in ["efficientnet_b0", "convnext_tiny"]:
-        for p in model.features.parameters(): p.requires_grad_(False)
+    # Linear probe: features freeze
+    for p in model.features.parameters():
+        p.requires_grad_(False)
 
-    class_weights = compute_class_weights(tr_df['label'].tolist(), classes).to(device)
+    # 손실가중치 사용 여부
+    if args.imbalance_strategy in ["loss", "both"]:
+        class_weights = compute_class_weights(tr_df['label'].tolist(), classes).to(device)
+    else:
+        class_weights = None
+
     criterion = nn.CrossEntropyLoss(weight=class_weights, label_smoothing=args.label_smoothing)
 
     opt = torch.optim.AdamW(filter(lambda p: p.requires_grad, model.parameters()),
@@ -333,15 +401,27 @@ def main():
     for ep in range(1, args.epochs_lp+1):
         tr_loss, tr_f1, tr_ap = train_epoch(model, dl_tr, device, criterion, opt, use_amp=use_amp)
         va_loss, va_f1, va_ap, y_true, y_pred, prob, paths = eval_epoch(model, dl_va, device, label_smoothing=args.label_smoothing)
+        # (옵션) 소프트맥스 예시 출력
+        if args.print_examples > 0 and len(paths) > 0:
+            ex = min(args.print_examples, len(paths))
+            print("[Softmax examples - LP]")
+            for i in range(ex):
+                row_probs = prob[i]
+                top_idx = int(np.argmax(row_probs))
+                top_conf = float(row_probs[top_idx]) * 100
+                print(f"  {i+1}) {paths[i]} | pred={classes[top_idx]} ({top_conf:.1f}%) | "
+                    f"true={classes[int(y_true[i])]}")
         improved = va_f1 > best_f1 + 1e-4
         if improved:
             best_f1 = va_f1; torch.save(model.state_dict(), best_path)
-        logs.append({"phase":"LP","epoch":ep,"train_loss":tr_loss,"train_f1":tr_f1,"train_ap":float(tr_ap or 0.0),
-                     "val_loss":va_loss,"val_f1":va_f1,"val_ap":float(va_ap or 0.0),"lr":opt.param_groups[0]["lr"]})
+        logs.append({
+            "phase":"LP","epoch":ep,"train_loss":tr_loss,"train_f1":tr_f1,"train_ap":float(tr_ap or 0.0),
+            "val_loss":va_loss,"val_f1":va_f1,"val_ap":float(va_ap or 0.0),"lr":opt.param_groups[0]["lr"]
+        })
         print(f"[LP {ep:02d}/{args.epochs_lp}] train {tr_loss:.3f}/F1 {tr_f1:.3f}/AP {tr_ap} | "
               f"val {va_loss:.3f}/F1 {va_f1:.3f}/AP {va_ap} {'(*)' if improved else ''}")
 
-    # Fine-tune
+    # Fine-tune: 일부 feature unfreeze
     print("\n=== Fine-Tune ===")
     try:
         state = torch.load(best_path, map_location=device, weights_only=True)
@@ -349,12 +429,20 @@ def main():
         state = torch.load(best_path, map_location=device)
     model.load_state_dict(state)
 
+    # FT 대상 계층 보정
+    for p in model.features.parameters():
+        p.requires_grad_(False)
+
     if args.backbone == "efficientnet_b0":
-        for name,p in model.features.named_parameters():
-            if any(k in name for k in ["6","7"]): p.requires_grad_(True)
+        # features의 마지막 두 stage만 풀기(버전 안전: children() 기준)
+        feats = list(model.features.children())
+        for blk in feats[-2:]:
+            for p in blk.parameters():
+                p.requires_grad_(True)
     elif args.backbone == "convnext_tiny":
-        for name,p in model.features.named_parameters():
-            if "7" in name or "6" in name: p.requires_grad_(True)
+        # ConvNeXt: 마지막 stage만 풀기
+        for p in model.features[-1].parameters():
+            p.requires_grad_(True)
 
     opt = torch.optim.AdamW(filter(lambda p: p.requires_grad, model.parameters()),
                             lr=args.lr_backbone, weight_decay=args.weight_decay)
@@ -364,13 +452,24 @@ def main():
     for ep in range(1, args.epochs_ft+1):
         tr_loss, tr_f1, tr_ap = train_epoch(model, dl_tr, device, criterion, opt, use_amp=use_amp)
         va_loss, va_f1, va_ap, y_true, y_pred, prob, paths = eval_epoch(model, dl_va, device, label_smoothing=args.label_smoothing)
-        improved = va_f1 > best_f1 + 1e-4
+        # (옵션) 소프트맥스 예시 출력
+        if args.print_examples > 0 and len(paths) > 0:
+            ex = min(args.print_examples, len(paths))
+            print("[Softmax examples - FT]")
+            for i in range(ex):
+                row_probs = prob[i]
+                top_idx = int(np.argmax(row_probs))
+                top_conf = float(row_probs[top_idx]) * 100
+                print(f"  {i+1}) {paths[i]} | pred={classes[top_idx]} ({top_conf:.1f}%) | "
+                    f"true={classes[int(y_true[i])]}")
         if improved:
             best_f1 = va_f1; torch.save(model.state_dict(), best_path); no_imp = 0
         else:
             no_imp += 1
-        logs.append({"phase":"FT","epoch":ep,"train_loss":tr_loss,"train_f1":tr_f1,"train_ap":float(tr_ap or 0.0),
-                     "val_loss":va_loss,"val_f1":va_f1,"val_ap":float(va_ap or 0.0),"lr":opt.param_groups[0]["lr"]})
+        logs.append({
+            "phase":"FT","epoch":ep,"train_loss":tr_loss,"train_f1":tr_f1,"train_ap":float(tr_ap or 0.0),
+            "val_loss":va_loss,"val_f1":va_f1,"val_ap":float(va_ap or 0.0),"lr":opt.param_groups[0]["lr"]
+        })
         print(f"[FT {ep:02d}/{args.epochs_ft}] train {tr_loss:.3f}/F1 {tr_f1:.3f}/AP {tr_ap} | "
               f"val {va_loss:.3f}/F1 {va_f1:.3f}/AP {va_ap} {'(*)' if improved else ''}")
         sched.step()
@@ -401,15 +500,45 @@ def main():
         "patient_split": True,
         "stratified_by_label": True,
         "excluded_labels": sorted(list(EXCLUDE_LABELS)),
+        "imbalance_strategy": args.imbalance_strategy,
+        "train_class_counts": tr_df['label'].value_counts().to_dict(),
+        "val_class_counts": va_df['label'].value_counts().to_dict(),
     }
     with open(OUT_ROOT / f"metrics_{args.backbone}_{stamp}.json", "w") as f:
         json.dump(metrics, f, indent=2)
 
-    cls_map = {i:c for i,c in enumerate(classes)}
-    pred_rows = [{"path": pth, "y_true": int(yt), "y_pred": int(yp),
-                  "true_label": cls_map[int(yt)], "pred_label": cls_map[int(yp)]}
-                 for pth, yt, yp in zip(paths, y_true, y_pred)]
-    pd.DataFrame(pred_rows).to_csv(OUT_ROOT / f"preds_{args.backbone}_{stamp}.csv", index=False)
+    # 소프트맥스 확률 및 Top-k 요약 포함 저장
+    pred_rows = []
+    k = max(1, min(args.topk, len(classes)))
+    for i, (pth, yt) in enumerate(zip(paths, y_true)):
+        row = {
+            "path": pth,
+            "y_true": int(yt),
+            "true_label": classes[int(yt)],
+            "y_pred": int(y_pred[i]),
+            "pred_label": classes[int(y_pred[i])],
+        }
+
+        # --save_softmax가 켜진 경우: 클래스별 확률(%) 컬럼 추가
+        if args.save_softmax:
+            for ci, cname in enumerate(classes):
+                row[f"prob_{cname}"] = float(prob[i, ci] * 100.0)
+
+            # Top-k 요약 (예: "Crackle 42.3 | Wheeze 31.8 | Rhonchi 20.4")
+            sorted_idx = np.argsort(-prob[i])[:k]
+            topk_str = " | ".join([f"{classes[j]} {prob[i, j]*100.0:.1f}" for j in sorted_idx])
+            row["topk"] = topk_str
+
+        # 항상 저장: top-1 신뢰도(%)
+        row["top1_conf"] = float(prob[i, int(y_pred[i])] * 100.0)
+
+        pred_rows.append(row)
+
+    pred_df = pd.DataFrame(pred_rows)
+    pred_csv = OUT_ROOT / f"preds_{args.backbone}_{stamp}.csv"
+    pred_df.to_csv(pred_csv, index=False)
+    print(f"[Saved] preds with softmax: {pred_csv}")
+
 
     plot_curves_and_cm(OUT_ROOT, classes, y_true, prob, y_pred, tag=f"{args.backbone}_{stamp}")
 

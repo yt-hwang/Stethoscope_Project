@@ -16,9 +16,17 @@ import matplotlib.pyplot as plt
 import pandas as pd
 
 # ===== Paths =====
-AUDIO_ROOT = Path("/Users/yunhwang/Desktop/Stethoscope_Project/Audio shared/ML test sound list/RAW sound_ML test sound list")
-JSON_PATH  = Path("/Users/yunhwang/Desktop/Stethoscope_Project/Audio shared/breathing_nonbreathing_intervals.json")
-OUT_DIR    = Path("/Users/yunhwang/Desktop/Stethoscope_Project/Development/2) Image/2D CNN/Abnormal_Breathing/A/Scalogram/Processed Data")
+
+# Mac
+#AUDIO_ROOT = Path("/Users/yunhwang/Desktop/Stethoscope_Project/Audio shared/ML test sound list/RAW sound_ML test sound list")
+#JSON_PATH  = Path("/Users/yunhwang/Desktop/Stethoscope_Project/Development/2) Image/Transfer_Learning/Abnormal_Breathing/breathing_nonbreathing_intervals.json")
+#OUT_DIR    = Path("/Users/yunhwang/Desktop/Stethoscope_Project/Development/2) Image/Transfer_Learning/Abnormal_Breathing/A/Scalogram/Processed Data")
+
+# Windows
+AUDIO_ROOT = Path("D:\\Stethoscope_Project\\Audio shared\\ML test sound list\\RAW sound_ML test sound list")
+JSON_PATH  = Path("D:\\Stethoscope_Project\\Development\\2) Image\\Transfer_Learning\\Abnormal_Breathing\\breathing_nonbreathing_intervals.json")
+OUT_DIR    = Path("D:\\Stethoscope_Project\\Development\\2) Image\\Transfer_Learning\\Abnormal_Breathing\\A\\Scalogram\\Processed Data")
+
 OUT_DIR.mkdir(parents=True, exist_ok=True)
 MANIFEST_PATH = OUT_DIR / "manifest.csv"
 
