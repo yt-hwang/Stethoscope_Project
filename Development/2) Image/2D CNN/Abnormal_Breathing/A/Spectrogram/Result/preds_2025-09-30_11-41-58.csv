@@ -1,0 +1,5 @@
+path,y_true,y_pred,true_label,pred_label
+D:\Stethoscope_Project\Development\2) Image\2D CNN\Abnormal_Breathing\A\Spectrogram\Processed Data\Crackle\KP005_WWS.png,0,3,Crackle,Wheezing
+D:\Stethoscope_Project\Development\2) Image\2D CNN\Abnormal_Breathing\A\Spectrogram\Processed Data\Healthy\H002.png,1,3,Healthy,Wheezing
+D:\Stethoscope_Project\Development\2) Image\2D CNN\Abnormal_Breathing\A\Spectrogram\Processed Data\Rhonchi\KP010_WWS.png,2,3,Rhonchi,Wheezing
+D:\Stethoscope_Project\Development\2) Image\2D CNN\Abnormal_Breathing\A\Spectrogram\Processed Data\Wheezing\KP013_WWS.png,3,3,Wheezing,Wheezing

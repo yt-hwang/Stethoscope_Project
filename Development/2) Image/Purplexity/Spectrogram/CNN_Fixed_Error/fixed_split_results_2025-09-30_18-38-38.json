@@ -1,0 +1,26 @@
+{
+  "best_accuracy": 0.5370370370370371,
+  "final_f1": 0.5277777777777778,
+  "split_method": "Smart Patient-Based",
+  "dataset_size": 243,
+  "train_size": 189,
+  "val_size": 54,
+  "classes": [
+    "Crackle",
+    "Healthy",
+    "Rhonchi",
+    "Wheezing"
+  ],
+  "train_distribution": {
+    "Crackle": 81,
+    "Wheezing": 54,
+    "Rhonchi": 27,
+    "Healthy": 27
+  },
+  "val_distribution": {
+    "Crackle": 18,
+    "Wheezing": 18,
+    "Rhonchi": 9,
+    "Healthy": 9
+  }
+}

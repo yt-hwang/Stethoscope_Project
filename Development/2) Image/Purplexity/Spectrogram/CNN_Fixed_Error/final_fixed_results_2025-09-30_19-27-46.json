@@ -1,0 +1,35 @@
+{
+  "mean_accuracy": 0.43209876543209874,
+  "std_accuracy": 0.03491885339192827,
+  "mean_f1": 0.22868914043402133,
+  "cv_results": [
+    {
+      "fold": 1,
+      "ensemble_accuracy": 0.4074074074074074,
+      "ensemble_f1": 0.2438542581211589,
+      "individual_accuracies": [
+        0.49382716049382713,
+        0.4691358024691358
+      ]
+    },
+    {
+      "fold": 2,
+      "ensemble_accuracy": 0.48148148148148145,
+      "ensemble_f1": 0.16666666666666666,
+      "individual_accuracies": [
+        0.4444444444444444,
+        0.5679012345679012
+      ]
+    },
+    {
+      "fold": 3,
+      "ensemble_accuracy": 0.4074074074074074,
+      "ensemble_f1": 0.27554649651423846,
+      "individual_accuracies": [
+        0.41975308641975306,
+        0.4444444444444444
+      ]
+    }
+  ],
+  "approach": "Fixed Ultimate Ensemble CNN"
+}

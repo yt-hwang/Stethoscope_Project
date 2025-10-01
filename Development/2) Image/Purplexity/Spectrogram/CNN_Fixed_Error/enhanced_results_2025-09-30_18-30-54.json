@@ -1,0 +1,31 @@
+{
+  "best_accuracy": 0.2962962962962963,
+  "final_f1": 0.23752785043107622,
+  "approach": "Enhanced CNN with Patient-Based Split + Advanced Augmentation",
+  "dataset_size": 243,
+  "train_size": 189,
+  "val_size": 54,
+  "total_patients": 23,
+  "train_patients": 17,
+  "val_patients": 6,
+  "classes": [
+    "Crackle",
+    "Healthy",
+    "Rhonchi",
+    "Wheezing"
+  ],
+  "class_distribution": {
+    "Crackle": 99,
+    "Wheezing": 72,
+    "Healthy": 36,
+    "Rhonchi": 36
+  },
+  "improvements_applied": [
+    "Patient-based data splitting",
+    "SpecAugment",
+    "MixUp augmentation",
+    "Enhanced regularization",
+    "Batch normalization",
+    "Advanced optimizer scheduling"
+  ]
+}

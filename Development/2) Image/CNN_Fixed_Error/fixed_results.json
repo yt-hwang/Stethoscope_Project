@@ -1,0 +1,12 @@
+{
+  "best_accuracy": 0.6,
+  "final_f1": 0.5833333333333333,
+  "approach": "Fixed CNN (Error Corrected)",
+  "dataset_size": 19,
+  "train_size": 14,
+  "val_size": 5,
+  "classes": [
+    "Crackle",
+    "Wheezing"
+  ]
+}

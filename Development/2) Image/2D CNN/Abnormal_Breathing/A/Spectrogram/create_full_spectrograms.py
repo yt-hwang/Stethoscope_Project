@@ -13,11 +13,20 @@ import matplotlib
 matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 import pandas as pd
+from collections import Counter
 
 # ===== Paths =====
-AUDIO_ROOT = Path("/Users/yunhwang/Desktop/Stethoscope_Project/Audio shared/ML test sound list/RAW sound_ML test sound list")
-JSON_PATH  = Path("/Users/yunhwang/Desktop/Stethoscope_Project/Audio shared/breathing_nonbreathing_intervals.json")
-OUT_DIR    = Path("/Users/yunhwang/Desktop/Stethoscope_Project/Development/2) Image/2D CNN/Abnormal_Breathing/A/Spectrogram/Processed Data")
+# Mac
+#AUDIO_ROOT = Path("/Users/yunhwang/Desktop/Stethoscope_Project/Audio shared/ML test sound list/RAW sound_ML test sound list")
+#JSON_PATH  = Path("/Users/yunhwang/Desktop/Stethoscope_Project/Development/2) Image/2D CNN/Abnormal_Breathing/breathing_nonbreathing_intervals.json")
+#OUT_DIR    = Path("/Users/yunhwang/Desktop/Stethoscope_Project/Development/2) Image/2D CNN/Abnormal_Breathing/A/Spectrogram/Processed Data")
+
+# Windows
+AUDIO_ROOT = Path("D:\\Stethoscope_Project\\Audio shared\\ML test sound list\\RAW sound_ML test sound list")
+JSON_PATH  = Path("D:\\Stethoscope_Project\\Development\\2) Image\\2D CNN\\Abnormal_Breathing\\breathing_nonbreathing_intervals.json")
+OUT_DIR    = Path("D:\\Stethoscope_Project\\Development\\2) Image\\2D CNN\\Abnormal_Breathing\\A\\Spectrogram\\Processed Data")
+
+
 OUT_DIR.mkdir(parents=True, exist_ok=True)
 MANIFEST_PATH = OUT_DIR / "manifest.csv"
 
@@ -101,20 +110,31 @@ def main():
 
     audio_paths = sorted([p for p in AUDIO_ROOT.glob("**/*")
                           if p.suffix.lower() in (".wav", ".flac", ".m4a", ".mp3")])
+    audio_index = { _norm_key(p.name): p for p in audio_paths }
 
-    rows, hit, miss = [], 0, 0
-    for wav in audio_paths:
-        key = _norm_key(wav.name)
-        meta = meta_index.get(key)
+    rows = []
+    counts_json = Counter()
+    counts_json_with_audio = Counter()
+    counts_saved = Counter()
+    missing_audio_keys = []
+
+    for key, meta in meta_index.items():
         label = get_label_from_meta(meta, key)
+        counts_json[label] += 1
+
+        wav = audio_index.get(key)
+        if wav is None:
+            missing_audio_keys.append(key)
+            continue
+
+        counts_json_with_audio[label] += 1
+
         if label == "Unknown":
-            miss += 1
-        else:
-            hit += 1
+            # Skip conversion for unknown labels but still tracked in counts
+            continue
 
         patient_id = parse_patient_id(wav.stem)
 
-        # >>> change 1: save directly under diagnosis folder (no patient subfolder)
         out_dir = OUT_DIR / label
         out_dir.mkdir(parents=True, exist_ok=True)
         out_img = out_dir / f"{wav.stem}.png"
@@ -123,6 +143,7 @@ def main():
             y, sr = load_audio_30s(wav, SR_TARGET)
             img = mel_image(y, sr)
             save_png(img, out_img)
+            counts_saved[label] += 1
             rows.append({
                 "path": str(out_img),
                 "label": label,
@@ -137,8 +158,30 @@ def main():
             print(f"[ERROR] {wav.name}: {e}")
 
     pd.DataFrame(rows).to_csv(MANIFEST_PATH, index=False)
-    print(f"✅ Saved spectrograms: {len(rows)}  |  🗂️ {MANIFEST_PATH}")
-    print(f"[LABEL MATCH] labeled={hit}  unknown={miss}")
+
+    total_json = sum(counts_json.values())
+    total_with_audio = sum(counts_json_with_audio.values())
+    total_saved = sum(counts_saved.values())
+
+    print(f"✅ Saved spectrograms: {total_saved}  |  🗂️ {MANIFEST_PATH}")
+    print(f"[VERIFY] JSON total={total_json} | with_audio={total_with_audio} | saved={total_saved}")
+    if missing_audio_keys:
+        print(f"[MISSING AUDIO] {len(missing_audio_keys)} JSON items had no matching audio file")
+        for i, key in enumerate(missing_audio_keys, 1):
+            print(f"    {i}. {key}")
+        missing_list_path = OUT_DIR / "missing_audio_from_json.txt"
+        try:
+            with open(missing_list_path, "w", encoding="utf-8") as f:
+                for key in missing_audio_keys:
+                    f.write(f"{key}\n")
+            print(f"[MISSING AUDIO LIST] Saved to {missing_list_path}")
+        except Exception as e:
+            print(f"[WARN] Could not write missing list: {e}")
+    # Per-label comparison
+    all_labels = sorted(set(list(counts_json.keys()) + list(counts_json_with_audio.keys()) + list(counts_saved.keys())))
+    print("[LABEL COUNTS] label | json | json_with_audio | saved")
+    for lbl in all_labels:
+        print(f"  - {lbl}: {counts_json.get(lbl,0)} | {counts_json_with_audio.get(lbl,0)} | {counts_saved.get(lbl,0)}")
 
 if __name__ == "__main__":
     main()

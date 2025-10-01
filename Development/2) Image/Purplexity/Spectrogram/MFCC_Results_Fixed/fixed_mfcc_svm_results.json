@@ -1,0 +1,35 @@
+{
+  "cv_accuracy_mean": 0.2698394050885703,
+  "cv_accuracy_std": 0.09748100786069251,
+  "cv_f1_mean": 0.21997965032212718,
+  "cv_scores": [
+    0.273972602739726,
+    0.09345794392523364,
+    0.3018867924528302,
+    0.28735632183908044,
+    0.3925233644859813
+  ],
+  "cv_f1_scores": [
+    0.23226616446955428,
+    0.10638297872340426,
+    0.32614379084967315,
+    0.1488095238095238,
+    0.28629579375848035
+  ],
+  "n_samples_balanced": 480,
+  "n_features": 39,
+  "classes": [
+    "Crackle",
+    "Healthy",
+    "Rhonchi",
+    "Wheezing"
+  ],
+  "approach": "Fixed MFCC + SVM (Version 2)",
+  "improvements": [
+    "Reduced features (39 vs 166)",
+    "Balanced classes",
+    "Conservative augmentation",
+    "Improved filtering",
+    "Longer segments (8s)"
+  ]
+}

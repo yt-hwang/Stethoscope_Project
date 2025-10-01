@@ -35,11 +35,14 @@ import matplotlib.pyplot as plt
 # ------------------------------
 # Choose ONE of these roots (already converted 30s images):
 #   Spectrogram root:
-IMG_ROOT = Path("/Users/yunhwang/Desktop/Stethoscope_Project/Development/2) Image/2D CNN/Abnormal_Breathing/A/Spectrogram/Processed Data")
+#IMG_ROOT = Path("/Users/yunhwang/Desktop/Stethoscope_Project/Development/2) Image/2D CNN/Abnormal_Breathing/A/Spectrogram/Processed Data")
+IMG_ROOT = Path("D:\\Stethoscope_Project\\Development\\2) Image\\2D CNN\\Abnormal_Breathing\\A\\Spectrogram\\Processed Data")
+
 #   Or Scalogram root:
 # IMG_ROOT = Path("/Users/yunhwang/Desktop/Stethoscope_Project/Development/2) Image/2D CNN/Abnormal_Breathing/A/Scalogram/Processed Data")
 
-OUT_ROOT = Path("/Users/yunhwang/Desktop/Stethoscope_Project/Development/2) Image/2D CNN/Abnormal_Breathing/A/Spectrogram/Result")
+#OUT_ROOT = Path("/Users/yunhwang/Desktop/Stethoscope_Project/Development/2) Image/2D CNN/Abnormal_Breathing/A/Spectrogram/Result")
+OUT_ROOT = Path("D:\\Stethoscope_Project\\Development\\2) Image\\2D CNN\\Abnormal_Breathing\\A\\Spectrogram\\Result")
 # If using scalogram, change OUT_ROOT accordingly.
 
 IMG_EXTS = {".png", ".jpg", ".jpeg", ".bmp"}

@@ -1,0 +1,27 @@
+{
+  "cv_accuracy_mean": 0.4724074074074074,
+  "cv_accuracy_std": 0.08419391035262819,
+  "cv_scores": [
+    0.4222222222222222,
+    0.5370370370370371,
+    0.5740740740740741,
+    0.49074074074074076,
+    0.33796296296296297
+  ],
+  "n_samples": 729,
+  "n_features": 166,
+  "classes": [
+    "Crackle",
+    "Healthy",
+    "Rhonchi",
+    "Wheezing"
+  ],
+  "class_counts": {
+    "Rhonchi": 108,
+    "Wheezing": 216,
+    "Crackle": 297,
+    "Healthy": 108
+  },
+  "approach": "MFCC + SVM Ensemble",
+  "feature_dim": 166
+}

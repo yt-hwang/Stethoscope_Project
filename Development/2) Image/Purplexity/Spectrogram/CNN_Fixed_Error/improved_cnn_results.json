@@ -1,0 +1,15 @@
+{
+  "best_accuracy": 0.7755102040816326,
+  "final_f1": 0.7277310924369748,
+  "approach": "CNN with Improved Balanced Spectrograms",
+  "dataset_size": 243,
+  "train_size": 194,
+  "val_size": 49,
+  "classes": [
+    "Crackle",
+    "Healthy",
+    "Rhonchi",
+    "Wheezing"
+  ],
+  "class_distribution": {
+    "Crackle": 

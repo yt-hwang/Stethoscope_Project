@@ -1,0 +1,16 @@
+RESPIRATORY SOUND CLASSIFICATION REPORT
+==================================================
+
+              precision    recall  f1-score   support
+
+     Crackle       0.83      0.75      0.79        20
+     Healthy       0.75      0.86      0.80         7
+     Rhonchi       0.60      0.43      0.50         7
+    Wheezing       0.72      0.87      0.79        15
+
+    accuracy                           0.76        49
+   macro avg       0.73      0.73      0.72        49
+weighted avg       0.75      0.76      0.75        49
+
+
+Generated: 2025-09-30 18:22:29
