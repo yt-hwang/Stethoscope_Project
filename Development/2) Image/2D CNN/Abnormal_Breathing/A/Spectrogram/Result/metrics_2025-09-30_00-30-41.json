@@ -1,0 +1,15 @@
+{
+  "classes": [
+    "Crackle",
+    "Healthy",
+    "Unknown",
+    "Wheezing"
+  ],
+  "val_loss": 1.400303602218628,
+  "val_macro_f1": 0.1,
+  "val_macro_ap": 0.3726190476190476,
+  "n_train": 31,
+  "n_val": 8,
+  "patient_split": true,
+  "stratified_by_label": true
+}
