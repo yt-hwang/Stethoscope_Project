@@ -1,0 +1,20 @@
+{
+  "total_segments": 726,
+  "feature_dim": 13,
+  "feature_type": "mfcc",
+  "class_distribution": {
+    "Healthy": 45,
+    "Non-breathing": 389,
+    "Rhonchi": 67,
+    "Wheezing": 123,
+    "Crackle": 102
+  },
+  "feature_stats": {
+    "mean": -24.505884170532227,
+    "std": 151.6469268798828,
+    "min": -1008.94189453125,
+    "max": 231.46133422851562,
+    "missing_values": 0,
+    "infinite_values": 0
+  }
+}

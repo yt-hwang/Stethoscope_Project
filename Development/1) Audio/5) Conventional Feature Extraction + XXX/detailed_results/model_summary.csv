@@ -1,0 +1,6 @@
+Model,CV_F1,Test_Accuracy,Test_F1,Test_Precision,Test_Recall,Target_Reached
+KNN,0.766 ± 0.036,0.404,0.180,0.331,0.193,False
+SVM_RBF,0.832 ± 0.051,0.362,0.132,0.111,0.162,False
+LogisticRegression,0.771 ± 0.053,0.362,0.130,0.109,0.162,False
+SVM_Linear,0.764 ± 0.022,0.335,0.124,0.106,0.150,False
+GradientBoosting,0.749 ± 0.030,0.314,0.119,0.103,0.140,False
