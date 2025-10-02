@@ -1,0 +1,8 @@
+path,y_true,y_pred,true_label,pred_label
+/Users/yunhwang/Desktop/Stethoscope_Project/Development/2) Image/Transfer_Learning/Abnormal_Breathing/A/Spectrogram/Processed Data/Bronchi/KP003_WWS_1.png,0,0,Bronchi,Bronchi
+/Users/yunhwang/Desktop/Stethoscope_Project/Development/2) Image/Transfer_Learning/Abnormal_Breathing/A/Spectrogram/Processed Data/Crackle/KP014_WWS.png,1,3,Crackle,Rhonchi
+/Users/yunhwang/Desktop/Stethoscope_Project/Development/2) Image/Transfer_Learning/Abnormal_Breathing/A/Spectrogram/Processed Data/Healthy/H002.png,2,3,Healthy,Rhonchi
+/Users/yunhwang/Desktop/Stethoscope_Project/Development/2) Image/Transfer_Learning/Abnormal_Breathing/A/Spectrogram/Processed Data/Rhonchi/KP008_WWS.png,3,3,Rhonchi,Rhonchi
+/Users/yunhwang/Desktop/Stethoscope_Project/Development/2) Image/Transfer_Learning/Abnormal_Breathing/A/Spectrogram/Processed Data/Wheezing/KP017_WWS_1.png,4,3,Wheezing,Rhonchi
+/Users/yunhwang/Desktop/Stethoscope_Project/Development/2) Image/Transfer_Learning/Abnormal_Breathing/A/Spectrogram/Processed Data/Wheezing/KP017_WWS_2.png,4,3,Wheezing,Rhonchi
+/Users/yunhwang/Desktop/Stethoscope_Project/Development/2) Image/Transfer_Learning/Abnormal_Breathing/A/Spectrogram/Processed Data/Wheezing/KP004_WWS.png,4,3,Wheezing,Rhonchi

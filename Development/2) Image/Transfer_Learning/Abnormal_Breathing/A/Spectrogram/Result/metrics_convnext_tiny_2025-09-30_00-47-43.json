@@ -1,0 +1,22 @@
+{
+  "backbone": "convnext_tiny",
+  "classes": [
+    "Bronchi",
+    "Crackle",
+    "Healthy",
+    "Rhonchi",
+    "Wheezing"
+  ],
+  "n_params_total": 27823973,
+  "n_params_trainable": 17879813,
+  "val_loss": 2.2304062843322754,
+  "val_macro_f1": 0.2571428571428571,
+  "val_macro_ap": 0.5233333333333333,
+  "n_train": 20,
+  "n_val": 7,
+  "patient_split": true,
+  "stratified_by_label": true,
+  "excluded_labels": [
+    "Unknown"
+  ]
+}
