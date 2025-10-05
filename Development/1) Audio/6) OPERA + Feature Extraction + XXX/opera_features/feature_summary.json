@@ -1,0 +1,12 @@
+{
+  "total_segments": 726,
+  "feature_dimension": 13,
+  "feature_type": "OPERA-CT",
+  "class_distribution": {
+    "Healthy": 45,
+    "Non-breathing": 389,
+    "Rhonchi": 67,
+    "Wheezing": 123,
+    "Crackle": 102
+  }
+}

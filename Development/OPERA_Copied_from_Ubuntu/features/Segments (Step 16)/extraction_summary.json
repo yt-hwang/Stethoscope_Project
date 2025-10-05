@@ -1,0 +1,12 @@
+{
+  "total": 627,
+  "failed": 0,
+  "feature_dim": 768,
+  "labels": [
+    "Crackle",
+    "Healthy",
+    "Non-breathing",
+    "Rhonchi",
+    "Wheezing"
+  ]
+}

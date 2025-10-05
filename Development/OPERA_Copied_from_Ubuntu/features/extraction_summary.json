@@ -1,0 +1,13 @@
+{
+  "total_files": 726,
+  "successful_extractions": 726,
+  "failed_extractions": 0,
+  "feature_dimension": 768,
+  "unique_labels": [
+    "Healthy",
+    "Non-breathing",
+    "Rhonchi",
+    "Wheezing",
+    "Crackle"
+  ]
+}
