@@ -1,0 +1,7 @@
+{
+  "linear_ldam": 0.2,
+  "mlp_deep": 0.2,
+  "cosine_head": 0.2,
+  "sklearn_lr": 0.2,
+  "sklearn_rf": 0.2
+}
