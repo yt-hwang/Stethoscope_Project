@@ -1,3 +1,0 @@
-[BEST OVERALL] fold=3, version=TAU, macroF1=0.8023, macroP=0.7736, macroR=0.8851
-[BEST by VERSION] TAU: fold=3, macroF1=0.8023, macroP=0.7736, macroR=0.8851
-[BEST by VERSION] RAW: fold=4, macroF1=0.7781, macroP=0.7869, macroR=0.7942
