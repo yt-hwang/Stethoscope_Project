@@ -34,7 +34,7 @@ import matplotlib.pyplot as plt
 DEF_CSV_PATH = "/Users/yunhwang/Desktop/Stethoscope_Project/Development/OPERA_Copied_from_Ubuntu/features/opera_features.csv"
 DEF_RESULTS_DIR = "/Users/yunhwang/Desktop/Stethoscope_Project/Development/OPERA_Copied_from_Ubuntu/scripts/Insurance/Result"  # CHANGED: new directory name
 DEF_EXPERIMENT_TAG = "Step17A_SegmentSplit_EXPERIMENT"  # CHANGED: new tag
-DEF_RANDOM_SEED = 42
+DEF_RANDOM_SEED = 385795
 DEF_EPOCHS = 80
 DEF_BATCH_SIZE = 64
 DEF_LR = 2e-4
