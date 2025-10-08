@@ -35,8 +35,11 @@ import seaborn as sns
 from matplotlib.colors import LinearSegmentedColormap
 
 # ======================== OPTIMIZED Configuration ========================
-DEF_CSV_PATH = "/Users/yunhwang/Desktop/Stethoscope_Project/Development/OPERA_Copied_from_Ubuntu/features/opera_features.csv"
-DEF_RESULTS_DIR = "/Users/yunhwang/Desktop/Stethoscope_Project/Development/OPERA_Copied_from_Ubuntu/scripts/Insurance/Result"  # CHANGED: new directory name
+# DEF_CSV_PATH = "/Users/yunhwang/Desktop/Stethoscope_Project/Development/OPERA_Copied_from_Ubuntu/features/opera_features.csv"
+# DEF_RESULTS_DIR = "/Users/yunhwang/Desktop/Stethoscope_Project/Development/OPERA_Copied_from_Ubuntu/scripts/Insurance/Result"  # CHANGED: new directory name
+DEF_CSV_PATH = r"D:\Stethoscope_Project\Development\OPERA_Copied_from_Ubuntu\features\opera_features.csv"
+DEF_RESULTS_DIR = r"D:\Stethoscope_Project\Development\OPERA_Copied_from_Ubuntu\scripts\GPT\results_step16B"
+
 DEF_EXPERIMENT_TAG = "Step17A_Optimized_80Percent"
 DEF_RANDOM_SEED = None  # Random for multiple attempts
 DEF_EPOCHS = 100  # OPTIMIZED: Increased for better convergence
@@ -1110,8 +1113,8 @@ def main():
         save_detailed_metrics(overall_tr_raw_metrics, os.path.join(summary_dir, "detailed_metrics_TRAIN_allfolds_raw.txt"))
     except Exception as e:
         print("[WARN] Could not save overall detailed metrics:", e)
-summary_csv = os.path.join(args.results_dir, f"{tag}_summary.csv")
-    pd.DataFrame(rows).to_csv(summary_csv, index=False, encoding='utf-8-sig')
+        summary_csv = os.path.join(args.results_dir, f"{tag}_summary.csv")
+        pd.DataFrame(rows).to_csv(summary_csv, index=False, encoding='utf-8-sig')
 
     # Final statistics
     avg_raw = float(np.mean([r['macro_recall_raw'] for r in rows]))

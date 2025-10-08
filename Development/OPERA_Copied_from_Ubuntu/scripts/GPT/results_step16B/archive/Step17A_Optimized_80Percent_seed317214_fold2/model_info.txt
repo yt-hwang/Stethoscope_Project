@@ -1,0 +1,7 @@
+Best epoch: 64
+Best val Macro Recall (raw): 0.7170
+Macro Recall (raw end): 0.7170
+Macro Recall (tau): 0.8495
+NB Precision (tau): 0.9333
+Best tau: [0.7352941036224365, 0.2764706015586853, 2.5705883502960205, 0.5823529362678528, 0.8500000238418579]
+Classes: ['Crackle', 'Healthy', 'Non-breathing', 'Rhonchi', 'Wheezing']

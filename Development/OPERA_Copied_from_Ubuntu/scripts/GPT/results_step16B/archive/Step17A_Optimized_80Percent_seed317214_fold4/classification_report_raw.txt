@@ -1,0 +1,15 @@
+CLASSIFICATION REPORT - RAW PREDICTIONS
+Fold 4 (OPTIMIZED Seed 317214)
+==================================================
+
+               precision    recall  f1-score   support
+
+      Crackle     0.8000    0.6000    0.6857        20
+      Healthy     0.7500    0.3333    0.4615         9
+Non-breathing     0.7475    0.9487    0.8362        78
+      Rhonchi     0.8750    0.5385    0.6667        13
+     Wheezing     0.8421    0.6400    0.7273        25
+
+     accuracy                         0.7724       145
+    macro avg     0.8029    0.6121    0.6755       145
+ weighted avg     0.7826    0.7724    0.7582       145

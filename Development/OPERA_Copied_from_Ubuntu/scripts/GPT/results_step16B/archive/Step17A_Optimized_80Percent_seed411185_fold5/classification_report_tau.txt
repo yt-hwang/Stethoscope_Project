@@ -1,0 +1,12 @@
+CLASSIFICATION REPORT - TAU
+               precision    recall  f1-score   support
+
+      Crackle     0.6400    0.7619    0.6957        21
+      Healthy     0.4706    0.8889    0.6154         9
+Non-breathing     0.9200    0.5974    0.7244        77
+      Rhonchi     0.8462    0.7857    0.8148        14
+     Wheezing     0.5750    0.9583    0.7188        24
+
+     accuracy                         0.7172       145
+    macro avg     0.6903    0.7984    0.7138       145
+ weighted avg     0.7873    0.7172    0.7213       145

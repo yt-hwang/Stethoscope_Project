@@ -1,0 +1,25 @@
+DETAILED CLASSIFICATION METRICS
+==================================================
+
+OVERALL METRICS:
+Accuracy:           0.7655
+Precision (Macro):  0.7481
+Recall (Macro):     0.6554
+F1-Score (Macro):   0.6872
+AUROC (Macro):      0.9369
+
+WEIGHTED METRICS:
+Precision (Weighted): 0.7728
+Recall (Weighted):    0.7655
+F1-Score (Weighted):  0.7596
+AUROC (Weighted):     0.9141
+
+PER-CLASS METRICS:
+--------------------------------------------------------------------------------
+Class           Precision  Recall     F1-Score   AUROC      Support   
+--------------------------------------------------------------------------------
+Crackle         0.5909     0.6500     0.6190     0.8884     20        
+Healthy         0.6000     0.3333     0.4286     0.9788     9         
+Non-breathing   0.7753     0.8846     0.8263     0.8925     78        
+Rhonchi         0.8333     0.7692     0.8000     0.9808     13        
+Wheezing        0.9412     0.6400     0.7619     0.9440     25        

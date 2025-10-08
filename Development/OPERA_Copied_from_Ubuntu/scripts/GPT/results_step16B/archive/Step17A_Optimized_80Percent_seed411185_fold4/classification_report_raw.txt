@@ -1,0 +1,12 @@
+CLASSIFICATION REPORT - RAW
+               precision    recall  f1-score   support
+
+      Crackle     0.8235    0.7000    0.7568        20
+      Healthy     0.6364    0.7778    0.7000         9
+Non-breathing     0.8140    0.8974    0.8537        78
+      Rhonchi     0.9231    0.9231    0.9231        13
+     Wheezing     0.8333    0.6000    0.6977        25
+
+     accuracy                         0.8138       145
+    macro avg     0.8061    0.7797    0.7862       145
+ weighted avg     0.8174    0.8138    0.8101       145

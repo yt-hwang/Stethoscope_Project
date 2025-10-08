@@ -1,0 +1,15 @@
+CLASSIFICATION REPORT - TAU ADJUSTED
+Fold 2 (OPTIMIZED Seed 17965)
+==================================================
+
+               precision    recall  f1-score   support
+
+      Crackle     0.6333    0.9500    0.7600        20
+      Healthy     0.4000    0.6667    0.5000         9
+Non-breathing     0.9130    0.5385    0.6774        78
+      Rhonchi     0.7500    0.9231    0.8276        13
+     Wheezing     0.6053    0.9200    0.7302        25
+
+     accuracy                         0.7034       145
+    macro avg     0.6603    0.7996    0.6990       145
+ weighted avg     0.7749    0.7034    0.7004       145

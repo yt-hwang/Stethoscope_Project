@@ -1,0 +1,14 @@
+{
+  "strategy": "champion_fold",
+  "champion_fold": 1,
+  "champion_metric_macro_recall_tau": 0.9033272282756126,
+  "final_model_path": "D:\\Stethoscope_Project\\Development\\OPERA_Copied_from_Ubuntu\\scripts\\GPT\\results_step16B\\Step17A_Optimized_80Percent_seed411185_summary\\final_model.pt",
+  "avg_tau_over_folds": [
+    0.7199999952316285,
+    0.658823534916429,
+    1.9694117316077737,
+    0.6300709231329493,
+    0.7218065897174331
+  ],
+  "note": "배포 시 avg_tau 또는 챔피언 폴드 best_tau 중 하나를 선택해서 사용"
+}
