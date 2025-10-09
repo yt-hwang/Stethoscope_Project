@@ -1,7 +1,0 @@
-Best epoch: 96
-Best val MR (raw): 0.7747
-MR (raw end): 0.7747
-MR (tau): 0.9202
-NB Precision (tau): 0.9661
-Best tau: [1.2705882787704468, 0.5823529362678528, 2.72352933883667, 0.42941176891326904, 0.8500000238418579]
-Classes: ['Crackle', 'Healthy', 'Non-breathing', 'Rhonchi', 'Wheezing']

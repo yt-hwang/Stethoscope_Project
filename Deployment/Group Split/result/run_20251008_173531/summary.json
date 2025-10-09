@@ -1,0 +1,18 @@
+{
+  "run_id": "run_20251008_173531",
+  "n_total": 1950,
+  "n_train": 1577,
+  "n_val": 127,
+  "n_test": 246,
+  "n_groups_train": 436,
+  "n_groups_val": 63,
+  "n_groups_test": 125,
+  "target_recall": 0.8,
+  "classes": [
+    "Crackle",
+    "Healthy",
+    "Non-breathing",
+    "Rhonchi",
+    "Wheezing"
+  ]
+}

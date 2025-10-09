@@ -1,0 +1,6 @@
+== Source-file overlap check ==
+train ∩ val : []
+train ∩ test: []
+val   ∩ test: []
+
+(빈 리스트면 정상: 그룹 분리 제대로 됨)

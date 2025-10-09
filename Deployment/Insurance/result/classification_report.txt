@@ -1,0 +1,18 @@
+Class thresholds (tau):
+     Crackle: 0.0000
+     Healthy: 0.0000
+Non-breathing: 0.0000
+     Rhonchi: 0.0000
+    Wheezing: 0.0001
+
+               precision    recall  f1-score   support
+
+      Crackle     0.6250    0.7895    0.6977        19
+      Healthy     0.9167    0.8462    0.8800        13
+Non-breathing     0.9062    0.9206    0.9134       126
+      Rhonchi     0.9091    0.8333    0.8696        12
+     Wheezing     0.9500    0.7600    0.8444        25
+
+     accuracy                         0.8769       195
+    macro avg     0.8614    0.8299    0.8410       195
+ weighted avg     0.8853    0.8769    0.8786       195
