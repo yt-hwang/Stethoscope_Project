@@ -1,29 +1,31 @@
-# make_segments_1s_hop025.py
+# make_segments_2s_hop050.py
 # -----------------------------------------------------------------------------
-# 1) 기존 JSON 세그먼트로 만든 16kHz WAV들을 2.0s/0.5s hop으로 재윈도잉
-# 2) 무음(저에너지) 구간 제거 옵션 포함
-# 3) 출력/메타 모두 D:\Stethoscope_Project\Deployment 하위로 저장
-# -----------------------------------------------------------------------------
+# 1) Existing JSON segments created from 16kHz WAV files to 2.0s/0.5s hop
+# 2) Include option to remove silent (low energy) segments
+# 3) Output/metadata saved under D:\Stethoscope_Project\Deployment under Segments_2s_hop500ms
+
+# Input: JSON file with breathing and non-breathing intervals
+# Output: WAV files with segments
 
 from pathlib import Path
 import numpy as np
 import soundfile as sf
 import pandas as pd
 
-# ==== 경로 설정 ====
+# ==== Path settings ====
 DEPLOY_ROOT = Path(r"D:\Stethoscope_Project\Deployment")
-# 기존 세그먼트(입력) 위치: 필요시 바꿔줘 (예: 네가 이미 만들어 둔 Segments_from_JSON)
+# Location of existing segments (input): Change if needed (e.g. already created Segments_from_JSON)
 RAW_SEGMENTS_SRC = Path(r"D:\Stethoscope_Project\Development\OPERA_Copied_from_Ubuntu\data\audio\Segments_from_JSON")
 
-# 출력 루트 (고정)
+# Output root (fixed)
 OUT_DIR = DEPLOY_ROOT / r"data\Segments_2s_hop500ms"
 OUT_DIR.mkdir(parents=True, exist_ok=True)
 
-# ==== 파라미터 ====
+# ==== Parameters ====
 SR = 16000
 WIN = 2.0      # seconds
-HOP = 0.5      # seconds (오버랩 75%)
-MIN_RMS = 5e-4 # 무음 필터. 끄려면 None 또는 0으로.
+HOP = 0.5      # seconds (75% overlap)
+MIN_RMS = 5e-4 # Silent filter. Turn off by None or 0.
 
 def rms_energy(x: np.ndarray) -> float:
     x = x.astype(np.float32)
@@ -44,12 +46,12 @@ for label_dir in RAW_SEGMENTS_SRC.iterdir():
             continue
 
         if sr != SR:
-            # 필요하면 librosa.resample 사용 가능. 여기선 SR=16k 가정.
+            # If needed, use librosa.resample. Here we assume SR=16k.
             pass
 
         dur = len(x) / SR
 
-        # dur <= WIN: 패딩해서 1개만 생성
+        # dur <= WIN: Pad and create only one segment
         if dur <= WIN:
             pad = int(WIN * SR) - len(x)
             seg = np.pad(x, (0, pad))
@@ -65,7 +67,7 @@ for label_dir in RAW_SEGMENTS_SRC.iterdir():
                 ))
             continue
 
-        # 2s 창, 0.5s hop
+        # 2s window, 0.5s hop
         t = 0.0
         while t + WIN <= dur + 1e-6:
             i0 = int(t * SR); i1 = i0 + int(WIN * SR)
@@ -84,7 +86,7 @@ for label_dir in RAW_SEGMENTS_SRC.iterdir():
             t += HOP
 
 df = pd.DataFrame(rows)
-meta_path = OUT_DIR / "metadata_2s_hop500ms.csv"
+meta_path = OUT_DIR / "metadata_2s_hop500ms.csv"   # metadata_2s_hop500ms.csv
 df.to_csv(meta_path, index=False)
 
 print(f"[DONE] segments: {len(df)}")

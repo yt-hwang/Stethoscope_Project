@@ -1,11 +1,11 @@
 # extract_logmel.py
 # -----------------------------------------------------------------------------
-# - 입력: D:\Stethoscope_Project\Deployment\data\Segments_1s_hop250ms\metadata_1s_hop250ms.csv
-# - 출력:
-#    D:\Stethoscope_Project\Deployment\features\features_1s_hop250ms.npz
+# - Input: D:\Stethoscope_Project\Deployment\data\Segments_2s_hop500ms\metadata_2s_hop500ms.csv
+# - Output:
+#    D:\Stethoscope_Project\Deployment\features\features_2s_hop500ms.npz
 #        (X, y, class_names, ids, sources, patient_ids)
-#    D:\Stethoscope_Project\Deployment\features\features_1s_hop250ms.labels.json
-#    D:\Stethoscope_Project\Deployment\features\features_1s_hop250ms.index.csv
+#    D:\Stethoscope_Project\Deployment\features\features_2s_hop500ms.labels.json
+#    D:\Stethoscope_Project\Deployment\features\features_2s_hop500ms.index.csv
 # -----------------------------------------------------------------------------
 
 from pathlib import Path
@@ -16,17 +16,17 @@ import pandas as pd
 import soundfile as sf
 import librosa
 
-# ==== 경로 설정 ====
-DEPLOY_ROOT = Path(r"D:\Stethoscope_Project\Deployment")
-META = DEPLOY_ROOT / r"data\Segments_1s_hop250ms\metadata_1s_hop250ms.csv"
+# ==== Path settings ====
+DEPLOY_ROOT = Path(r"D:\Stethoscope_Project\Deployment\1 Final Pipeline\2 Model Training with Replayed Sound")
+META = DEPLOY_ROOT / r"Output\Segments_2s_hop500ms\metadata_2s_hop500ms.csv"
 
 FEATURE_DIR = DEPLOY_ROOT / "features"
 FEATURE_DIR.mkdir(parents=True, exist_ok=True)
-OUT = FEATURE_DIR / "features_1s_hop250ms.npz"
-LABELS_JSON = FEATURE_DIR / "features_1s_hop250ms.labels.json"
-INDEX_CSV = FEATURE_DIR / "features_1s_hop250ms.index.csv"
+OUT = FEATURE_DIR / "features_2s_hop500ms.npz"
+LABELS_JSON = FEATURE_DIR / "features_2s_hop500ms.labels.json"
+INDEX_CSV = FEATURE_DIR / "features_2s_hop500ms.index.csv"
 
-# ==== 파라미터 ====
+# ==== Parameters ====
 SR = 16000
 N_MELS = 64
 WIN_LEN = int(0.064 * SR)  # 64 ms
@@ -35,12 +35,12 @@ FMIN, FMAX = 50, 7900
 
 def extract_patient_id(name: str) -> str:
     """
-    파일명에서 환자ID(prefix)를 뽑는다.
-    지원 패턴 예:
+    Extract patient ID (prefix) from file name.
+    Supported patterns:
       - H001.wav, H002_...         -> 'H001', 'H002'
       - KP021_WWS_2.wav            -> 'KP021'
       - WEBSS-006 TP3_...          -> 'WEBSS-006'
-    못 찾으면 ''(빈 문자열) 반환
+    If not found, return '' (empty string)
     """
     base = Path(name).name
     stem = Path(base).stem
@@ -53,7 +53,7 @@ def extract_patient_id(name: str) -> str:
     # KP###
     m = re.match(r'^(KP\d+)', stem, flags=re.IGNORECASE)
     if m: return m.group(1)
-    # 토큰 첫 조각 검사
+    # Check first token
     tok = re.split(r'[_\- ]+', stem)[0]
     m = re.match(r'^(WEBSS-\d+|H\d+|KP\d+)$', tok, flags=re.IGNORECASE)
     if m: return m.group(1)
@@ -87,7 +87,7 @@ for _, row in df.iterrows():
     )
     logmel = librosa.power_to_db(S, ref=np.max)
 
-    # 샘플 단위 표준화
+    # Sample-wise standardization
     m = logmel.mean(); s = logmel.std() + 1e-6
     logmel = (logmel - m) / s
 
@@ -98,7 +98,7 @@ for _, row in df.iterrows():
     sources.append(src)
     pid = extract_patient_id(src)
     if not pid:
-        # 안전장치: 찾지 못하면 source_file stem 사용(최소 파일 단위로라도 분리)
+        # Safety check: If not found, use source_file stem (even at the file level)
         pid = Path(src).stem
     patient_ids.append(pid)
 

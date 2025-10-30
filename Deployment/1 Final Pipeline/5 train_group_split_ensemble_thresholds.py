@@ -1,7 +1,7 @@
 # train_group_split_ensemble_thresholds.py
 # -----------------------------------------------------------------------------
-# 환자/원본 단위 분리(GroupShuffleSplit: groups=source_file)
-# 저장 구조:
+# Patient/source unit split (GroupShuffleSplit: groups=source_file)
+# Save structure:
 #   D:\Stethoscope_Project\Deployment\
 #      model\<run_id>\ (scaler.pkl, lr.pkl, mlp.pkl, thresholds.json)
 #      result\<run_id>\ (report.txt, confusion_matrix.png, thresholds_table.csv, summary.json)
@@ -23,11 +23,11 @@ import matplotlib.pyplot as plt
 plt.rcParams.update({"figure.dpi": 160})
 
 
-# ==== 경로/런아이디 ====
+# ==== Path/run ID ====
 DEPLOY_ROOT = Path(r"D:\Stethoscope_Project\Deployment\Group Split")
-FEAT = DEPLOY_ROOT / r"features\features_1s_hop250ms.npz"
+FEAT = Path(r"D:\Stethoscope_Project\Deployment\features\features_2s_hop500ms.npz")
 
-RUN_ID = time.strftime("run_%Y%m%d_%H%M%S")  # 예: run_20251008_173522
+RUN_ID = time.strftime("run_%Y%m%d_%H%M%S")  # e.g. run_20251008_173522
 MODEL_DIR  = DEPLOY_ROOT / "model"  / RUN_ID
 RESULT_DIR = DEPLOY_ROOT / "result" / RUN_ID
 MODEL_DIR.mkdir(parents=True, exist_ok=True)
@@ -46,7 +46,7 @@ SUMMARY_JSON= RESULT_DIR / "summary.json"
 TARGET_RECALL = 0.80
 SEED = 42
 
-# ==== 데이터 로드 ====
+# ==== Load data ====
 data = np.load(FEAT, allow_pickle=True)
 X_all = data["X"]   # (N, T, F)
 y_all = data["y"]
@@ -56,14 +56,14 @@ sources = data["sources"]
 K = len(class_names)
 N = X_all.shape[0]
 
-# 간단 탭형 피처: time mean-pooling
+# Simple tabular feature: time mean-pooling
 X_tab = X_all.mean(axis=1)  # (N, F)
 
-# ==== 그룹 기준 분할: source_file을 그룹으로 사용 ====
+# ==== Group-based split: use source_file as groups ====
 gss = GroupShuffleSplit(n_splits=1, test_size=0.20, random_state=SEED)
 (train_idx, test_idx) = next(gss.split(X_tab, y_all, groups=sources))
 
-# 남은 80% 중에서 val 10% (전체 비율로는 8%)
+# Remaining 80% for val 10% (8% overall)
 X_tmp, y_tmp, src_tmp = X_tab[train_idx], y_all[train_idx], sources[train_idx]
 gss2 = GroupShuffleSplit(n_splits=1, test_size=0.10/0.80, random_state=SEED)
 (train_idx2, val_idx2) = next(gss2.split(X_tmp, y_tmp, groups=src_tmp))
@@ -79,14 +79,14 @@ X_tr, y_tr, g_tr = subset(tr_idx)
 X_va, y_va, g_va = subset(va_idx)
 X_te, y_te, g_te = subset(te_idx)
 
-# ==== 스케일러 ====
+# ==== Scaler ====
 scaler = StandardScaler().fit(X_tr)
 X_tr = scaler.transform(X_tr)
 X_va = scaler.transform(X_va)
 X_te = scaler.transform(X_te)
 joblib.dump(scaler, SCALER_PATH)
 
-# ==== 모델 ====
+# ==== Model ====
 classes = np.arange(K)
 class_weight_vals = compute_class_weight(class_weight="balanced", classes=classes, y=y_tr)
 class_weight_dict = {i: w for i, w in enumerate(class_weight_vals)}
@@ -111,7 +111,7 @@ def prob_ensemble(X):
     p2 = mlp.predict_proba(X)
     return (p1 + p2) / 2.0
 
-# ==== 임계값 튜닝: val 기준(원하면 val+train 일부 활용 가능) ====
+# ==== Threshold tuning: val based (can use val+train if desired) ====
 probs_va = prob_ensemble(X_va)
 taus = np.zeros(K, dtype=np.float32)
 rows = []
@@ -131,7 +131,7 @@ def predict_with_thresholds(probs, taus):
     adj = probs - taus[None, :]
     return adj.argmax(axis=1)
 
-# ==== 최종 평가: test ====
+# ==== Final evaluation: test ====
 probs_te = prob_ensemble(X_te)
 y_pred = predict_with_thresholds(probs_te, taus)
 
@@ -167,7 +167,7 @@ with open(REPORT_TXT, "w", encoding="utf-8") as f:
     f.write("\n== Classification Report (test) ==\n")
     f.write(rep)
 
-# 요약 저장
+# Save summary
 summary = {
     "run_id": RUN_ID,
     "n_total": int(N),

@@ -1,0 +1,24 @@
+wearable_stethoscope/
+├── main.py                              <--- Run main.py to operate the UI
+├── UI/                                  <--- UI designs
+│   ├── __init__.py
+│   ├── wearable_stetho_ui.py    
+│   ├── color_dot.py               
+│   ├── diagnosis_table.py         
+│   └── placeholder_plot.py        
+├── BLE/                                 <--- Deals with BLE connection/stop
+│   ├── __init__.py   
+│   └── bluetooth_manager.py               
+├── Streaming/                           <--- Deals with real-time data streaming
+│   └── __init__.py         
+│   └── stream_manager.py          
+├── ML_Diagnosis/                        <--- Deals with ML and softmax labeling table (diagnosis_table)
+│   └── __init__.py    
+│   └── diagnosis_table.py              
+├── Actuation/                           <--- Deals with interactive actuation controls
+│   └── __init__.py                
+├── Vitals/                              <--- Deals with vitals (heartrate & breath-rate)
+│   └── __init__.py                
+└── Utils/
+    ├── __init__.py
+    └── utils.py                   
