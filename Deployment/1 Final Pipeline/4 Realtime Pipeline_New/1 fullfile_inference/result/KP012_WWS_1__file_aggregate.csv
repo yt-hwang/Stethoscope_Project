@@ -1,0 +1,2 @@
+file,n_windows,mean_prob_Crackle,mean_prob_Healthy,mean_prob_Non-breathing,mean_prob_Rhonchi,mean_prob_Wheezing,majority_label,count_Crackle,count_Healthy,count_Non-breathing,count_Rhonchi,count_Wheezing
+/Users/yunhwang/Desktop/Stethoscope_Project/Audio shared/Test for Realtime Deployment/KP012_WWS_1.wav,57,0.027931,0.022102,0.765152,0.001704,0.183110,Wheezing,1,1,25,0,30

@@ -16,15 +16,25 @@ import pandas as pd
 import soundfile as sf
 import librosa
 
-# ==== Path settings ====
-DEPLOY_ROOT = Path(r"/Users/yunhwang/Desktop/Stethoscope_Project/Deployment")
-META = DEPLOY_ROOT / r"wav_files_2s_hop500ms/metadata.csv"
+## Mac
+DEPLOY_ROOT = Path(r"/Users/yunhwang/Desktop/Stethoscope_Project/Deployment/1 Final Pipeline/2 Model Training with Replayed Sound")
+META = DEPLOY_ROOT / r"Output/Segments_2s_hop500ms/metadata_2s_hop500ms.csv"
 
-FEATURE_DIR = DEPLOY_ROOT / "wav_files_2s_hop500ms"
+FEATURE_DIR = DEPLOY_ROOT / "features"
 FEATURE_DIR.mkdir(parents=True, exist_ok=True)
-OUT = FEATURE_DIR / "wav_files_2s_hop500ms.npz"
-LABELS_JSON = FEATURE_DIR / "wav_files_2s_hop500ms.labels.json"
-INDEX_CSV = FEATURE_DIR / "wav_files_2s_hop500ms.index.csv"
+OUT = FEATURE_DIR / "features_2s_hop500ms.npz"
+LABELS_JSON = FEATURE_DIR / "features_2s_hop500ms.labels.json"
+INDEX_CSV = FEATURE_DIR / "features_2s_hop500ms.index.csv"
+
+## Windows
+#DEPLOY_ROOT = Path(r"D:\Stethoscope_Project\Deployment\1 Final Pipeline\2 Model Training with Replayed Sound")
+#META = DEPLOY_ROOT / r"Output\Segments_2s_hop500ms\metadata_2s_hop500ms.csv"
+
+#FEATURE_DIR = DEPLOY_ROOT / "features"
+#FEATURE_DIR.mkdir(parents=True, exist_ok=True)
+#OUT = FEATURE_DIR / "features_2s_hop500ms.npz"
+#LABELS_JSON = FEATURE_DIR / "features_2s_hop500ms.labels.json"
+#INDEX_CSV = FEATURE_DIR / "features_2s_hop500ms.index.csv"
 
 # ==== Parameters ====
 SR = 16000

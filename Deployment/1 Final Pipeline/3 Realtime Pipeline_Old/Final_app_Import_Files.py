@@ -44,7 +44,8 @@ ADC_SCALE = 2.4 / (2 ** 23)        # 24bit ADC -> Volt
 
 # =================== MODEL/FEATURE CONSTANTS ===================
 # --- 네 환경의 절대 경로 ---
-MODEL_DIR   = r"D:\Stethoscope_Project\Deployment\Group Split\model\run_20251008_172910"
+MODEL_DIR   = r"/Users/yunhwang/Desktop/Stethoscope_Project/Deployment/1 Final Pipeline/2 Model Training with Replayed Sound/model/run_20251102_120824"
+#MODEL_DIR   = r"D:\Stethoscope_Project\Deployment\Group Split\model\run_20251009_092633"
 SCALER_PATH = os.path.join(MODEL_DIR, "scaler.pkl")
 LR_PATH     = os.path.join(MODEL_DIR, "model_lr.pkl")
 MLP_PATH    = os.path.join(MODEL_DIR, "model_mlp.pkl")
@@ -71,6 +72,11 @@ BYPASS_SCALER     = False      # True면 저장된 StandardScaler 무시
 # CANONICAL 클래스(라벨 인코더 없거나, 모델 classes_를 안전히 UI로 매핑해야 할 때 사용)
 CANONICAL_UI = ["Healthy", "Crackle", "Rhonchi", "Wheezing", "Non-Breathing"]
 
+# ---- debug switches ----
+DEBUG_VERBOSE = True           # 세부 로그 전체 on/off
+LOG_CONSUME_IDLE = False       # seg_buf < 2초일 때의 [CONSUME] 아이들 로그 표시 여부
+LOG_ACC = False                # [ACC] push 로그 표시 여부
+LOG_TICK = False               # [TICK] 타이머 틱 로그 표시 여부
 
 # =================== 유틸 ===================
 def parse_24bit_signed(data: bytes) -> np.ndarray:
@@ -145,7 +151,8 @@ class RealtimeInferenceEngine:
         self.lr_reorder  = [self.lr_labels.index(c)  for c in CANONICAL_UI]
         self.mlp_reorder = [self.mlp_labels.index(c) for c in CANONICAL_UI]
 
-        print(f"[WRN] inverse_transform fail: '{type(None).__name__}' object has no attribute 'inverse_transform'") if self.label_encoder is None else None
+        if self.label_encoder is None:
+            print(f"[WRN] inverse_transform fail: '{type(None).__name__}' object has no attribute 'inverse_transform'")
         print("[MDL] canonical UI classes:", CANONICAL_UI)
         print(f"[MDL] LR.local={self.lr_labels}  -> reorder={self.lr_reorder}")
         print(f"[MDL] MLP.local={self.mlp_labels} -> reorder={self.mlp_reorder}")
@@ -159,23 +166,26 @@ class RealtimeInferenceEngine:
         """모델 classes_ (숫자/문자) -> 문자열 라벨
            - label_encoder 있으면 inverse_transform
            - 없으면 CANONICAL 길이==classes 길이 가정하고 순서대로 맵핑"""
-        # 1) 인코더 있는 경우 시도
         if self.label_encoder is not None:
             try:
                 inv = self.label_encoder.inverse_transform(np.array(classes_local))
                 return [str(x) for x in inv]
             except Exception as e:
                 print(f"[WRN] inverse_transform fail: {e}")
-        # 2) 없는 경우: 길이만 맞춰서 CANONICAL로 반환
         if len(classes_local) == len(CANONICAL_UI):
             print("[WRN] cannot map via encoder. Falling back to CANONICAL order guess.")
             return list(CANONICAL_UI)
-        # 3) 길이도 다르면, 그냥 문자열화
         print("[WRN] classes length mismatch. Using raw stringified labels.")
         return [str(c) for c in classes_local]
 
     def predict_proba_ui(self, seg2s_16k: np.ndarray, win_a: float, win_b: float) -> dict:
         """2초(16k) -> CANONICAL_UI 순서의 확률 dict 반환"""
+        # 간단 에너지 로그
+        rms = float(np.sqrt(np.mean(seg2s_16k**2) + 1e-12))
+        peak = float(np.max(np.abs(seg2s_16k)) + 1e-12)
+        if DEBUG_VERBOSE:
+            print(f"[MDL] seg energy: rms={rms:.6f}, peak={peak:.6f}")
+
         M = mels_64_from_2s(seg2s_16k)           # (T,64)
         feat64 = M.mean(axis=0, keepdims=False)  # (64,)
         X = feat64.reshape(1, -1)
@@ -195,7 +205,6 @@ class RealtimeInferenceEngine:
             p_lr  = p_lr_local[self.lr_reorder]
             p_mlp = p_mlp_local[self.mlp_reorder]
         except Exception:
-            # 실패 시 길이 맞춰 최소한의 안전 조치
             p_lr  = np.zeros(len(CANONICAL_UI), dtype=float)
             p_mlp = np.zeros(len(CANONICAL_UI), dtype=float)
 
@@ -203,14 +212,6 @@ class RealtimeInferenceEngine:
         p = np.maximum(p, 1e-12)
         p = p / p.sum()
 
-        # 디버깅 로그 (요청)
-        print(f"[MDL] seg64k raw stats: mean={seg2s_16k.mean():.6f}, std={seg2s_16k.std():.6f}")
-        print(f"[MDL] feat64 stats: mean={feat64.mean():.4f}, std={feat64.std():.4f}, min={feat64.min():.4f}, max={feat64.max():.4f}")
-        print(f"[MDL] p_lr  ({self.lr_labels}): "  + "[" + ", ".join(f"{x:.3f}" for x in p_lr_local)  + "]")
-        print(f"[MDL] p_mlp ({self.mlp_labels}): " + "[" + ", ".join(f"{x:.3f}" for x in p_mlp_local) + "]")
-        print(f"[MDL] p_avg (UI {CANONICAL_UI}): " + "[" + ", ".join(f"{x:.3f}" for x in p) + "]")
-
-        # dict로 반환
         return {cls: float(prob) for cls, prob in zip(CANONICAL_UI, p)}
 
 
@@ -249,7 +250,6 @@ class DiagnosisTable(QtWidgets.QTableWidget):
         self.setColumnWidth(0, 120)
         self.setColumnWidth(1, 80)
         self.setColumnWidth(2, 80)
-        # 헤더 스타일은 상위 스타일시트로 통일
 
     def _add_row(self, cls_name, prob, tstr):
         r = self.rowCount()
@@ -347,8 +347,20 @@ class WearableStethoUI(QtWidgets.QWidget):
         # audio out stream for file mode
         self.sd_stream = None
 
-        # 디버그용: 재생 기준 시간(초)
+        # 재생 기준 시간(초)
         self.play_start_time = None
+
+        # per-window probs CSV (로그)
+        self.csv_path = os.path.join(os.path.expanduser("~"), "Stethoscope_Project", "live_probs.csv")
+        try:
+            os.makedirs(os.path.dirname(self.csv_path), exist_ok=True)
+            if not os.path.exists(self.csv_path):
+                with open(self.csv_path, "w", encoding="utf-8") as f:
+                    header = ["win_start_s", "win_end_s"] + CANONICAL_UI
+                    f.write(",".join(header) + "\n")
+            print(f"[LOG] writing per-window probs to: {self.csv_path}")
+        except Exception as e:
+            print(f"[LOG] CSV init failed: {e}")
 
     # -------- UI build/style --------
     def _build_ui(self):
@@ -580,7 +592,6 @@ class WearableStethoUI(QtWidgets.QWidget):
                     if "Amplitude(V)" in arr.dtype.names:
                         x = np.asarray(arr["Amplitude(V)"], dtype=np.float32)
                     else:
-                        # 헤더 두 번째 컬럼 가정
                         x = np.asarray(arr[list(arr.dtype.names)[1]], dtype=np.float32)
                     if "Time(s)" in arr.dtype.names:
                         t = np.asarray(arr["Time(s)"], dtype=np.float64)
@@ -661,8 +672,9 @@ class WearableStethoUI(QtWidgets.QWidget):
 
         remain_plot = len(self.file_plot_4k) - self.file_idx_plot if self.file_plot_4k is not None else 0
         remain_inf  = len(self.file_inf_16k) - self.file_idx_inf  if self.file_inf_16k  is not None else 0
-        print(f"[TICK] idx_plot={self.file_idx_plot}, remain_plot={remain_plot}, "
-              f"idx_inf={self.file_idx_inf}, remain_inf={remain_inf}, seg_buf={self.seg_buffer_16k.size}")
+        if DEBUG_VERBOSE and LOG_TICK:
+            print(f"[TICK] idx_plot={self.file_idx_plot}, remain_plot={remain_plot}, "
+                  f"idx_inf={self.file_idx_inf}, remain_inf={remain_inf}, seg_buf={self.seg_buffer_16k.size}")
 
         # 종료
         if self.file_idx_plot >= len(self.file_plot_4k) and self.file_idx_inf >= len(self.file_inf_16k):
@@ -687,7 +699,7 @@ class WearableStethoUI(QtWidgets.QWidget):
         self.time_counter += shift_len / SAMPLE_RATE
         self.x_buffer = np.linspace(self.time_counter - WINDOW_DURATION, self.time_counter, WINDOW_SIZE)
 
-        # CSV 저장용
+        # CSV 저장용 원시 스트림
         start_time = self.time_counter - shift_len / SAMPLE_RATE
         full_time_array = start_time + np.arange(shift_len) / SAMPLE_RATE
         self.full_time.extend(full_time_array); self.full_audio.extend(samples)
@@ -697,15 +709,28 @@ class WearableStethoUI(QtWidgets.QWidget):
         if sr != TARGET_SR:
             samples = resample_poly(samples, up=TARGET_SR, down=sr).astype(np.float32)
         self.seg_buffer_16k = np.concatenate([self.seg_buffer_16k, samples])
+
+        if DEBUG_VERBOSE and LOG_ACC:
+            print(f"[ACC] pushed {len(samples)} @16k | seg_buf={self.seg_buffer_16k.size}")
+
         if self.seg_buffer_16k.size >= SEG_SAMPLES_16K:
             self.consume_segments()
 
     # -------- 2초 단위 소모/추론 --------
     def consume_segments(self):
+        # 아이들 상태: 버퍼가 2초 미만이면 즉시 리턴
+        if self.seg_buffer_16k.size < SEG_SAMPLES_16K:
+            if DEBUG_VERBOSE and LOG_CONSUME_IDLE:
+                print(f"[CONSUME] idle | seg_buf={self.seg_buffer_16k.size}")
+            return
+
         updated = False
+        windows_done = 0
+
         while self.seg_buffer_16k.size >= SEG_SAMPLES_16K:
             seg = self.seg_buffer_16k[:SEG_SAMPLES_16K].copy()
             self.seg_buffer_16k = self.seg_buffer_16k[SEG_SAMPLES_16K:]
+            windows_done += 1
 
             # 현재 윈도우 시간 계산(파일모드: 재생 시작 기준 경과시간, BLE: time_counter 사용)
             if self.playback_mode and self.play_start_time is not None:
@@ -713,7 +738,6 @@ class WearableStethoUI(QtWidgets.QWidget):
                 win_b = elapsed
                 win_a = max(0.0, win_b - SEG_SECONDS)
             else:
-                # plot 타임축을 기준으로 (대략)
                 win_b = max(0.0, self.time_counter)
                 win_a = max(0.0, win_b - SEG_SECONDS)
 
@@ -724,15 +748,27 @@ class WearableStethoUI(QtWidgets.QWidget):
                 self.tbl_diag.set_probs(probs_ui, tstr)
                 updated = True
 
-                # 콘솔 디버그
+                # 콘솔 요약
                 top1 = max(probs_ui.items(), key=lambda kv: kv[1])
-                print(f"[INF] softmax updated  |  window={win_a:6.2f}–{win_b:6.2f}s  | "
-                      f"top1={top1[0]:<10} {top1[1]*100:5.1f}%  | buf_after={self.seg_buffer_16k.size} samples")
+                if DEBUG_VERBOSE:
+                    print(f"[INF] softmax updated | window={win_a:6.2f}–{win_b:6.2f}s | top1={top1[0]:<12} {top1[1]*100:5.1f}%")
+
+                # CSV 저장 (윈도우별 확률)
+                try:
+                    if self.csv_path:
+                        with open(self.csv_path, "a", encoding="utf-8") as f:
+                            row = [f"{win_a:.2f}", f"{win_b:.2f}"] + [f"{probs_ui[c]:.6f}" for c in CANONICAL_UI]
+                            f.write(",".join(row) + "\n")
+                except Exception as e:
+                    print(f"[LOG] CSV append failed: {e}")
+
             except Exception as e:
                 print(f"[!] Inference error: {e}")
 
+        if DEBUG_VERBOSE:
+            print(f"[CONSUME] processed windows={windows_done} | seg_buf_remain={self.seg_buffer_16k.size}")
+
         if updated:
-            # 즉시 화면 반영
             self.tbl_diag.viewport().update()
 
     # -------- 저장 --------

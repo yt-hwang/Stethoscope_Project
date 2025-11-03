@@ -199,9 +199,14 @@ def _sanitize_for_col(name: str) -> str:
 def main():
     parser = argparse.ArgumentParser(description="Inference-only pipeline for WAV files")
     #parser.add_argument("--input_dir", type=str, default=str(Path(r"D:\\Stethoscope_Project\\Audio shared\\1021 replayed")), help="Directory containing WAV files")
-    parser.add_argument("--input_dir", type=str, default=str(Path(r"D:\Stethoscope_Project\Audio shared\ML test sound list\RAW sound_ML test sound list")), help="Directory containing WAV files")
-    parser.add_argument("--model_dir", type=str, default=str(Path(r"D:\\Stethoscope_Project\\Deployment\\Group Split\\model\\run_20251008_172910")), help="Model directory or 'auto'")
-    parser.add_argument("--result_dir", type=str, default=str(Path(r"D:\\Stethoscope_Project\\Deployment\\1 Final Pipeline\\1 Testing with Replayed Sound\\result")), help="Output directory for CSVs")
+    #parser.add_argument("--input_dir", type=str, default=str(Path(r"D:\Stethoscope_Project\Audio shared\ML test sound list\RAW sound_ML test sound list")), help="Directory containing WAV files")
+    #parser.add_argument("--model_dir", type=str, default=str(Path(r"D:\\Stethoscope_Project\\Deployment\\Group Split\\model\\run_20251008_172910")), help="Model directory or 'auto'")
+    #parser.add_argument("--result_dir", type=str, default=str(Path(r"D:\\Stethoscope_Project\\Deployment\\1 Final Pipeline\\1 Testing with Replayed Sound\\result")), help="Output directory for CSVs")
+    
+    parser.add_argument("--input_dir", type=str, default=str(Path(r"/Users/yunhwang/Desktop/Stethoscope_Project/Audio shared/Test for Realtime Deployment")), help="Directory containing WAV files")
+    parser.add_argument("--model_dir", type=str, default=str(Path(r"/Users/yunhwang/Desktop/Stethoscope_Project/Deployment/1 Final Pipeline/2 Model Training with Replayed Sound/model/run_20251102_120824")), help="Model directory or 'auto'")
+    parser.add_argument("--result_dir", type=str, default=str(Path(r"/Users/yunhwang/Desktop/Stethoscope_Project/Deployment/1 Final Pipeline/1 Testing with Replayed Sound/result")), help="Output directory for CSVs")
+
     args = parser.parse_args()
 
     input_dir = Path(args.input_dir)
@@ -226,6 +231,13 @@ def main():
             raise RuntimeError(f"Model dir not found: {model_dir}")
 
     scaler, lr, mlp, class_names, thresholds = load_models(model_dir)
+
+    print("[DBG] lr.classes_:", getattr(lr, "classes_", None))
+    print("[DBG] thresholds shape:", None if thresholds is None else thresholds.shape)
+    print("[DBG] class_names from thresholds:", class_names)
+    from pathlib import Path as _P
+    print("[DBG] scaler_n_features:", getattr(scaler, "n_features_in_", None), " model_dir=", _P(model_dir).name)
+
 
     wav_files = sorted([p for p in input_dir.glob("*.wav") if p.is_file()])
     if not wav_files:
@@ -255,6 +267,31 @@ def main():
             feats.append(feat)
 
         F = np.stack(feats, axis=0)  # (num_segments, 64)
+        # === DEBUG DUMP (begin) ===
+        import pandas as _pd
+        _debug_raw_feat = _pd.DataFrame(F, columns=[f"f{i}" for i in range(F.shape[1])])
+        _debug_raw_feat["segment_index"] = list(range(F.shape[0]))
+        _debug_raw_feat["t0"] = [w[2] for w in windows]
+        _debug_raw_feat["t1"] = [w[3] for w in windows]
+        _debug_raw_feat_path = result_dir / (wav_path.stem + "_features_raw.csv")
+        _debug_raw_feat.to_csv(_debug_raw_feat_path, index=False)
+
+        # 스케일러 적용 후도 저장 (infer_probs 호출 전)
+        Xs_tmp = scaler.transform(F)
+        _debug_scaled_feat = _pd.DataFrame(Xs_tmp, columns=[f"z{i}" for i in range(Xs_tmp.shape[1])])
+        _debug_scaled_feat["segment_index"] = list(range(Xs_tmp.shape[0]))
+        _debug_scaled_feat_path = result_dir / (wav_path.stem + "_features_scaled.csv")
+        _debug_scaled_feat.to_csv(_debug_scaled_feat_path, index=False)
+
+        # 모델 클래스 차원/이름 확인용
+        try:
+            _lr_classes = getattr(lr, "classes_", None)
+            _mlp_classes = getattr(mlp, "classes_", None)
+            print(f"[CHK] LR.classes_={_lr_classes}  MLP.classes_={_mlp_classes}  class_names={class_names}")
+        except Exception as _e:
+            print("[CHK] classes_ print fail:", _e)
+        # === DEBUG DUMP (end) ===
+
         probs = infer_probs(F, scaler, lr, mlp)
         labels, conf = choose_labels(probs, class_names, thresholds)
 
@@ -282,6 +319,9 @@ def main():
         # Aggregate per-file
         mean_probs = probs.mean(axis=0)
         file_label, file_conf, file_probs_map = aggregate_file_level(probs, class_names)
+
+        print("[DBG] file-level mean probs:", {k: round(v,4) for k, v in file_probs_map.items()})
+
         file_row = {
             "file": wav_path.name,
             "num_segments": F.shape[0],

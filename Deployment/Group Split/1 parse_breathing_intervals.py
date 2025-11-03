@@ -11,11 +11,11 @@ import pandas as pd
 
 # ===== User Settings =====
 # Mac
-#EXCEL_PATH = Path("/Users/yunhwang/Desktop/Stethoscope_Project/Audio shared/ML test sound list/ML test sound list breathing info.xlsx")   # Input Excel file
-#OUT_JSON = Path("/Users/yunhwang/Desktop/Stethoscope_Project/Development/2) Image/Transfer_Learning/Abnormal_Breathing/breathing_nonbreathing_intervals.json")      # Output JSON file
+EXCEL_PATH = Path("/Users/yunhwang/Desktop/Stethoscope_Project/Audio shared/ML test sound list/ML test sound list breathing info.xlsx")   # Input Excel file
+OUT_JSON = Path("/Users/yunhwang/Desktop/Stethoscope_Project/Deployment/1 Final Pipeline/2 Model Training with Replayed Sound/Output/breathing_nonbreathing_intervals.json")      # Output JSON file
 # Windows
-EXCEL_PATH = Path("D:\\Stethoscope_Project\\Audio shared\\ML test sound list\\ML test sound list breathing info.xlsx")   # Input Excel file
-OUT_JSON = Path("D:\\Stethoscope_Project\\Development\\2) Image\\Transfer_Learning\\Abnormal_Breathing\\breathing_nonbreathing_intervals.json")      # Output JSON file
+#EXCEL_PATH = Path("D:\\Stethoscope_Project\\Audio shared\\ML test sound list\\ML test sound list breathing info.xlsx")   # Input Excel file
+#OUT_JSON = Path("D:\\Stethoscope_Project\\Development\\2) Image\\Transfer_Learning\\Abnormal_Breathing\\breathing_nonbreathing_intervals.json")      # Output JSON file
 
 DURATION_SEC = 30.0                                           # Total audio length (seconds)
 STRICT_DROP = False                                            # If dirty data exists, remove the file itself

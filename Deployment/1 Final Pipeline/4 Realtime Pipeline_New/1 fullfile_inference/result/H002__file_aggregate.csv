@@ -1,0 +1,2 @@
+file,n_windows,mean_prob_Crackle,mean_prob_Healthy,mean_prob_Non-breathing,mean_prob_Rhonchi,mean_prob_Wheezing,majority_label,count_Crackle,count_Healthy,count_Non-breathing,count_Rhonchi,count_Wheezing
+/Users/yunhwang/Desktop/Stethoscope_Project/Audio shared/Test for Realtime Deployment/H002.wav,57,0.036816,0.319512,0.639161,0.003982,0.000529,Healthy,0,43,14,0,0

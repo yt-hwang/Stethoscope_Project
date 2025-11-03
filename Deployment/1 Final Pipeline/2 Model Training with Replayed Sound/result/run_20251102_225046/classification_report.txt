@@ -1,0 +1,22 @@
+== Classes (canonical) ==
+Crackle, Healthy, Non-breathing, Rhonchi, Wheezing
+
+== Thresholds (val, Youden J) ==
+       Crackle: 0.1311
+       Healthy: 0.0540
+ Non-breathing: 0.7475
+       Rhonchi: 0.0029
+      Wheezing: 0.0001
+
+== Classification Report (TEST) ==
+               precision    recall  f1-score   support
+
+      Crackle     0.2400    1.0000    0.3871         6
+      Healthy     0.2381    0.4545    0.3125        22
+Non-breathing     0.8947    0.5635    0.6915       181
+      Rhonchi     0.5500    0.6875    0.6111        48
+     Wheezing     0.6500    0.8125    0.7222        64
+
+     accuracy                         0.6324       321
+    macro avg     0.5146    0.7036    0.5449       321
+ weighted avg     0.7372    0.6324    0.6540       321

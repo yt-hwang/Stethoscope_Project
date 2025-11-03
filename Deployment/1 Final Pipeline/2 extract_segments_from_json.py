@@ -8,11 +8,11 @@ import torchaudio
 import torch
 import pandas as pd
 
-PROJECT_DIR = '//home//un_wang//my_stethoscope_project'
-RAW_DIR = f'{PROJECT_DIR}//data//audio//Raw//RAW sound_ML test sound list'
-INTERVAL_JSON = f'{PROJECT_DIR}//data//audio//Raw//breathing_nonbreathing_intervals.json'
-SEG_OUT_DIR = f'{PROJECT_DIR}//data//audio//Segments_from_JSON'
-META_CSV = f'{PROJECT_DIR}//data//audio//Segments_from_JSON//metadata.csv'
+PROJECT_DIR = '/Users/yunhwang/Desktop/Stethoscope_Project'
+RAW_DIR = f'{PROJECT_DIR}//Audio shared//ML test sound list//RAW sound_ML test sound list'
+INTERVAL_JSON = f'{PROJECT_DIR}/Deployment/1 Final Pipeline/Output/breathing_nonbreathing_intervals.json'
+SEG_OUT_DIR = f'{PROJECT_DIR}/Deployment/1 Final Pipeline/Output/wav_files'
+META_CSV = f'{PROJECT_DIR}/Deployment/1 Final Pipeline/Output/wav_files/metadata.csv'
 
 TARGET_SR = 16000
 

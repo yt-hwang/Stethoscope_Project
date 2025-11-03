@@ -2,24 +2,25 @@
 # -----------------------------------------------------------------------------
 # 1) Existing JSON segments created from 16kHz WAV files to 2.0s/0.5s hop
 # 2) Include option to remove silent (low energy) segments
-# 3) Output/metadata saved under D:\Stethoscope_Project\Deployment under Segments_2s_hop500ms
-
-# Input: JSON file with breathing and non-breathing intervals
-# Output: WAV files with segments
+# 3) Output/metadata saved under D:\Stethoscope_Project\Deployment\1 Final Pipeline\2 Model Training with Replayed Sound under Segments_2s_hop500ms
+# -----------------------------------------------------------------------------
 
 from pathlib import Path
 import numpy as np
 import soundfile as sf
 import pandas as pd
 
-# ==== Path settings ====
-DEPLOY_ROOT = Path(r"/Users/yunhwang/Desktop/Stethoscope_Project/Deployment")
-# Location of existing segments (input): Change if needed (e.g. already created Segments_from_JSON)
-RAW_SEGMENTS_SRC = Path(r"/Users/yunhwang/Desktop/Stethoscope_Project/Deployment/1 Final Pipeline/Output/wav_files")
-
-# Output root (fixed)
-OUT_DIR = DEPLOY_ROOT / r"wav_files_2s_hop500ms"
+## Mac
+DEPLOY_ROOT = Path(r"/Users/yunhwang/Desktop/Stethoscope_Project/Deployment/1 Final Pipeline/2 Model Training with Replayed Sound")
+RAW_SEGMENTS_SRC = Path(r"/Users/yunhwang/Desktop/Stethoscope_Project/Deployment/1 Final Pipeline/2 Model Training with Replayed Sound/Output/Segments_from_JSON")
+OUT_DIR = DEPLOY_ROOT / "Output/Segments_2s_hop500ms"
 OUT_DIR.mkdir(parents=True, exist_ok=True)
+
+## Windows
+#DEPLOY_ROOT = Path(r"D:\\Stethoscope_Project\\Deployment\\1 Final Pipeline\\2 Model Training with Replayed Sound")
+#RAW_SEGMENTS_SRC = Path(r"D:\\Stethoscope_Project\\Deployment\\1 Final Pipeline\\2 Model Training with Replayed Sound\\Output\\Segments_from_JSON")
+#OUT_DIR = DEPLOY_ROOT / r"D:\\Stethoscope_Project\\Deployment\\1 Final Pipeline\\2 Model Training with Replayed Sound\\Output\\Segments_2s_hop500ms"
+#OUT_DIR.mkdir(parents=True, exist_ok=True)
 
 # ==== Parameters ====
 SR = 16000
@@ -86,7 +87,7 @@ for label_dir in RAW_SEGMENTS_SRC.iterdir():
             t += HOP
 
 df = pd.DataFrame(rows)
-meta_path = OUT_DIR / "metadata_2s_hop500ms.csv"   # metadata_2s_hop500ms.csv
+meta_path = OUT_DIR / "metadata_2s_hop500ms.csv"
 df.to_csv(meta_path, index=False)
 
 print(f"[DONE] segments: {len(df)}")

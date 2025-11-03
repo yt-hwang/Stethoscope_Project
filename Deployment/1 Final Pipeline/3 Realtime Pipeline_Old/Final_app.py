@@ -30,8 +30,9 @@ WINDOW_SIZE = int(SAMPLE_RATE * WINDOW_DURATION)
 DT = 1.0 / SAMPLE_RATE
 
 # ----------------- 모델/특징 설정 -----------------
-MODEL_DIR = r"D:\Stethoscope_Project\Deployment\ Group Split\model\run_20251008_172910".replace(" ", " ")  # 공백 깨짐 방지
-MODEL_DIR = r"D:\Stethoscope_Project\Deployment\Group Split\model\run_20251008_172910"  # 최종 적용
+#MODEL_DIR = r"D:\Stethoscope_Project\Deployment\ Group Split\model\run_20251008_172910".replace(" ", " ")  # 공백 깨짐 방지
+#MODEL_DIR = r"D:\Stethoscope_Project\Deployment\Group Split\model\run_20251008_172910"  # 최종 적용
+MODEL_DIR = r"/Users/yunhwang/Desktop/Stethoscope_Project/Deployment/1 Final Pipeline/2 Model Training with Replayed Sound/model/run_20251029_235024"  # 최종 적용
 
 TARGET_SR = 16000
 SEG_SECONDS = 2.0
