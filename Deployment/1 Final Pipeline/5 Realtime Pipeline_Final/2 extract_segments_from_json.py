@@ -1,26 +1,31 @@
 #!/usr/bin/env python3
 # Input: JSON file with breathing and non-breathing intervals
 # Output: WAV files with segments
-
 import os, json, glob
 from pathlib import Path
 import torchaudio
 import torch
 import pandas as pd
 
+## Mac
 PROJECT_DIR = '/Users/yunhwang/Desktop/Stethoscope_Project'
 RAW_DIR = f'{PROJECT_DIR}//Audio shared//ML test sound list//RAW sound_ML test sound list'
-INTERVAL_JSON = f'{PROJECT_DIR}/Deployment/1 Final Pipeline/Output/breathing_nonbreathing_intervals.json'
-SEG_OUT_DIR = f'{PROJECT_DIR}/Deployment/1 Final Pipeline/Output/wav_files'
-META_CSV = f'{PROJECT_DIR}/Deployment/1 Final Pipeline/Output/wav_files/metadata.csv'
+INTERVAL_JSON = f'{PROJECT_DIR}/Deployment/1 Final Pipeline/5 Realtime Pipeline_Final/Output/breathing_nonbreathing_intervals.json'
+SEG_OUT_DIR = f'{PROJECT_DIR}/Deployment/1 Final Pipeline/5 Realtime Pipeline_Final/Output/Segments_from_JSON'
+META_CSV = f'{PROJECT_DIR}/Deployment/1 Final Pipeline/5 Realtime Pipeline_Final/Output/Segments_from_JSON/metadata.csv'
+## Windows
+#RAW_DIR = f'D:\\Stethoscope_Project\\Audio shared\\ML test sound list\\RAW sound_ML test sound list'
+#INTERVAL_JSON = f'D:\\Stethoscope_Project\\Deployment\\1 Final Pipeline\\2 Model Training with Replayed Sound\\Output\\breathing_nonbreathing_intervals.json'
+#SEG_OUT_DIR = f'D:\\Stethoscope_Project\\Deployment\\1 Final Pipeline\\2 Model Training with Replayed Sound\\Output\\Segments_from_JSON'
+#META_CSV = f'D:\\Stethoscope_Project\\Deployment\\1 Final Pipeline\\2 Model Training with Replayed Sound\\Output\\Segments_from_JSON\\metadata.csv'
 
 TARGET_SR = 16000
 
-LABELS_ALLOWED = {'Healthy','Crackle','Rhonchi','Wheezing'}  # breathing 진단 라벨
+LABELS_ALLOWED = {'Healthy','Crackle','Rhonchi','Wheezing'}  # breathing diagnosis label
 NB_LABEL = 'Non-breathing'
 
 def find_raw_path(basename: str) -> str:
-    # 확장자/대소문자 무시하고 RAW_DIR에서 매칭
+    # Ignore extension/case and match in RAW_DIR
     pat = os.path.join(RAW_DIR, f'*{basename}*')
     cands = []
     for p in glob.glob(pat):
@@ -29,7 +34,7 @@ def find_raw_path(basename: str) -> str:
         name = os.path.splitext(os.path.basename(p))[0].lower()
         if basename.lower() in name:
             cands.append(p)
-    # 가장 길이가 가까운 것을 우선 선택
+    # Select the closest length first
     if not cands:
         return None
     cands.sort(key=lambda x: abs(len(os.path.splitext(os.path.basename(x))[0]) - len(basename)))
@@ -37,7 +42,7 @@ def find_raw_path(basename: str) -> str:
 
 def load_audio(path):
     wav, sr = torchaudio.load(path)  # [ch, T]
-    if wav.shape[0] > 1:  # mono 변환
+    if wav.shape[0] > 1:  # mono conversion
         wav = torch.mean(wav, dim=0, keepdim=True)
     if sr != TARGET_SR:
         wav = torchaudio.functional.resample(wav, sr, TARGET_SR)
@@ -109,7 +114,7 @@ def main():
             })
 
     if miss:
-        print('[WARN] JSON에는 있는데 RAW 폴더에서 못 찾은 파일 키:', miss)
+        print('[WARN] JSON has keys but not found in RAW folder:', miss)
 
     df = pd.DataFrame(rows)
     df.to_csv(META_CSV, index=False, encoding='utf-8')

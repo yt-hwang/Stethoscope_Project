@@ -24,7 +24,7 @@ from joblib import load as joblib_load
 # 고정 하드코딩 경로
 # ─────────────────────────────────────────────────────────
 TEST_WAV_DIR = Path("/Users/yunhwang/Desktop/Stethoscope_Project/Audio shared/Test for Realtime Deployment")
-MODEL_DIR    = Path("/Users/yunhwang/Desktop/Stethoscope_Project/Deployment/1 Final Pipeline/2 Model Training with Replayed Sound/model/run_20251102_225046")
+MODEL_DIR    = Path("/Users/yunhwang/Desktop/Stethoscope_Project/Deployment/1 Final Pipeline/5 Realtime Pipeline_Final/model/run_20251107_194938")
 
 # ─────────────────────────────────────────────────────────
 # 기존 BLE/Plot 파라미터 (원본 유지)

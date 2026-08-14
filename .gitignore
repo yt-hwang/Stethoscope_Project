@@ -60,3 +60,6 @@ Development/1) Audio/3) Supervised Learning (Handcrafted) with New Data/01_Full_
 Development/1) Audio/3) Supervised Learning (Handcrafted) with New Data/03_Layer_Analysis/setup/OPERA
 Development/1) Audio/4) Transfer Learning with OPERA-CT/01_Unsupervised_Learning/01_Baseline/setup/OPERA
 Development/1) Audio/4) Transfer Learning with OPERA-CT/01_Unsupervised_Learning/03_Layer_Analysis/setup/OPERA
+
+# macOS
+.DS_Store

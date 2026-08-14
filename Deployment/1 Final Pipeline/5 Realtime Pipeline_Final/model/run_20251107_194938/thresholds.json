@@ -1,0 +1,16 @@
+{
+  "class_names": [
+    "Crackle",
+    "Healthy",
+    "Non-breathing",
+    "Rhonchi",
+    "Wheezing"
+  ],
+  "thresholds": [
+    0.0003383830501126293,
+    0.0019448057564805225,
+    0.5087921670737531,
+    Infinity,
+    0.000682480376159758
+  ]
+}

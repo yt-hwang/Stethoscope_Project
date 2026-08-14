@@ -2,7 +2,6 @@
 # Input: Excel file with breathing intervals
 # Output: JSON file with breathing and non-breathing intervals
 
-
 from __future__ import annotations
 import json
 from pathlib import Path
@@ -11,16 +10,15 @@ import pandas as pd
 
 # ===== User Settings =====
 # Mac
-EXCEL_PATH = Path("/Users/yunhwang/Desktop/Stethoscope_Project/Audio shared/ML test sound list/ML test sound list breathing info.xlsx")   # Input Excel file
-OUT_JSON = Path("/Users/yunhwang/Desktop/Stethoscope_Project/Deployment/1 Final Pipeline/Output/breathing_nonbreathing_intervals.json")      # Output JSON file
+EXCEL_PATH = Path("/Users/yunhwang/Desktop/Stethoscope_Project/Audio shared/ML test sound list/ML test sound list breathing info.xlsx")   # 입력 Excel 파일
+OUT_JSON = Path("/Users/yunhwang/Desktop/Stethoscope_Project/Deployment/1 Final Pipeline/5 Realtime Pipeline_Final/Output/breathing_nonbreathing_intervals.json")      # 출력 JSON 파일
 # Windows
-#EXCEL_PATH = Path("D:\\Stethoscope_Project\\Audio shared\\ML test sound list\\ML test sound list breathing info.xlsx")   # Input Excel file
-#OUT_JSON = Path("D:\\Stethoscope_Project\\Development\\2) Image\\Transfer_Learning\\Abnormal_Breathing\\breathing_nonbreathing_intervals.json")      # Output JSON file
+#EXCEL_PATH = Path("D:\\Stethoscope_Project\\Audio shared\\ML test sound list\\ML test sound list breathing info.xlsx")   # 입력 Excel 파일
+#OUT_JSON = Path("D:\\Stethoscope_Project\\Deployment\\1 Final Pipeline\\2 Model Training with Replayed Sound\\Output\\breathing_nonbreathing_intervals.json")      # 출력 JSON 파일
 
 DURATION_SEC = 30.0                                           # Total audio length (seconds)
 STRICT_DROP = False                                            # If dirty data exists, remove the file itself
 # ======================
-
 
 def _as_float(x) -> float | None:
     try:
